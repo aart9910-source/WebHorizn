@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="en-IN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>document.documentElement.classList.add('js');</script>
+
+<title>Vantora Digital | Websites and Ads That Bring Real Customers</title>
+<meta name="description" content="Web development and digital marketing for growing businesses in India. Get a free audit. We reply within 2 hours (10am to 7pm).">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_IN">
+<meta property="og:site_name" content="Vantora Digital">
+<meta property="og:title" content="Websites and ads that bring you real customers.">
+<meta property="og:description" content="Web development and digital marketing for growing businesses in India. Get a free audit.">
+<!-- <meta property="og:image" content="[OG_IMAGE_URL: 1200x630 image]"> -->
+<!-- <link rel="canonical" href="[CANONICAL_URL]"> -->
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='10' fill='%23FF4F1F'/%3E%3Cpath d='M10 12l10 17 10-17' fill='none' stroke='%230E0E0E' stroke-width='4.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&display=swap" rel="stylesheet">
+
+<!-- ==================== TRACKING PLACEHOLDERS (uncomment and fill in) ====================
+  [A] GA4 (paste in <head>, replace G-XXXXXXX):
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-XXXXXXX');</script>
+
+  [B] Meta Pixel: paste the base code from Meta Events Manager here, using your Pixel ID [META_PIXEL_ID].
+
+  [C] Google Ads conversion: uses gtag from [A]. Replace AW-XXXXXXXXX/LABEL in track() below.
+  ======================================================================================== -->
+
+<style>
+:root{
+  --paper:#F3F0E8;
+  --paper-2:#E9E5DA;
+  --ink:#0E0E0E;
+  --ink-2:#55524B;
+  --mute:#A9A59B;
+  --line:rgba(14,14,14,.14);
+  --accent:#FF4F1F;
+  --accent-2:#FF6A3D;
+  --r:16px;
+  --pad:clamp(20px,4vw,48px);
+  --ease:cubic-bezier(.2,.7,.1,1);
+  --font:'Archivo',system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--font);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+img,svg{display:block;max-width:100%}
+a{color:inherit}
+h1,h2,h3,p{margin:0}
+p{max-width:60ch}
+.wrap{max-width:1280px;margin:0 auto;padding:0 var(--pad)}
+.skip{position:absolute;left:-9999px}
+.skip:focus{left:16px;top:16px;background:var(--paper);padding:10px 14px;z-index:999;border-radius:var(--r)}
+:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
+.dark :focus-visible{outline-color:var(--accent)}
+
+/* Film grain for texture */
+body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:900;opacity:.05;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+
+/* Editorial section label with hairline */
+.label{display:flex;align-items:center;gap:14px;font-size:.78rem;font-weight:700;text-transform:uppercase;letter-spacing:.14em;color:var(--ink-2);margin-bottom:clamp(28px,4vw,48px)}
+.label b{color:var(--ink)}
+.label::after{content:"";flex:1;height:1px;background:var(--line)}
+.dark .label{color:var(--mute)}
+.dark .label b{color:var(--paper)}
+.dark .label::after{background:rgba(243,240,232,.16)}
+.title{font-size:clamp(2.6rem,7vw,6.25rem);font-weight:800;letter-spacing:-.045em;line-height:.92}
+section{padding:clamp(80px,11vw,160px) 0;scroll-margin-top:72px}
+
+/* Header */
+.hdr{position:sticky;top:0;z-index:80;background:rgba(243,240,232,.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.hdr .wrap{height:72px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:1.1rem;letter-spacing:-.02em;text-decoration:none;white-space:nowrap}
+@media (max-width:479px){.brand .ext{display:none}.hdr .btn-sm{padding:0 16px;font-size:.88rem}}
+.hdr-right{display:flex;align-items:center;gap:10px}
+.call{width:48px;height:48px;border-radius:var(--r);border:1.5px solid var(--ink);display:grid;place-items:center}
+.call svg{width:20px;height:20px}
+@media (min-width:800px){.call{display:none}}
+.progress{position:absolute;left:0;bottom:-1px;height:2px;width:100%;background:var(--accent);transform-origin:0 50%;transform:scaleX(0)}
+
+/* Buttons: one style, one radius */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:12px;min-height:56px;padding:0 28px;border-radius:var(--r);border:1.5px solid transparent;font:inherit;font-weight:700;font-size:1rem;line-height:1;text-decoration:none;cursor:pointer;white-space:nowrap;transition:background-color .35s var(--ease),color .35s var(--ease),border-color .35s var(--ease),transform .35s var(--ease)}
+.btn svg{width:18px;height:18px;flex:none;transition:transform .35s var(--ease)}
+.btn:hover svg{transform:translateX(4px)}
+.btn:active{transform:scale(.98)}
+.btn:disabled{opacity:.6;cursor:not-allowed}
+.btn-sm{min-height:48px;padding:0 20px;font-size:.92rem}
+.btn-accent{background:var(--accent);color:var(--ink)}
+.btn-accent:hover{background:var(--ink);color:var(--paper)}
+.btn-line{border-color:var(--ink);color:var(--ink);background:transparent}
+.btn-line:hover{background:var(--ink);color:var(--paper)}
+.btn-block{width:100%}
+
+/* Hero */
+.hero{padding:clamp(40px,6vw,88px) 0 0}
+.kicker{font-size:.95rem;font-weight:600;color:var(--ink-2);margin-bottom:clamp(20px,3vw,32px)}
+.display{font-size:clamp(2.5rem,10.5vw,7.5rem);font-weight:800;line-height:.92;letter-spacing:-.05em;font-stretch:112%}
+.ln{display:block;overflow:hidden;padding-bottom:.06em;margin-bottom:-.06em}
+.ln>span{display:inline-block;transform:translateY(110%);animation:rise 1s var(--ease) forwards}
+.ln:nth-child(1)>span{animation-delay:.05s}
+.ln:nth-child(2)>span{animation-delay:.14s}
+.ln:nth-child(3)>span{animation-delay:.23s}
+.ln:nth-child(4)>span{animation-delay:.32s}
+@keyframes rise{to{transform:none}}
+.pill{display:inline-block;white-space:nowrap;background:var(--accent);color:var(--ink);border-radius:var(--r);padding:.02em .18em .05em;line-height:.98}
+.hero-bottom{display:grid;gap:44px;align-items:end;margin-top:clamp(40px,6vw,72px);padding-bottom:clamp(56px,7vw,96px)}
+@media (min-width:960px){.hero-bottom{grid-template-columns:1fr 1.15fr;gap:72px}}
+.sub{font-size:clamp(1.2rem,1.7vw,1.45rem);line-height:1.4;font-weight:600;max-width:26ch;margin-bottom:28px}
+.cta-row{display:flex;flex-direction:column;gap:12px}
+@media (min-width:520px){.cta-row{flex-direction:row;flex-wrap:wrap}}
+.trust{margin-top:22px;font-size:.92rem;color:var(--ink-2);max-width:none}
+.fig{margin:0;border-top:1px solid var(--ink);padding-top:20px}
+.fig svg{width:100%;height:auto}
+.fig figcaption{font-size:.85rem;color:var(--ink-2);margin-top:12px}
+.flow{animation:flow 2.4s linear infinite}
+@keyframes flow{to{stroke-dashoffset:-64}}
+
+/* Ticker */
+.ticker{background:var(--ink);color:var(--paper);overflow:hidden;padding:20px 0;white-space:nowrap}
+.ticker-track{display:flex;width:max-content;animation:tick 32s linear infinite}
+.group{display:flex;align-items:center;gap:28px;padding-right:28px}
+.tk{font-size:clamp(1.5rem,3.4vw,2.6rem);font-weight:800;letter-spacing:-.035em;line-height:1}
+.sq{width:14px;height:14px;background:var(--accent);flex:none}
+@keyframes tick{to{transform:translateX(-50%)}}
+
+/* Services as editorial rows */
+.rows{list-style:none;margin:0;padding:0;border-top:1.5px solid var(--ink)}
+.row{display:grid;gap:10px;padding:28px 14px;border-bottom:1px solid var(--line);transition:background-color .45s var(--ease),color .45s var(--ease),padding .45s var(--ease)}
+.row:hover,.row:focus-within{background:var(--ink);color:var(--paper);padding-left:28px;padding-right:28px}
+.row .idx{font-size:.85rem;font-weight:700;color:var(--ink-2);transition:color .45s var(--ease)}
+.row:hover .idx{color:var(--accent)}
+.row h3{font-size:clamp(1.7rem,4vw,3.4rem);font-weight:800;letter-spacing:-.04em;line-height:1}
+.row p{color:var(--ink-2);margin:0;transition:color .45s var(--ease)}
+.row:hover p{color:var(--mute)}
+.row .price{font-weight:700;font-size:.95rem}
+@media (min-width:900px){
+  .row{grid-template-columns:72px 1.1fr 1.3fr 180px;align-items:center;gap:24px}
+  .row .price{text-align:right}
+}
+.pointer{margin-top:32px}
+.pointer a{font-weight:700;text-underline-offset:5px;padding:12px 0;display:inline-block}
+
+/* Our work: sticky stacking cases on desktop */
+.case{position:relative;background:var(--paper);border:1px solid var(--line);border-radius:var(--r);padding:clamp(20px,3vw,44px);margin-bottom:24px;display:grid;gap:28px;box-shadow:0 -10px 40px rgba(14,14,14,.07)}
+@media (min-width:900px){
+  .case{position:sticky;top:calc(96px + var(--i) * 16px);grid-template-columns:1.2fr 1fr;gap:56px;align-items:center;min-height:min(620px,78vh)}
+}
+.frame{aspect-ratio:16/11;border-radius:var(--r);border:1px solid var(--line);background:repeating-linear-gradient(135deg,var(--paper-2) 0 14px,var(--paper) 14px 28px);display:grid;place-items:center;text-align:center;padding:20px;font-size:.85rem;font-weight:700;color:var(--ink-2);letter-spacing:.04em}
+.case-meta{font-size:.78rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-2);margin-bottom:14px}
+.case h3{font-size:clamp(2rem,4vw,3.4rem);font-weight:800;letter-spacing:-.04em;line-height:1;margin-bottom:24px}
+.change{display:grid;gap:14px;margin:0;border-top:1px solid var(--ink);padding-top:20px}
+.change div{display:grid;grid-template-columns:150px 1fr;gap:12px}
+.change dt{font-size:.78rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--ink-2);padding-top:4px}
+.change dd{margin:0;font-weight:600}
+.work-foot{margin-top:56px;display:flex;flex-direction:column;gap:20px;align-items:flex-start}
+.work-foot p{color:var(--ink-2);margin:0}
+@media (min-width:800px){.work-foot{flex-direction:row;justify-content:space-between;align-items:center}}
+
+/* How it works (dark) */
+.dark{background:var(--ink);color:var(--paper)}
+.proc{display:grid;gap:64px}
+@media (min-width:960px){
+  .proc{grid-template-columns:.9fr 1.1fr;gap:110px;align-items:start}
+  .proc-l{position:sticky;top:120px}
+}
+.risk{margin-top:40px;font-size:clamp(1.3rem,2.4vw,2rem);font-weight:800;letter-spacing:-.03em;line-height:1.15;max-width:18ch}
+.timeline{position:relative;list-style:none;margin:0;padding:0 0 0 56px}
+.timeline::before,.timeline::after{content:"";position:absolute;left:15px;top:10px;bottom:10px;width:2px}
+.timeline::before{background:rgba(243,240,232,.16)}
+.timeline::after{background:var(--accent);transform-origin:top;transform:scaleY(var(--p,0))}
+.step{position:relative;padding-bottom:72px}
+.step:last-child{padding-bottom:0}
+.step::before{content:"";position:absolute;left:-47px;top:6px;width:14px;height:14px;border-radius:50%;background:var(--ink);border:2px solid var(--mute)}
+.step-no{font-size:.85rem;font-weight:700;color:var(--accent);letter-spacing:.12em}
+.step h3{font-size:clamp(1.9rem,3.8vw,3.2rem);font-weight:800;letter-spacing:-.04em;line-height:1;margin:10px 0 14px}
+.step p{color:var(--mute);max-width:40ch}
+
+/* Contact */
+.contact-grid{display:grid;gap:64px}
+@media (min-width:960px){.contact-grid{grid-template-columns:.85fr 1.15fr;gap:110px;align-items:start}}
+.founder .frame{aspect-ratio:4/5;max-width:440px}
+.founder h3{font-size:clamp(2rem,4vw,3.2rem);font-weight:800;letter-spacing:-.04em;line-height:1;margin:28px 0 8px}
+.role{color:var(--ink-2);font-size:.95rem;margin-bottom:20px}
+.story p{margin-bottom:12px;color:var(--ink-2)}
+.form{display:grid;gap:30px}
+.field{display:grid;gap:6px}
+.field label{font-size:.78rem;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:var(--ink-2)}
+.field input,.field select{width:100%;min-height:56px;background:transparent;border:0;border-bottom:1.5px solid var(--ink);border-radius:0;padding:12px 0;font:inherit;font-size:1.2rem;font-weight:600;color:var(--ink);appearance:none;-webkit-appearance:none;transition:box-shadow .2s ease}
+.field input::placeholder{color:#6E6A61;font-weight:500}
+.field select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='%230E0E0E' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 2px center;background-size:20px;padding-right:32px}
+.field input:focus,.field select:focus{outline:none;box-shadow:0 3px 0 var(--accent)}
+.field [aria-invalid="true"]{border-bottom-color:#B42318;box-shadow:none}
+.err{display:none;color:#B42318;font-size:.9rem;font-weight:600}
+.err.show{display:block}
+.or{display:flex;align-items:center;gap:14px;color:var(--ink-2);font-size:.85rem;font-weight:600}
+.or::before,.or::after{content:"";flex:1;height:1px;background:var(--line)}
+.privacy{font-size:.875rem;color:var(--ink-2);margin:-8px 0 0}
+.status{font-weight:600;min-height:1.5em;margin:0}
+.status-ok{color:#067647}
+.status-error{color:#B42318}
+
+/* Footer */
+.foot{background:var(--ink);color:var(--paper);padding:88px 0 calc(40px + 80px);overflow:clip}
+.foot-grid{display:grid;gap:32px;margin-bottom:56px}
+@media (min-width:800px){.foot-grid{grid-template-columns:repeat(3,1fr)}}
+.foot p{color:var(--mute);margin:0 0 6px;max-width:none}
+.foot strong{color:var(--paper)}
+.foot a{color:var(--paper);text-underline-offset:4px}
+.giant{font-size:clamp(4rem,21vw,30rem);font-weight:800;letter-spacing:-.07em;line-height:.8;color:#242424;white-space:nowrap;margin:0 0 0 -.04em;user-select:none}
+@media (min-width:960px){.foot{padding-bottom:40px}}
+
+/* Floating WhatsApp (ink, not a fourth color) */
+.wa{position:fixed;right:20px;bottom:20px;z-index:70;width:58px;height:58px;border-radius:var(--r);background:var(--ink);color:var(--paper);display:grid;place-items:center;box-shadow:0 12px 30px rgba(14,14,14,.28);transition:opacity .3s var(--ease),transform .3s var(--ease)}
+.wa svg{width:26px;height:26px}
+.wa.is-hidden{opacity:0;pointer-events:none;transform:translateY(12px)}
+
+/* Scroll reveal */
+.js .rv{opacity:0;transform:translateY(28px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
+.js .rv.in{opacity:1;transform:none}
+
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+  .ln>span{transform:none}
+  .js .rv{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="hdr">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Vantora Digital, back to top">
+      <svg width="30" height="30" viewBox="0 0 40 40" aria-hidden="true"><rect width="40" height="40" rx="10" fill="#FF4F1F"/><path d="M10 12l10 17 10-17" fill="none" stroke="#0E0E0E" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span>Vantora<span class="ext"> Digital</span></span>
+    </a>
+    <div class="hdr-right">
+      <!-- Replace +91XXXXXXXXXX with your real number -->
+      <a class="call" href="tel:+91XXXXXXXXXX" aria-label="Call Vantora Digital">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>
+      </a>
+      <a class="btn btn-accent btn-sm" href="#contact">Get a Free Audit</a>
+    </div>
+  </div>
+  <span class="progress" aria-hidden="true"></span>
+</header>
+
+<main id="main">
+
+<!-- 2. HERO -->
+<section class="hero" id="top" style="padding-bottom:0">
+  <div class="wrap">
+    <p class="kicker">Vantora Digital · [City, State], India</p>
+    <h1 class="display">
+      <span class="ln"><span>Websites</span></span>
+      <span class="ln"><span>and ads that</span></span>
+      <span class="ln"><span>bring you</span></span>
+      <span class="ln"><span><span class="pill">real customers.</span></span></span>
+    </h1>
+
+    <div class="hero-bottom">
+      <div>
+        <p class="sub">Web development and digital marketing for growing businesses in India.</p>
+        <div class="cta-row">
+          <a class="btn btn-accent" href="#contact">Get a Free Audit <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <!-- Replace 91XXXXXXXXXX with your WhatsApp number (country code, no +) -->
+          <a class="btn btn-line" href="https://wa.me/91XXXXXXXXXX?text=Hi%20Vantora%20Digital%2C%20I%27d%20like%20a%20free%20audit." data-wa>Chat on WhatsApp</a>
+        </div>
+        <p class="trust">4+ years in web development and digital marketing · We reply within 2 hours (10am to 7pm) · No obligation</p>
+      </div>
+
+      <figure class="fig rv">
+        <svg viewBox="0 0 560 170" role="img" aria-label="Diagram: an ad click leads to your page, then an enquiry form, then WhatsApp or a call.">
+          <line x1="70" y1="78" x2="490" y2="78" stroke="rgba(14,14,14,.16)" stroke-width="2"/>
+          <line class="flow" x1="70" y1="78" x2="490" y2="78" stroke="#0E0E0E" stroke-width="2" stroke-dasharray="4 12"/>
+          <g fill="#55524B" font-size="15" font-weight="600" text-anchor="middle">
+            <text x="70" y="26">01</text><text x="210" y="26">02</text><text x="350" y="26">03</text><text x="490" y="26">04</text>
+          </g>
+          <circle cx="70" cy="78" r="12" fill="#F3F0E8" stroke="#0E0E0E" stroke-width="2"/>
+          <circle cx="210" cy="78" r="12" fill="#F3F0E8" stroke="#0E0E0E" stroke-width="2"/>
+          <circle cx="350" cy="78" r="12" fill="#F3F0E8" stroke="#0E0E0E" stroke-width="2"/>
+          <circle cx="490" cy="78" r="12" fill="#FF4F1F" stroke="#0E0E0E" stroke-width="2"/>
+          <g fill="#0E0E0E" font-size="18" font-weight="700" text-anchor="middle">
+            <text x="70" y="128">Ad click</text><text x="210" y="128">Your page</text><text x="350" y="128">Form</text><text x="490" y="128">WhatsApp</text>
+          </g>
+        </svg>
+        <figcaption>How a visitor becomes an enquiry. Illustrative diagram, not client data.</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- Ticker -->
+<div class="ticker" aria-hidden="true">
+  <div class="ticker-track">
+    <div class="group"><span class="tk">Websites</span><span class="sq"></span><span class="tk">Landing pages</span><span class="sq"></span><span class="tk">Google Ads</span><span class="sq"></span><span class="tk">Meta Ads</span><span class="sq"></span><span class="tk">Lead generation</span><span class="sq"></span></div>
+    <div class="group"><span class="tk">Websites</span><span class="sq"></span><span class="tk">Landing pages</span><span class="sq"></span><span class="tk">Google Ads</span><span class="sq"></span><span class="tk">Meta Ads</span><span class="sq"></span><span class="tk">Lead generation</span><span class="sq"></span></div>
+  </div>
+</div>
+
+<!-- 3. SERVICES -->
+<section id="services" aria-labelledby="services-title">
+  <div class="wrap">
+    <div class="label rv"><b>01</b> Services</div>
+    <h2 class="title rv" id="services-title">What we build for you.</h2>
+
+    <ul class="rows" style="margin-top:clamp(40px,6vw,72px)">
+      <li class="row rv">
+        <span class="idx">01</span>
+        <h3>Website Development</h3>
+        <p>A fast website that shows your business well on every phone.</p>
+        <span class="price">From Rs [X]</span>
+      </li>
+      <li class="row rv">
+        <span class="idx">02</span>
+        <h3>Landing Pages</h3>
+        <p>One focused page that turns ad clicks into enquiries.</p>
+        <span class="price">From Rs [X]</span>
+      </li>
+      <li class="row rv">
+        <span class="idx">03</span>
+        <h3>Google Ads</h3>
+        <p>Show up when people nearby search for what you sell.</p>
+        <span class="price">Management from Rs [X]/month</span>
+      </li>
+      <li class="row rv">
+        <span class="idx">04</span>
+        <h3>Meta Ads</h3>
+        <p>Reach nearby customers on Facebook and Instagram.</p>
+        <span class="price">Management from Rs [X]/month</span>
+      </li>
+      <li class="row rv">
+        <span class="idx">05</span>
+        <h3>Lead Generation</h3>
+        <p>A clear way to capture, track and follow up every enquiry.</p>
+        <span class="price">Priced on the call</span>
+      </li>
+    </ul>
+
+    <p class="pointer"><a href="#work">See our recent work →</a></p>
+  </div>
+</section>
+
+<!-- 4. OUR WORK -->
+<section id="work" aria-labelledby="work-title" style="padding-top:0">
+  <div class="wrap">
+    <div class="label rv"><b>02</b> Our work</div>
+    <h2 class="title rv" id="work-title" style="margin-bottom:clamp(40px,6vw,72px)">Recent projects.</h2>
+
+    <!-- Case 1 -->
+    <article class="case" style="--i:0">
+      <!-- Replace the frame with <img src="..." alt="Screenshot of [PROJECT 1 NAME] website"> -->
+      <div class="frame">[SCREENSHOT: PROJECT 1]</div>
+      <div>
+        <p class="case-meta">Case 01 · Business type: [BUSINESS TYPE]</p>
+        <h3>[PROJECT 1 NAME]</h3>
+        <dl class="change">
+          <div><dt>What we did</dt><dd>[WHAT WE DID]</dd></div>
+          <div><dt>What changed</dt><dd>[X]% [WHAT CHANGED, e.g. more enquiries]</dd></div>
+        </dl>
+      </div>
+    </article>
+
+    <!-- Case 2 -->
+    <article class="case" style="--i:1">
+      <div class="frame">[SCREENSHOT: PROJECT 2]</div>
+      <div>
+        <p class="case-meta">Case 02 · Business type: [BUSINESS TYPE]</p>
+        <h3>[PROJECT 2 NAME]</h3>
+        <dl class="change">
+          <div><dt>What we did</dt><dd>[WHAT WE DID]</dd></div>
+          <div><dt>What changed</dt><dd>[X]% [WHAT CHANGED, e.g. more enquiries]</dd></div>
+        </dl>
+      </div>
+    </article>
+
+    <!-- Case 3 -->
+    <article class="case" style="--i:2">
+      <div class="frame">[SCREENSHOT: PROJECT 3]</div>
+      <div>
+        <p class="case-meta">Case 03 · Business type: [BUSINESS TYPE]</p>
+        <h3>[PROJECT 3 NAME]</h3>
+        <dl class="change">
+          <div><dt>What we did</dt><dd>[WHAT WE DID]</dd></div>
+          <div><dt>What changed</dt><dd>[X]% [WHAT CHANGED, e.g. more enquiries]</dd></div>
+        </dl>
+      </div>
+    </article>
+
+    <div class="work-foot rv">
+      <p>Real projects. Details shared on the call.</p>
+      <a class="btn btn-accent" href="#contact">Get a Free Audit <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<!-- 5. HOW IT WORKS -->
+<section class="dark" id="process" aria-labelledby="process-title">
+  <div class="wrap proc">
+    <div class="proc-l">
+      <div class="label rv"><b>03</b> How it works</div>
+      <h2 class="title rv" id="process-title">Three steps. No surprises.</h2>
+      <p class="risk rv">No lock-in. No pressure. Start with a free audit.</p>
+    </div>
+
+    <ol class="timeline" id="timeline">
+      <li class="step rv">
+        <div class="step-no">STEP 01</div>
+        <h3>Free call</h3>
+        <p>A short, free call to understand your business and what you want from it.</p>
+      </li>
+      <li class="step rv">
+        <div class="step-no">STEP 02</div>
+        <h3>Plan and proposal</h3>
+        <p>You get a clear plan and a written price. You decide, and only then we start.</p>
+      </li>
+      <li class="step rv">
+        <div class="step-no">STEP 03</div>
+        <h3>Build, launch and weekly report</h3>
+        <p>We build and launch it, then send you a simple report every week.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- 6. FOUNDER + CONTACT -->
+<section id="contact" aria-labelledby="contact-title">
+  <div class="wrap">
+    <div class="label rv"><b>04</b> Contact</div>
+    <h2 class="title rv" id="contact-title" style="margin-bottom:clamp(40px,6vw,72px)">Talk to a real person.</h2>
+
+    <div class="contact-grid">
+      <div class="founder rv">
+        <!-- Replace the frame with <img src="..." alt="Photo of [Founder Name], founder of Vantora Digital"> -->
+        <div class="frame">[FOUNDER PHOTO]</div>
+        <h3>[Founder Name]</h3>
+        <p class="role">Founder, Vantora Digital · [City, State], India</p>
+        <div class="story">
+          <p>I have spent 4+ years in web development and digital marketing, building websites and running ads for small and medium businesses.</p>
+          <p>[ADD ONE HONEST LINE ABOUT WHY YOU DO THIS WORK]</p>
+        </div>
+      </div>
+
+      <div class="rv">
+        <form id="lead-form" class="form" novalidate>
+          <div class="field">
+            <label for="name">Your name</label>
+            <input id="name" name="name" type="text" autocomplete="name" required aria-describedby="name-error">
+            <p class="err" id="name-error" role="alert"></p>
+          </div>
+
+          <div class="field">
+            <label for="phone">Mobile number</label>
+            <input id="phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" maxlength="16" placeholder="10-digit mobile number" required aria-describedby="phone-error">
+            <p class="err" id="phone-error" role="alert"></p>
+          </div>
+
+          <div class="field">
+            <label for="business">Business type</label>
+            <select id="business" name="business" required aria-describedby="business-error">
+              <option value="">Select one</option>
+              <option value="Restaurant or cafe">Restaurant or cafe</option>
+              <option value="Clinic or healthcare">Clinic or healthcare</option>
+              <option value="Coaching or education">Coaching or education</option>
+              <option value="Retail or shop">Retail or shop</option>
+              <option value="Salon or wellness">Salon or wellness</option>
+              <option value="Real estate">Real estate</option>
+              <option value="Manufacturing or wholesale">Manufacturing or wholesale</option>
+              <option value="Other">Other</option>
+            </select>
+            <p class="err" id="business-error" role="alert"></p>
+          </div>
+
+          <button class="btn btn-accent btn-block" type="submit" id="submit-btn">Get a Free Audit <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+          <p class="status" id="form-status" role="status" aria-live="polite"></p>
+          <p class="privacy">Your details stay private. We only use them to contact you about your enquiry.</p>
+        </form>
+
+        <div class="or" style="margin:28px 0">or</div>
+
+        <!-- Replace 91XXXXXXXXXX with your WhatsApp number -->
+        <a class="btn btn-line btn-block" href="https://wa.me/91XXXXXXXXXX?text=Hi%20Vantora%20Digital%2C%20I%27d%20like%20a%20free%20audit." data-wa>Chat on WhatsApp</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- 7. FOOTER -->
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <p><strong>Vantora Digital</strong></p>
+        <p>[City, State], India</p>
+      </div>
+      <div>
+        <p>Phone: <a href="tel:+91XXXXXXXXXX">+91 XXXXX XXXXX</a></p>
+        <p>Email: <a href="mailto:hello@example.com">hello@example.com</a></p>
+      </div>
+      <div>
+        <p>GST / Registration No.: [GST / REGISTRATION NUMBER]</p>
+        <p>© 2026 Vantora Digital. All rights reserved.</p>
+        <p>We use your details only to reply to your enquiry.</p>
+      </div>
+    </div>
+    <p class="giant" aria-hidden="true">Vantora</p>
+  </div>
+</footer>
+
+<!-- Floating WhatsApp (hidden while the contact form is on screen) -->
+<a class="wa" href="https://wa.me/91XXXXXXXXXX?text=Hi%20Vantora%20Digital%2C%20I%27d%20like%20a%20free%20audit." data-wa aria-label="Chat with Vantora Digital on WhatsApp">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 20.5l1.7-5.4A8.4 8.4 0 1 1 21 11.5z"/></svg>
+</a>
+
+<script>
+(function () {
+  'use strict';
+
+  /* ===== FORM ENDPOINT =====
+     Paste your endpoint here. Options:
+     - Formspree:  https://formspree.io/f/XXXXXXXX
+     - Google Apps Script web app URL (deploy as "Anyone" access)
+     - Your own backend URL (must accept POST with FormData)
+     Until this is set, the form will NOT send anything and will show a message. */
+  var FORM_ENDPOINT = '[FORM_ENDPOINT_URL]';
+  var isConfigured = /^https:\/\//.test(FORM_ENDPOINT);
+
+  /* ===== TRACKING =====
+     Fires on form success (lead_form_submit) and WhatsApp taps (whatsapp_click). */
+  function track(name, metaEvent) {
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({ event: name });
+    // GA4 (enable after adding the GA4 snippet in <head>):
+    // if (typeof gtag === 'function') gtag('event', name);
+    // Meta Pixel (enable after adding the pixel in <head>):
+    // if (typeof fbq === 'function') fbq('track', metaEvent);
+    // Google Ads conversion (form submit only; replace AW-XXXXXXXXX/LABEL):
+    // if (typeof gtag === 'function' && name === 'lead_form_submit') gtag('event', 'conversion', { send_to: 'AW-XXXXXXXXX/LABEL' });
+  }
+
+  document.querySelectorAll('[data-wa]').forEach(function (a) {
+    a.addEventListener('click', function () { track('whatsapp_click', 'Contact'); });
+  });
+
+  /* ===== SCROLL: progress bar, timeline fill ===== */
+  var bar = document.querySelector('.progress');
+  var timeline = document.getElementById('timeline');
+  var ticking = false;
+
+  function onScroll() {
+    var doc = document.documentElement;
+    var max = doc.scrollHeight - window.innerHeight;
+    if (bar) bar.style.transform = 'scaleX(' + (max > 0 ? window.scrollY / max : 0) + ')';
+
+    if (timeline) {
+      var r = timeline.getBoundingClientRect();
+      var p = (window.innerHeight * 0.6 - r.top) / r.height;
+      p = Math.min(1, Math.max(0, p));
+      timeline.style.setProperty('--p', p.toFixed(3));
+    }
+    ticking = false;
+  }
+
+  window.addEventListener('scroll', function () {
+    if (!ticking) { window.requestAnimationFrame(onScroll); ticking = true; }
+  }, { passive: true });
+  window.addEventListener('resize', onScroll);
+  onScroll();
+
+  /* ===== REVEAL ON SCROLL ===== */
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var revealEls = document.querySelectorAll('.rv');
+  if ('IntersectionObserver' in window && !reduce) {
+    var io = new IntersectionObserver(function (entries, obs) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { e.target.classList.add('in'); obs.unobserve(e.target); }
+      });
+    }, { threshold: 0.12 });
+    revealEls.forEach(function (el) { io.observe(el); });
+  } else {
+    revealEls.forEach(function (el) { el.classList.add('in'); });
+  }
+
+  /* ===== HIDE FLOATING WHATSAPP NEAR THE FORM ===== */
+  var fab = document.querySelector('.wa');
+  var contact = document.getElementById('contact');
+  if ('IntersectionObserver' in window && fab && contact) {
+    new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) { fab.classList.toggle('is-hidden', e.isIntersecting); });
+    }, { threshold: 0.15 }).observe(contact);
+  }
+
+  /* ===== FORM VALIDATION + SUBMIT ===== */
+  var form = document.getElementById('lead-form');
+  var status = document.getElementById('form-status');
+  var submitBtn = document.getElementById('submit-btn');
+  var fName = document.getElementById('name');
+  var fPhone = document.getElementById('phone');
+  var fBusiness = document.getElementById('business');
+
+  function normalisePhone(v) {
+    var d = v.replace(/\D/g, '');
+    if (d.length === 12 && d.indexOf('91') === 0) d = d.slice(2);
+    if (d.length === 11 && d.charAt(0) === '0') d = d.slice(1);
+    return d;
+  }
+
+  function setError(field, msg) {
+    var err = document.getElementById(field.id + '-error');
+    field.setAttribute('aria-invalid', msg ? 'true' : 'false');
+    err.textContent = msg || '';
+    err.classList.toggle('show', !!msg);
+    return !msg;
+  }
+
+  function validate(focusFirst) {
+    var okName = setError(fName, fName.value.trim().length < 2 ? 'Please enter your name.' : '');
+    var okPhone = setError(fPhone, /^[6-9]\d{9}$/.test(normalisePhone(fPhone.value)) ? '' : 'Enter a valid 10-digit mobile number, for example 98765 43210.');
+    var okBiz = setError(fBusiness, fBusiness.value ? '' : 'Please choose your business type.');
+    if (focusFirst) {
+      var first = [fName, fPhone, fBusiness].filter(function (f) { return f.getAttribute('aria-invalid') === 'true'; })[0];
+      if (first) first.focus();
+    }
+    return okName && okPhone && okBiz;
+  }
+
+  form.addEventListener('input', function () {
+    if (form.querySelector('[aria-invalid="true"]')) validate(false);
+  });
+
+  form.addEventListener('submit', function (ev) {
+    ev.preventDefault();
+    status.className = 'status';
+    status.textContent = '';
+    if (!validate(true)) return;
+
+    if (!isConfigured) {
+      status.classList.add('status-error');
+      status.textContent = 'The form is not connected yet. Please use WhatsApp for now.';
+      console.warn('Set FORM_ENDPOINT in index.html so leads are received.');
+      return;
+    }
+
+    var label = submitBtn.textContent;
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Sending…';
+
+    var data = new FormData(form);
+    data.set('phone', normalisePhone(fPhone.value));
+    data.append('page_url', location.href);
+    // Keep ad source details (utm_source, utm_campaign, etc.) for attribution
+    new URLSearchParams(location.search).forEach(function (v, k) {
+      if (k.indexOf('utm_') === 0) data.append(k, v);
+    });
+
+    fetch(FORM_ENDPOINT, { method: 'POST', body: data, headers: { 'Accept': 'application/json' } })
+      .then(function (res) {
+        if (!res.ok) throw new Error('HTTP ' + res.status);
+        track('lead_form_submit', 'Lead');
+        form.reset();
+        status.classList.add('status-ok');
+        status.textContent = 'Thank you! We have your details and will reply within 2 hours (10am to 7pm).';
+      })
+      .catch(function () {
+        status.classList.add('status-error');
+        status.textContent = 'Something went wrong. Please try again, or tap Chat on WhatsApp.';
+      })
+      .then(function () {
+        submitBtn.disabled = false;
+        submitBtn.textContent = label;
+      });
+  });
+})();
+</script>
+</body>
+</html>
