@@ -5,11 +5,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script>document.documentElement.classList.add('js');</script>
 
-<title>Vantora Digital | Websites and Ads That Bring Real Customers</title>
+<title>Webcraft — Websites and Ads That Bring Real Customers</title>
 <meta name="description" content="Web development and digital marketing for growing businesses in India. Get a free audit. We reply within 2 hours (10am to 7pm).">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="en_IN">
-<meta property="og:site_name" content="Vantora Digital">
+<meta property="og:site_name" content="Webcraft">
 <meta property="og:title" content="Websites and ads that bring you real customers.">
 <meta property="og:description" content="Web development and digital marketing for growing businesses in India. Get a free audit.">
 <!-- <meta property="og:image" content="[OG_IMAGE_URL: 1200x630 image]"> -->
@@ -20,6 +20,20 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&display=swap" rel="stylesheet">
+
+<!-- Structured data -->
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"ProfessionalService",
+  "name":"Webcraft",
+  "description":"Web development and digital marketing for growing businesses in India.",
+  "areaServed":"IN",
+  "email":"hello@example.com",
+  "url":"[CANONICAL_URL]",
+  "sameAs":[]
+}
+</script>
 
 <!-- ==================== TRACKING PLACEHOLDERS (uncomment and fill in) ====================
   [A] GA4 (paste in <head>, replace G-XXXXXXX):
@@ -73,8 +87,10 @@ body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:900;op
 section{padding:clamp(80px,11vw,160px) 0;scroll-margin-top:72px}
 
 /* Header */
-.hdr{position:sticky;top:0;z-index:80;background:rgba(243,240,232,.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
-.hdr .wrap{height:72px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.hdr{position:sticky;top:0;z-index:80;background:rgba(243,240,232,.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line);transition:box-shadow .4s var(--ease)}
+.hdr.is-scrolled{box-shadow:0 10px 30px rgba(14,14,14,.07)}
+.hdr .wrap{height:72px;display:flex;align-items:center;justify-content:space-between;gap:12px;transition:height .4s var(--ease)}
+.hdr.is-scrolled .wrap{height:60px}
 .brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:1.1rem;letter-spacing:-.02em;text-decoration:none;white-space:nowrap}
 @media (max-width:479px){.brand .ext{display:none}.hdr .btn-sm{padding:0 16px;font-size:.88rem}}
 .hdr-right{display:flex;align-items:center;gap:10px}
@@ -123,6 +139,7 @@ section{padding:clamp(80px,11vw,160px) 0;scroll-margin-top:72px}
 /* Ticker */
 .ticker{background:var(--ink);color:var(--paper);overflow:hidden;padding:20px 0;white-space:nowrap}
 .ticker-track{display:flex;width:max-content;animation:tick 32s linear infinite}
+.ticker:hover .ticker-track{animation-play-state:paused}
 .group{display:flex;align-items:center;gap:28px;padding-right:28px}
 .tk{font-size:clamp(1.5rem,3.4vw,2.6rem);font-weight:800;letter-spacing:-.035em;line-height:1}
 .sq{width:14px;height:14px;background:var(--accent);flex:none}
@@ -142,6 +159,17 @@ section{padding:clamp(80px,11vw,160px) 0;scroll-margin-top:72px}
   .row{grid-template-columns:72px 1.1fr 1.3fr 180px;align-items:center;gap:24px}
   .row .price{text-align:right}
 }
+/* Staggered reveal inside the rows list */
+.js .rows .rv:nth-child(2){transition-delay:.06s}
+.js .rows .rv:nth-child(3){transition-delay:.12s}
+.js .rows .rv:nth-child(4){transition-delay:.18s}
+.js .rows .rv:nth-child(5){transition-delay:.24s}
+/* Row hover: headline slides with a masked arrow cue */
+.row h3,.row .price{transition:transform .45s var(--ease)}
+.row:hover h3,.row:focus-within h3{transform:translateX(8px)}
+.row::marker{content:""}
+.arrowcue{display:inline-block;width:0;overflow:hidden;opacity:0;transition:width .45s var(--ease),opacity .45s var(--ease);vertical-align:middle}
+.row:hover .arrowcue,.row:focus-within .arrowcue{width:1.1em;opacity:1}
 .pointer{margin-top:32px}
 .pointer a{font-weight:700;text-underline-offset:5px;padding:12px 0;display:inline-block}
 
@@ -150,6 +178,10 @@ section{padding:clamp(80px,11vw,160px) 0;scroll-margin-top:72px}
 @media (min-width:900px){
   .case{position:sticky;top:calc(96px + var(--i) * 16px);grid-template-columns:1.2fr 1fr;gap:56px;align-items:center;min-height:min(620px,78vh)}
 }
+/* Case cards lift and settle as they enter */
+.js .case{opacity:0;transform:translateY(34px) scale(.985);transition:opacity .9s var(--ease),transform .9s var(--ease),box-shadow .5s var(--ease)}
+.js .case.in{opacity:1;transform:none}
+.js .case.in:hover{box-shadow:0 -14px 56px rgba(14,14,14,.13)}
 .frame{aspect-ratio:16/11;border-radius:var(--r);border:1px solid var(--line);background:repeating-linear-gradient(135deg,var(--paper-2) 0 14px,var(--paper) 14px 28px);display:grid;place-items:center;text-align:center;padding:20px;font-size:.85rem;font-weight:700;color:var(--ink-2);letter-spacing:.04em}
 .case-meta{font-size:.78rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-2);margin-bottom:14px}
 .case h3{font-size:clamp(2rem,4vw,3.4rem);font-weight:800;letter-spacing:-.04em;line-height:1;margin-bottom:24px}
@@ -175,9 +207,12 @@ section{padding:clamp(80px,11vw,160px) 0;scroll-margin-top:72px}
 .timeline::after{background:var(--accent);transform-origin:top;transform:scaleY(var(--p,0))}
 .step{position:relative;padding-bottom:72px}
 .step:last-child{padding-bottom:0}
-.step::before{content:"";position:absolute;left:-47px;top:6px;width:14px;height:14px;border-radius:50%;background:var(--ink);border:2px solid var(--mute)}
+.step::before{content:"";position:absolute;left:-47px;top:6px;width:14px;height:14px;border-radius:50%;background:var(--ink);border:2px solid var(--mute);transition:background-color .5s var(--ease),border-color .5s var(--ease),box-shadow .5s var(--ease)}
+.step.lit::before{background:var(--accent);border-color:var(--accent);box-shadow:0 0 0 6px rgba(255,79,31,.18)}
+.step.lit h3{color:var(--paper)}
+.step.lit p{color:#CFCBC0}
 .step-no{font-size:.85rem;font-weight:700;color:var(--accent);letter-spacing:.12em}
-.step h3{font-size:clamp(1.9rem,3.8vw,3.2rem);font-weight:800;letter-spacing:-.04em;line-height:1;margin:10px 0 14px}
+.step h3{font-size:clamp(1.9rem,3.8vw,3.2rem);font-weight:800;letter-spacing:-.04em;line-height:1;margin:10px 0 14px;transition:color .5s var(--ease)}
 .step p{color:var(--mute);max-width:40ch}
 
 /* Contact */
@@ -212,6 +247,9 @@ section{padding:clamp(80px,11vw,160px) 0;scroll-margin-top:72px}
 .foot strong{color:var(--paper)}
 .foot a{color:var(--paper);text-underline-offset:4px}
 .giant{font-size:clamp(4rem,21vw,30rem);font-weight:800;letter-spacing:-.07em;line-height:.8;color:#242424;white-space:nowrap;margin:0 0 0 -.04em;user-select:none}
+.js .giant{opacity:0;transform:translateY(44px);transition:opacity 1.2s var(--ease),transform 1.2s var(--ease),color 1.2s var(--ease)}
+.js .giant.in{opacity:1;transform:none}
+.foot:hover .js .giant.in,.js .giant.in:hover{color:#2E2C28}
 @media (min-width:960px){.foot{padding-bottom:40px}}
 
 /* Floating WhatsApp (ink, not a fourth color) */
@@ -236,13 +274,13 @@ section{padding:clamp(80px,11vw,160px) 0;scroll-margin-top:72px}
 
 <header class="hdr">
   <div class="wrap">
-    <a class="brand" href="#top" aria-label="Vantora Digital, back to top">
+    <a class="brand" href="#top" aria-label="Webcraft, back to top">
       <svg width="30" height="30" viewBox="0 0 40 40" aria-hidden="true"><rect width="40" height="40" rx="10" fill="#FF4F1F"/><path d="M10 12l10 17 10-17" fill="none" stroke="#0E0E0E" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      <span>Vantora<span class="ext"> Digital</span></span>
+      <span>Webcraft</span>
     </a>
     <div class="hdr-right">
       <!-- Replace +91XXXXXXXXXX with your real number -->
-      <a class="call" href="tel:+91XXXXXXXXXX" aria-label="Call Vantora Digital">
+      <a class="call" href="tel:+91XXXXXXXXXX" aria-label="Call Webcraft">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>
       </a>
       <a class="btn btn-accent btn-sm" href="#contact">Get a Free Audit</a>
@@ -256,7 +294,7 @@ section{padding:clamp(80px,11vw,160px) 0;scroll-margin-top:72px}
 <!-- 2. HERO -->
 <section class="hero" id="top" style="padding-bottom:0">
   <div class="wrap">
-    <p class="kicker">Vantora Digital · [City, State], India</p>
+    <p class="kicker">Webcraft · [City, State], India</p>
     <h1 class="display">
       <span class="ln"><span>Websites</span></span>
       <span class="ln"><span>and ads that</span></span>
@@ -270,7 +308,7 @@ section{padding:clamp(80px,11vw,160px) 0;scroll-margin-top:72px}
         <div class="cta-row">
           <a class="btn btn-accent" href="#contact">Get a Free Audit <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
           <!-- Replace 91XXXXXXXXXX with your WhatsApp number (country code, no +) -->
-          <a class="btn btn-line" href="https://wa.me/91XXXXXXXXXX?text=Hi%20Vantora%20Digital%2C%20I%27d%20like%20a%20free%20audit." data-wa>Chat on WhatsApp</a>
+          <a class="btn btn-line" href="https://wa.me/91XXXXXXXXXX?text=Hi%20Webcraft%2C%20I%27d%20like%20a%20free%20audit." data-wa>Chat on WhatsApp</a>
         </div>
         <p class="trust">4+ years in web development and digital marketing · We reply within 2 hours (10am to 7pm) · No obligation</p>
       </div>
@@ -354,7 +392,7 @@ section{padding:clamp(80px,11vw,160px) 0;scroll-margin-top:72px}
     <h2 class="title rv" id="work-title" style="margin-bottom:clamp(40px,6vw,72px)">Recent projects.</h2>
 
     <!-- Case 1 -->
-    <article class="case" style="--i:0">
+    <article class="case rv" style="--i:0">
       <!-- Replace the frame with <img src="..." alt="Screenshot of [PROJECT 1 NAME] website"> -->
       <div class="frame">[SCREENSHOT: PROJECT 1]</div>
       <div>
@@ -368,7 +406,7 @@ section{padding:clamp(80px,11vw,160px) 0;scroll-margin-top:72px}
     </article>
 
     <!-- Case 2 -->
-    <article class="case" style="--i:1">
+    <article class="case rv" style="--i:1">
       <div class="frame">[SCREENSHOT: PROJECT 2]</div>
       <div>
         <p class="case-meta">Case 02 · Business type: [BUSINESS TYPE]</p>
@@ -381,7 +419,7 @@ section{padding:clamp(80px,11vw,160px) 0;scroll-margin-top:72px}
     </article>
 
     <!-- Case 3 -->
-    <article class="case" style="--i:2">
+    <article class="case rv" style="--i:2">
       <div class="frame">[SCREENSHOT: PROJECT 3]</div>
       <div>
         <p class="case-meta">Case 03 · Business type: [BUSINESS TYPE]</p>
@@ -437,10 +475,10 @@ section{padding:clamp(80px,11vw,160px) 0;scroll-margin-top:72px}
 
     <div class="contact-grid">
       <div class="founder rv">
-        <!-- Replace the frame with <img src="..." alt="Photo of [Founder Name], founder of Vantora Digital"> -->
+        <!-- Replace the frame with <img src="..." alt="Photo of [Founder Name], founder of Webcraft"> -->
         <div class="frame">[FOUNDER PHOTO]</div>
         <h3>[Founder Name]</h3>
-        <p class="role">Founder, Vantora Digital · [City, State], India</p>
+        <p class="role">Founder, Webcraft · [City, State], India</p>
         <div class="story">
           <p>I have spent 4+ years in web development and digital marketing, building websites and running ads for small and medium businesses.</p>
           <p>[ADD ONE HONEST LINE ABOUT WHY YOU DO THIS WORK]</p>
@@ -485,7 +523,7 @@ section{padding:clamp(80px,11vw,160px) 0;scroll-margin-top:72px}
         <div class="or" style="margin:28px 0">or</div>
 
         <!-- Replace 91XXXXXXXXXX with your WhatsApp number -->
-        <a class="btn btn-line btn-block" href="https://wa.me/91XXXXXXXXXX?text=Hi%20Vantora%20Digital%2C%20I%27d%20like%20a%20free%20audit." data-wa>Chat on WhatsApp</a>
+        <a class="btn btn-line btn-block" href="https://wa.me/91XXXXXXXXXX?text=Hi%20Webcraft%2C%20I%27d%20like%20a%20free%20audit." data-wa>Chat on WhatsApp</a>
       </div>
     </div>
   </div>
@@ -498,7 +536,7 @@ section{padding:clamp(80px,11vw,160px) 0;scroll-margin-top:72px}
   <div class="wrap">
     <div class="foot-grid">
       <div>
-        <p><strong>Vantora Digital</strong></p>
+        <p><strong>Webcraft</strong></p>
         <p>[City, State], India</p>
       </div>
       <div>
@@ -507,16 +545,16 @@ section{padding:clamp(80px,11vw,160px) 0;scroll-margin-top:72px}
       </div>
       <div>
         <p>GST / Registration No.: [GST / REGISTRATION NUMBER]</p>
-        <p>© 2026 Vantora Digital. All rights reserved.</p>
+        <p>© 2026 Webcraft. All rights reserved.</p>
         <p>We use your details only to reply to your enquiry.</p>
       </div>
     </div>
-    <p class="giant" aria-hidden="true">Vantora</p>
+    <p class="giant rv" aria-hidden="true">Webcraft</p>
   </div>
 </footer>
 
 <!-- Floating WhatsApp (hidden while the contact form is on screen) -->
-<a class="wa" href="https://wa.me/91XXXXXXXXXX?text=Hi%20Vantora%20Digital%2C%20I%27d%20like%20a%20free%20audit." data-wa aria-label="Chat with Vantora Digital on WhatsApp">
+<a class="wa" href="https://wa.me/91XXXXXXXXXX?text=Hi%20Webcraft%2C%20I%27d%20like%20a%20free%20audit." data-wa aria-label="Chat with Webcraft on WhatsApp">
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 20.5l1.7-5.4A8.4 8.4 0 1 1 21 11.5z"/></svg>
 </a>
 
@@ -546,25 +584,63 @@ section{padding:clamp(80px,11vw,160px) 0;scroll-margin-top:72px}
     // if (typeof gtag === 'function' && name === 'lead_form_submit') gtag('event', 'conversion', { send_to: 'AW-XXXXXXXXX/LABEL' });
   }
 
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
   document.querySelectorAll('[data-wa]').forEach(function (a) {
     a.addEventListener('click', function () { track('whatsapp_click', 'Contact'); });
   });
 
-  /* ===== SCROLL: progress bar, timeline fill ===== */
+  /* ===== HERO PARALLAX (pointer-linked, desktop only) ===== */
+  var heroFig = document.querySelector('.hero .fig');
+  if (heroFig && !reduce && window.matchMedia('(min-width:960px) and (pointer:fine)').matches) {
+    var pt = false, px = 0, py = 0;
+    window.addEventListener('pointermove', function (e) {
+      px = (e.clientX / window.innerWidth - .5);
+      py = (e.clientY / window.innerHeight - .5);
+      if (!pt) {
+        pt = true;
+        requestAnimationFrame(function () {
+          heroFig.style.transform = 'translate3d(' + (px * -12).toFixed(2) + 'px,' + (py * -8).toFixed(2) + 'px,0)';
+          pt = false;
+        });
+      }
+    }, { passive: true });
+  }
+
+  /* ===== MAGNETIC BUTTONS (fine pointers only) ===== */
+  if (!reduce && window.matchMedia('(pointer:fine)').matches) {
+    document.querySelectorAll('.btn').forEach(function (b) {
+      b.addEventListener('pointermove', function (e) {
+        var r = b.getBoundingClientRect();
+        b.style.transform = 'translate(' + ((e.clientX - r.left - r.width / 2) * .12).toFixed(2) + 'px,' + ((e.clientY - r.top - r.height / 2) * .18).toFixed(2) + 'px)';
+      });
+      b.addEventListener('pointerleave', function () { b.style.transform = ''; });
+    });
+  }
+
+  /* ===== SCROLL: progress bar, timeline fill, header state ===== */
   var bar = document.querySelector('.progress');
+  var hdr = document.querySelector('.hdr');
   var timeline = document.getElementById('timeline');
+  var steps = [].slice.call(document.querySelectorAll('.step'));
   var ticking = false;
 
   function onScroll() {
     var doc = document.documentElement;
     var max = doc.scrollHeight - window.innerHeight;
     if (bar) bar.style.transform = 'scaleX(' + (max > 0 ? window.scrollY / max : 0) + ')';
+    if (hdr) hdr.classList.toggle('is-scrolled', window.scrollY > 12);
 
     if (timeline) {
       var r = timeline.getBoundingClientRect();
       var p = (window.innerHeight * 0.6 - r.top) / r.height;
       p = Math.min(1, Math.max(0, p));
       timeline.style.setProperty('--p', p.toFixed(3));
+      /* Light up each step dot as the accent line reaches it */
+      steps.forEach(function (s) {
+        var sr = s.getBoundingClientRect();
+        s.classList.toggle('lit', sr.top < window.innerHeight * 0.6);
+      });
     }
     ticking = false;
   }
@@ -576,7 +652,6 @@ section{padding:clamp(80px,11vw,160px) 0;scroll-margin-top:72px}
   onScroll();
 
   /* ===== REVEAL ON SCROLL ===== */
-  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var revealEls = document.querySelectorAll('.rv');
   if ('IntersectionObserver' in window && !reduce) {
     var io = new IntersectionObserver(function (entries, obs) {
@@ -668,6 +743,10 @@ section{padding:clamp(80px,11vw,160px) 0;scroll-margin-top:72px}
         form.reset();
         status.classList.add('status-ok');
         status.textContent = 'Thank you! We have your details and will reply within 2 hours (10am to 7pm).';
+        /* Gentle confirmation pulse on the success message */
+        if (!reduce && status.animate) {
+          status.animate([{transform:'scale(.99)'},{transform:'scale(1)'}], {duration:450, easing:'cubic-bezier(.2,.7,.1,1)'});
+        }
       })
       .catch(function () {
         status.classList.add('status-error');
