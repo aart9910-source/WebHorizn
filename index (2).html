@@ -170,6 +170,9 @@ section{padding:clamp(80px,11vw,160px) 0;scroll-margin-top:72px}
 .row::marker{content:""}
 .arrowcue{display:inline-block;width:0;overflow:hidden;opacity:0;transition:width .45s var(--ease),opacity .45s var(--ease);vertical-align:middle}
 .row:hover .arrowcue,.row:focus-within .arrowcue{width:1.1em;opacity:1}
+/* Subtle accent underline on the pointer link */
+.pointer a{background:linear-gradient(var(--accent),var(--accent)) 0 100%/0% 2px no-repeat;transition:background-size .4s var(--ease)}
+.pointer a:hover{background-size:100% 2px}
 .pointer{margin-top:32px}
 .pointer a{font-weight:700;text-underline-offset:5px;padding:12px 0;display:inline-block}
 
