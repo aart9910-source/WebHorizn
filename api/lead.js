@@ -78,10 +78,14 @@ module.exports = async function handler(req, res) {
   }
 
   try {
+    // Send a URL-encoded payload so Apps Script can read it from e.parameter.
+    const payload = JSON.stringify({ ...lead, _token: secret });
+    const encodedBody = new URLSearchParams({ payload }).toString();
+
     const upstream = await fetch(scriptUrl, {
       method: "POST",
-      headers: { "Content-Type": "text/plain;charset=UTF-8" },
-      body: JSON.stringify({ ...lead, _token: secret }),
+      headers: { "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8" },
+      body: encodedBody,
       redirect: "follow"
     });
 
