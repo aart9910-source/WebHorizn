@@ -136,26 +136,47 @@ section{padding:clamp(80px,11vw,160px) 0;scroll-margin-top:84px}
 .trust{margin-top:22px;font-size:.92rem;color:var(--ink-2);max-width:none}
 .fig{margin:0;border-top:1px solid var(--ink);padding-top:20px;will-change:transform}
 .fig figcaption{font-size:.85rem;color:var(--ink-2);margin-top:12px}
-/* Hero device mockup with live ad→enquiry flow */
-.mock{position:relative;display:flex;align-items:center;gap:clamp(24px,5vw,64px);padding:34px 8px 14px}
-.scr{position:relative;width:58%;aspect-ratio:16/10;background:var(--paper);border:1.5px solid var(--ink);border-radius:12px;padding:14px;display:flex;flex-direction:column;gap:9px;box-shadow:0 18px 40px rgba(14,14,14,.08)}
-.scr .bar{height:8px;border-radius:4px;background:var(--paper-2)}
-.ln2{display:block;height:10px;border-radius:5px;background:var(--paper-2)}
-.w60{width:60%}.w80{width:80%}.w45{width:45%}
-.scr.phone{width:30%;aspect-ratio:9/17;border-radius:20px;padding:16px 12px;justify-content:flex-start;gap:8px}
-.scr.phone .notch{width:40%;height:6px;border-radius:3px;background:var(--paper-2);align-self:center;margin-bottom:6px}
-.scr.phone .cta-mini{margin-top:auto;background:var(--accent);color:var(--ink);font-size:.62rem;font-weight:800;text-align:center;padding:8px 4px;border-radius:8px;letter-spacing:.02em}
-.wire{position:absolute;left:14%;right:14%;top:16%;width:72%;height:44%;overflow:visible}
-.dot{position:absolute;width:12px;height:12px;border-radius:50%;background:var(--paper);border:2px solid var(--ink);top:38%;transform:translate(-50%,-50%)}
-.d1{left:31.7%}.d2{left:79%}
-.chip{position:absolute;font-size:.72rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;background:var(--ink);color:var(--paper);padding:7px 12px;border-radius:999px;display:inline-flex;align-items:center;gap:8px;white-space:nowrap}
-.c1{top:6%;left:2%}
-.c2{bottom:2%;right:0;background:var(--accent);color:var(--ink);animation:pop 2.4s var(--ease) infinite}
-@keyframes pop{0%,55%{opacity:0;transform:translateY(8px) scale(.92)}70%,92%{opacity:1;transform:none}100%{opacity:0}}
-.ping{width:8px;height:8px;border-radius:50%;background:var(--ink);animation:ping 1.2s ease-out infinite}
-@keyframes ping{0%{box-shadow:0 0 0 0 rgba(14,14,14,.35)}100%{box-shadow:0 0 0 9px rgba(14,14,14,0)}}
-.flow{animation:flow 2.4s linear infinite}
-@keyframes flow{to{stroke-dashoffset:-64}}
+/* Hero: self-contained desktop + mobile website concept. No remote screenshot dependencies. */
+.mock{position:relative;isolation:isolate;display:flex;align-items:center;min-height:350px;padding:30px 18px 34px;overflow:hidden;border:1px solid var(--line);border-radius:var(--r);background:radial-gradient(ellipse at 78% 30%,rgba(255,79,31,.12),transparent 38%),linear-gradient(135deg,#f2eee4,#e8e0d2)}
+.site-window{position:relative;width:82%;aspect-ratio:1.32;overflow:hidden;border:1.5px solid #171714;border-radius:11px;background:#f7f3e9;box-shadow:0 22px 50px rgba(20,18,13,.16)}
+.site-window-bar{height:29px;display:flex;align-items:center;gap:10px;padding:0 11px;background:#e5e0d5;border-bottom:1px solid rgba(14,14,14,.12);color:#514e47;font-size:.65rem;font-weight:700}
+.browser-lights{display:flex;gap:4px}.browser-lights i{width:6px;height:6px;background:#aaa294;border-radius:50%;display:block}
+.site-window-bar>span:nth-child(2){text-align:center;flex:1;opacity:.8}.browser-lock{font-size:.8rem}
+.mini-site{height:calc(100% - 29px);display:flex;flex-direction:column;color:#171714;overflow:hidden}
+.mini-site-nav{height:36px;flex:none;display:flex;justify-content:space-between;align-items:center;padding:0 15px;border-bottom:1px solid rgba(14,14,14,.1)}
+.mini-site-nav strong{font-size:clamp(.58rem,.95vw,.78rem);letter-spacing:.1em}
+.mini-site-nav span{font-size:clamp(.42rem,.56vw,.55rem);letter-spacing:.08em;color:#625e54;font-weight:700}
+.mini-site-content{display:grid;grid-template-columns:1.05fr .95fr;gap:4px;align-items:center;flex:1;min-height:0;padding:clamp(12px,2vw,24px) clamp(12px,2vw,24px) 10px}
+.mini-site-copy{position:relative;z-index:2;min-width:0}
+.mini-eyebrow{display:block;font-size:clamp(.42rem,.65vw,.6rem);font-weight:800;letter-spacing:.12em;color:#a84221;margin-bottom:10px}
+.mini-site-copy>strong{display:block;font-size:clamp(1.35rem,3vw,2.8rem);font-weight:800;line-height:.91;letter-spacing:-.06em}
+.mini-site-copy>p{font-size:clamp(.55rem,.8vw,.75rem);line-height:1.45;max-width:24ch;color:#5d594f;margin:12px 0}
+.mini-site-cta{display:inline-flex;gap:15px;align-items:center;background:#ff4f1f;padding:9px 11px;font-size:clamp(.46rem,.62vw,.6rem);font-weight:800;letter-spacing:.04em;color:#171714}
+.mini-site-cta b{font-size:.9rem}
+.mini-site-art{position:relative;align-self:stretch;min-height:0;overflow:hidden;background:linear-gradient(155deg,#d4b18b,#8f6044 58%,#3f392f);border-radius:2px}
+.mini-art-orb{position:absolute;width:82%;aspect-ratio:1;right:-8%;top:-8%;border-radius:50%;border:1px solid rgba(255,248,226,.65);box-shadow:0 0 0 16px rgba(255,248,226,.1),0 0 0 35px rgba(255,248,226,.07)}
+.mini-art-card{position:absolute;left:10%;right:12%;bottom:11%;padding:12px;background:rgba(247,243,233,.91);color:#171714;box-shadow:0 12px 25px rgba(0,0,0,.12)}
+.mini-art-card span{display:block;font-size:.44rem;font-weight:800;letter-spacing:.1em;color:#8a4a2c;margin-bottom:6px}
+.mini-art-card strong{font-size:clamp(.85rem,1.5vw,1.25rem);line-height:.98;letter-spacing:-.04em}
+.mini-art-index{position:absolute;top:12px;left:12px;color:#fff;font-size:.5rem;letter-spacing:.1em;font-weight:800}
+.mini-site-footer{display:flex;justify-content:space-between;padding:8px 15px;border-top:1px solid rgba(14,14,14,.12);font-size:clamp(.38rem,.5vw,.5rem);letter-spacing:.09em;font-weight:800;color:#777064}
+.site-phone{position:absolute;right:2.5%;top:14%;bottom:12%;width:25%;min-width:120px;max-width:176px;z-index:3;display:flex;flex-direction:column;padding:12px 11px 13px;overflow:hidden;border:3px solid #171714;border-radius:26px;background:#f7f3e9;box-shadow:0 24px 42px rgba(20,18,13,.22);color:#171714}
+.site-phone-notch{width:34%;height:5px;border-radius:0 0 6px 6px;background:#171714;align-self:center;margin:-12px auto 14px}
+.site-phone-brand{display:flex;align-items:center;justify-content:space-between;font-size:.48rem;font-weight:900;letter-spacing:.11em;border-bottom:1px solid rgba(14,14,14,.12);padding-bottom:10px}
+.site-phone-brand span{font-size:.86rem}
+.site-phone-art{height:24%;min-height:45px;position:relative;overflow:hidden;margin:12px 0;background:linear-gradient(145deg,#d9bb99,#8f6044 58%,#3f392f)}
+.site-phone-art:after{content:"";position:absolute;width:70%;aspect-ratio:1;right:-5%;top:-20%;border:1px solid rgba(255,248,226,.65);border-radius:50%;box-shadow:0 0 0 10px rgba(255,248,226,.1)}
+.site-phone-art span{position:absolute;z-index:1;left:8px;bottom:8px;font-size:.37rem;letter-spacing:.12em;font-weight:800;color:#fff}
+.site-phone>.mini-eyebrow{font-size:.43rem;margin:2px 0 8px}
+.site-phone>strong{font-size:clamp(1.15rem,2vw,1.8rem);line-height:.92;letter-spacing:-.055em}
+.site-phone>p{font-size:.57rem;line-height:1.35;color:#625e54;margin:8px 0}
+.site-phone-cta{margin-top:auto;background:#ff4f1f;color:#171714;font-size:.54rem;font-weight:900;letter-spacing:.04em;text-align:center;padding:10px 3px}
+.showcase-tag{position:absolute;left:3%;bottom:8px;z-index:4;display:flex;align-items:center;gap:8px;padding:9px 12px;background:#171714;color:#f7f3e9;border-radius:999px;font-size:.68rem;font-weight:800;letter-spacing:.02em;box-shadow:0 7px 20px rgba(20,18,13,.12)}
+.showcase-tag .ping{width:7px;height:7px;background:#ff4f1f;box-shadow:0 0 0 4px rgba(255,79,31,.15);animation:none}
+.showcase-note{position:absolute;right:4%;bottom:10px;font-size:.49rem;font-weight:800;letter-spacing:.09em;color:#565147}
+@media(max-width:700px){.mock{min-height:315px;padding:28px 12px 34px}.site-window{width:83%;aspect-ratio:1.12}.mini-site-content{grid-template-columns:1.05fr .8fr;padding:12px}.mini-site-nav span{display:none}.mini-site-copy>strong{font-size:clamp(1.55rem,5.5vw,2.45rem)}.site-phone{width:29%;right:1.5%;top:15%;bottom:12%;min-width:110px}.site-phone>strong{font-size:clamp(1.2rem,4vw,1.6rem)}}
+@media(max-width:480px){.mock{min-height:285px;padding:25px 8px 36px}.site-window{width:88%;aspect-ratio:1.02}.site-window-bar{height:25px}.mini-site{height:calc(100% - 25px)}.mini-site-nav{height:28px;padding:0 9px}.mini-site-nav strong{font-size:.52rem}.mini-site-content{grid-template-columns:1fr .65fr;padding:10px 8px}.mini-site-copy>strong{font-size:clamp(1.3rem,7.2vw,1.85rem)}.mini-site-copy>p{font-size:.5rem;margin:8px 0}.mini-site-cta{font-size:.43rem;padding:7px 7px;gap:7px}.mini-art-card{left:6%;right:6%;padding:7px}.mini-art-card span{font-size:.34rem}.mini-art-card strong{font-size:.83rem}.site-phone{width:32%;min-width:94px;right:0;top:18%;bottom:12%;padding:9px 8px;border-radius:22px}.site-phone-notch{margin:-9px auto 11px}.site-phone-brand{font-size:.38rem;padding-bottom:7px}.site-phone-art{min-height:36px;margin:9px 0}.site-phone-art span{font-size:.3rem}.site-phone>.mini-eyebrow{font-size:.34rem;margin-bottom:7px}.site-phone>strong{font-size:1.1rem}.site-phone>p{font-size:.47rem;margin:6px 0}.site-phone-cta{font-size:.45rem;padding:8px 2px}.showcase-tag{left:8px;font-size:.59rem;padding:8px 10px}.showcase-note{right:8px;font-size:.37rem;max-width:92px;text-align:right}}
+@media(prefers-reduced-motion:reduce){.showcase-tag .ping{animation:none}}
 
 /* Ticker */
 .ticker{background:var(--ink);color:var(--paper);overflow:hidden;padding:20px 0;white-space:nowrap}
@@ -326,6 +347,22 @@ section{padding:clamp(80px,11vw,160px) 0;scroll-margin-top:84px}
 .step h3{font-size:clamp(1.9rem,3.8vw,3.2rem);font-weight:800;letter-spacing:-.04em;line-height:1;margin:10px 0 14px;transition:color .5s var(--ease)}
 .step p{color:var(--mute);max-width:40ch}
 
+/* Process: make practical next steps visible, not buried in the FAQ. */
+.process-details{grid-column:1/-1;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:6px}
+.process-detail-card{min-width:0;padding:clamp(22px,3vw,34px);border:1px solid rgba(243,240,232,.18);border-radius:var(--r);background:rgba(243,240,232,.035)}
+.process-detail-card .case-meta{color:var(--accent);font-weight:800;letter-spacing:.12em;font-size:.7rem;margin:0 0 18px}
+.process-detail-card h3{font-size:clamp(1.45rem,2.8vw,2.2rem);line-height:1;letter-spacing:-.045em;color:var(--paper);margin:0 0 22px;max-width:18ch}
+.prep-list{list-style:none;margin:0;padding:0}
+.prep-list li{display:grid;grid-template-columns:28px 1fr;gap:10px;padding:12px 0;border-top:1px solid rgba(243,240,232,.12);font-size:.92rem;line-height:1.45;color:var(--mute)}
+.prep-list li span{color:var(--accent);font-size:.7rem;font-weight:800;letter-spacing:.09em;padding-top:2px}
+.process-detail-note{font-size:.85rem;line-height:1.55;color:var(--mute);margin:20px 0 0;max-width:52ch}
+.payment-stages{display:grid;grid-template-columns:minmax(0,1fr) 36px minmax(0,1fr);gap:8px;align-items:center;padding:18px 0 8px}
+.payment-stages>div:not(.payment-connector){display:flex;flex-direction:column;gap:7px;min-width:0}
+.payment-stages>div>span{display:grid;place-items:center;width:28px;height:28px;border-radius:50%;background:var(--accent);color:var(--ink);font-weight:900;font-size:.72rem}
+.payment-stages strong{font-size:.9rem;line-height:1.25;color:var(--paper)}
+.payment-stages small{font-size:.82rem;color:var(--mute)}
+.payment-connector{height:2px;background:linear-gradient(90deg,var(--accent),rgba(243,240,232,.18));align-self:start;margin-top:13px}
+@media(max-width:820px){.process-details{grid-template-columns:1fr}.process-detail-card h3{max-width:25ch}}
 /* Contact: project-first lead form, no founder profile block */
 .contact-grid{display:grid;gap:clamp(36px,6vw,80px)}
 @media (min-width:960px){.contact-grid{grid-template-columns:.85fr 1.15fr;gap:clamp(56px,8vw,110px);align-items:start}}
@@ -507,7 +544,7 @@ html:not(.js) .pre{display:none}
 .package-trust-grid h4{font-size:clamp(1.05rem,1.55vw,1.45rem);line-height:1.15;letter-spacing:-.03em;margin:0 0 10px}
 .package-trust-grid p{font-size:.92rem;line-height:1.6;color:var(--ink-2);margin:0;max-width:34ch}
 
-/* Portfolio previews: live site capture with a designed fallback */
+/* Portfolio previews: self-contained visual panels; live-site links open the real sites. */
 .live-projects{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;margin:0 0 clamp(48px,7vw,88px)}
 .live-project{display:flex;flex-direction:column;align-items:stretch;min-width:0;gap:0;border:1px solid var(--line);border-radius:var(--r);overflow:hidden;background:rgba(255,255,255,.35);box-shadow:0 10px 38px rgba(14,14,14,.035);transition:transform .35s var(--ease),box-shadow .35s var(--ease),border-color .35s var(--ease)}
 .live-project:hover{transform:translateY(-5px);box-shadow:0 22px 48px rgba(14,14,14,.10);border-color:rgba(14,14,14,.24)}
@@ -538,9 +575,6 @@ html:not(.js) .pre{display:none}
 .preview-agency-copy strong{font-weight:800}
 .preview-agency-copy p{max-width:28ch}
 .preview-label{position:absolute;z-index:6;right:12px;bottom:12px;padding:6px 9px;border:1px solid rgba(255,255,255,.35);border-radius:4px;background:rgba(8,8,8,.72);backdrop-filter:blur(6px);color:#fff;font-size:.62rem;font-weight:800;letter-spacing:.12em}
-.live-project-shot{position:absolute;z-index:3;inset:0;width:100%;height:100%;object-fit:cover;object-position:top center;background:var(--paper-2);transition:transform .75s var(--ease),opacity .3s ease}
-.live-project:hover .live-project-shot{transform:scale(1.025)}
-.live-project-shot.is-unavailable{display:none}
 .live-project-body{display:flex;flex-direction:column;align-items:flex-start;gap:11px;padding:clamp(20px,3vw,32px);flex:1}
 .live-project-body .case-meta{margin:0;font-size:.7rem}
 .live-project-body h3{font-size:clamp(1.65rem,3vw,2.3rem);letter-spacing:-.045em;line-height:1;margin:0}
@@ -553,7 +587,7 @@ html:not(.js) .pre{display:none}
 @media(min-width:960px){.why-heading{grid-template-columns:1.1fr .9fr;gap:64px}}
 @media(max-width:820px){.package-trust-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.package-trust-grid article:nth-child(2){border-right:0;margin-right:0}.package-trust-grid article:nth-child(3),.package-trust-grid article:nth-child(4){border-top:1px solid var(--line)}.package-trust-grid article{padding:22px 16px 22px 0}.live-projects{grid-template-columns:1fr;max-width:720px;margin-inline:auto;margin-bottom:56px}.live-project-preview{aspect-ratio:16/9;min-height:250px}.preview-fashion-copy strong,.preview-agency-copy strong{font-size:clamp(2rem,6vw,3.4rem)}}
 @media(max-width:560px){.package-trust-grid{grid-template-columns:1fr}.package-trust-grid article,.package-trust-grid article:nth-child(2),.package-trust-grid article:nth-child(3),.package-trust-grid article:nth-child(4){padding:20px 0;border-right:0;border-top:1px solid var(--line);margin:0}.package-trust-grid article:first-child{border-top:0}.package-trust-grid article>span{margin-bottom:9px}.live-project-preview{min-height:220px;aspect-ratio:4/3}.preview-fashion-copy,.preview-agency-copy{max-width:84%;padding:16px}.preview-fashion-copy strong,.preview-agency-copy strong{font-size:clamp(1.85rem,9vw,2.7rem)}.preview-brand{padding:14px 16px}.preview-fake-cta{font-size:.56rem}}
-@media(prefers-reduced-motion:reduce){.live-project,.live-project-shot{transition:none}.live-project:hover{transform:none}}
+@media(prefers-reduced-motion:reduce){.live-project{transition:none}.live-project:hover{transform:none}}
 </style>
 </head>
 <body>
@@ -632,18 +666,43 @@ html:not(.js) .pre{display:none}
       </div>
 
       <figure class="fig rv">
-        <div class="mock" aria-hidden="true">
-          <div class="scr"><span class="bar"></span><span class="ln2 w60"></span><span class="ln2 w80"></span><span class="ln2 w45"></span></div>
-          <div class="scr phone"><span class="notch"></span><span class="ln2 w60"></span><span class="ln2 w80"></span><span class="ln2 w45"></span><span class="cta-mini">Discuss a Project</span></div>
-          <svg class="wire" viewBox="0 0 560 210" preserveAspectRatio="none">
-            <path d="M120 105 C 220 40, 330 40, 430 105" fill="none" stroke="rgba(14,14,14,.2)" stroke-width="2"/>
-            <path class="flow" d="M120 105 C 220 40, 330 40, 430 105" fill="none" stroke="#0E0E0E" stroke-width="2" stroke-dasharray="4 12"/>
-          </svg>
-          <span class="dot d1"></span><span class="dot d2"></span>
-          <span class="chip c1">Ad click</span>
-          <span class="chip c2"><span class="ping"></span>Enquiry · now</span>
+        <div class="mock" aria-label="Illustrative responsive website design preview">
+          <div class="site-window" aria-hidden="true">
+            <div class="site-window-bar">
+              <span class="browser-lights"><i></i><i></i><i></i></span>
+              <span>yourbrand.in</span><span class="browser-lock">↗</span>
+            </div>
+            <div class="mini-site">
+              <div class="mini-site-nav"><strong>YOUR BRAND</strong><span>ABOUT&nbsp;&nbsp; SERVICES&nbsp;&nbsp; CONTACT</span></div>
+              <div class="mini-site-content">
+                <div class="mini-site-copy">
+                  <span class="mini-eyebrow">MADE FOR WHAT'S NEXT</span>
+                  <strong>Good things<br>start here.</strong>
+                  <p>Clear messaging. Confident design. A simple next step.</p>
+                  <span class="mini-site-cta">LET'S TALK <b>↗</b></span>
+                </div>
+                <div class="mini-site-art">
+                  <div class="mini-art-orb"></div>
+                  <div class="mini-art-card"><span>BUILT AROUND YOU</span><strong>Make it<br>memorable.</strong></div>
+                  <span class="mini-art-index">01 / 03</span>
+                </div>
+              </div>
+              <div class="mini-site-footer"><span>DESIGNED WITH PURPOSE</span><span>WEBHORIZN · INDIA</span></div>
+            </div>
+          </div>
+          <div class="site-phone" aria-hidden="true">
+            <div class="site-phone-notch"></div>
+            <div class="site-phone-brand">YOUR BRAND <span>☰</span></div>
+            <div class="site-phone-art"><span>BUILT AROUND YOU</span></div>
+            <span class="mini-eyebrow">MADE FOR WHAT'S NEXT</span>
+            <strong>Good things<br>start here.</strong>
+            <p>Clear messaging. A simple next step.</p>
+            <div class="site-phone-cta">LET'S TALK ↗</div>
+          </div>
+          <div class="showcase-tag"><span class="ping"></span> Responsive by design</div>
+          <span class="showcase-note">ILLUSTRATIVE DESIGN PREVIEW</span>
         </div>
-        <figcaption>How a visitor becomes an enquiry. Illustrative diagram, not client data.</figcaption>
+        <figcaption>A responsive design concept—not a client website screenshot. Every project is tailored to the business.</figcaption>
       </figure>
     </div>
   </div>
@@ -803,7 +862,7 @@ html:not(.js) .pre{display:none}
   <div class="wrap">
     <div class="label rv"><b>04</b> Selected work</div>
     <h2 class="title rv" id="work-title" style="margin-bottom:clamp(40px,6vw,72px)">Recent projects.</h2>
-    <p class="work-intro rv">Explore live website links alongside clearly labelled concept designs. Concept projects show our approach; they are not client results.</p>
+    <p class="work-intro rv">The panels below are original visual previews—not captured screenshots. Open each live website to explore the actual site; concept projects are labelled separately and are not client results.</p>
 
       <div class="live-projects" aria-label="Live website examples">
         <article class="live-project live-project--fashion rv">
@@ -824,9 +883,8 @@ html:not(.js) .pre{display:none}
                 </div>
                 <div class="preview-fashion-stamp">LIVE WEBSITE<br><b>RETAIL</b></div>
               </div>
-              <img class="live-project-shot" src="https://image.thum.io/get/width/1000/crop/700/noanimate/https://jkmoga.com/" alt="Preview of the live JK Moga men's fashion website" loading="lazy" decoding="async" referrerpolicy="no-referrer">
             </div>
-            <span class="preview-label">LIVE WEBSITE</span>
+            <span class="preview-label">VISUAL PREVIEW</span>
           </div>
           <div class="live-project-body">
             <p class="case-meta">Live website · Retail</p>
@@ -855,9 +913,8 @@ html:not(.js) .pre{display:none}
                   <span class="preview-fake-cta">GET A QUOTE ↗</span>
                 </div>
               </div>
-              <img class="live-project-shot" src="https://image.thum.io/get/width/1000/crop/700/noanimate/https://kiwidigihub.com/" alt="Preview of the live Kiwi DigiHub digital services website" loading="lazy" decoding="async" referrerpolicy="no-referrer">
             </div>
-            <span class="preview-label">LIVE WEBSITE</span>
+            <span class="preview-label">VISUAL PREVIEW</span>
           </div>
           <div class="live-project-body">
             <p class="case-meta">Live website · Digital agency</p>
@@ -985,6 +1042,30 @@ html:not(.js) .pre{display:none}
         <p>We launch the approved website and hand over ownership after final payment. Advertising setup and ongoing management follow the separately agreed scope.</p>
       </li>
     </ol>
+
+    <div class="process-details" aria-label="Project preparation and payment details">
+      <article class="process-detail-card">
+        <p class="case-meta">BEFORE WE START</p>
+        <h3>Bring the basics. We'll guide the rest.</h3>
+        <ul class="prep-list">
+          <li><span>01</span> Business name, offer and audience</li>
+          <li><span>02</span> Your contact details and service area</li>
+          <li><span>03</span> Logo, photos and content (if available)</li>
+          <li><span>04</span> Pages, features and main goal</li>
+        </ul>
+        <p class="process-detail-note">Missing something? Tell us what you have and we'll agree what is needed before the project starts.</p>
+      </article>
+      <article class="process-detail-card process-payment-card">
+        <p class="case-meta">STRAIGHTFORWARD PAYMENTS</p>
+        <h3>50% to begin. 50% before handover.</h3>
+        <div class="payment-stages">
+          <div><span>01</span><strong>Project start</strong><small>50% advance</small></div>
+          <div class="payment-connector" aria-hidden="true"></div>
+          <div><span>02</span><strong>Final handover</strong><small>Remaining 50%</small></div>
+        </div>
+        <p class="process-detail-note">Deliverables, revision rounds, target timing and any renewal charges are confirmed in writing before work begins.</p>
+      </article>
+    </div>
   </div>
 </section>
 
@@ -1220,14 +1301,6 @@ html:not(.js) .pre{display:none}
     a.addEventListener('click', function () { track('whatsapp_click', 'Contact'); });
   });
 
-  document.querySelectorAll('.live-project-shot').forEach(function (img) {
-    function markUnavailable() { img.classList.add('is-unavailable'); }
-    if (img.complete) {
-      if (!img.naturalWidth) markUnavailable();
-    } else {
-      img.addEventListener('error', markUnavailable, { once: true });
-    }
-  });
 
   var mobileMenu = document.querySelector('.nav-mobile');
   if (mobileMenu) {
