@@ -222,45 +222,36 @@ section{padding:clamp(80px,11vw,160px) 0;scroll-margin-top:84px}
 .case .frame img{width:100%;height:100%;object-fit:cover;animation:kb 18s var(--ease) infinite alternate}
 @keyframes kb{from{transform:scale(1.03)}to{transform:scale(1.1) translate(-1.4%,-1.6%)}}
 .work-intro{color:var(--ink-2);max-width:62ch;margin:-18px 0 48px}
-.project-art{position:relative;width:100%;height:100%;min-height:250px;overflow:hidden;border-radius:10px;text-align:left;padding:clamp(14px,2.2vw,26px);isolation:isolate}
-.art-nav{position:relative;z-index:3;display:flex;justify-content:space-between;gap:12px;align-items:center;font-size:clamp(.52rem,.9vw,.72rem);letter-spacing:.04em;white-space:nowrap}
-.art-brand{font-weight:800;letter-spacing:.08em}
+.case .frame{overflow:hidden;padding:0;place-items:stretch;background:#151515}
+.project-art{position:relative;width:100%;height:100%;min-height:250px;overflow:hidden;border-radius:10px;text-align:left;padding:clamp(16px,2.4vw,28px);isolation:isolate;background:#171717;color:#F3F0E8}
+.project-photo{position:absolute;z-index:0;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;transform:scale(1.02);transition:transform 1.1s var(--ease),filter .6s var(--ease);filter:saturate(.88)}
+.case:hover .project-photo{transform:scale(1.07);filter:saturate(1.04)}
+.project-shade{position:absolute;z-index:1;inset:0;background:linear-gradient(90deg,rgba(8,8,8,.86) 0%,rgba(8,8,8,.64) 46%,rgba(8,8,8,.12) 100%),linear-gradient(0deg,rgba(8,8,8,.44),transparent 42%);pointer-events:none}
+.art-nav{position:relative;z-index:3;display:flex;justify-content:space-between;gap:12px;align-items:center;font-size:clamp(.52rem,.9vw,.72rem);letter-spacing:.04em;white-space:nowrap;color:rgba(255,255,255,.9)}
+.art-brand{font-weight:800;letter-spacing:.1em}
 .art-brand-light{font-weight:500;opacity:.7;margin-left:3px}
-.art-copy{position:relative;z-index:3;display:flex;align-items:flex-start;flex-direction:column;gap:12px;margin-top:clamp(22px,4vw,48px);max-width:70%}
-.art-eyebrow{font-size:clamp(.48rem,.8vw,.65rem);font-weight:800;letter-spacing:.15em}
-.art-copy strong,.home-copy strong,.estate-copy strong{font-size:clamp(1.5rem,4vw,3.6rem);line-height:.92;letter-spacing:-.055em;font-weight:700}
-.art-desc{font-size:clamp(.62rem,1vw,.83rem);line-height:1.45;max-width:26ch;opacity:.78}
-.art-cta{display:inline-flex;align-items:center;gap:8px;padding:8px 11px;border:1px solid currentColor;border-radius:2px;font-size:clamp(.55rem,.85vw,.68rem);font-weight:700;margin-top:5px}
-.art-orbit{position:absolute;z-index:1;width:55%;aspect-ratio:1;right:-8%;top:18%;border:1px solid rgba(30,70,55,.32);border-radius:50%;transform:rotate(-23deg) scaleY(.45)}
-.art-sun{position:absolute;z-index:0;width:45%;aspect-ratio:1;border-radius:50%;right:-3%;top:16%;background:linear-gradient(135deg,#f5c06b,#e98e58 65%,#c96842);box-shadow:0 18px 55px rgba(155,87,40,.16)}
-.art-note{position:absolute;z-index:3;right:15px;bottom:13px;font-size:.48rem;letter-spacing:.16em;font-weight:800;opacity:.58}
-.project-art--academy{background:#dbe8dc;color:#183a2c}
-.project-art--academy .art-copy{margin-top:clamp(25px,4vw,44px)}
-.project-art--home{background:#eee5d5;color:#28271f}
-.home-copy{position:relative;z-index:2;display:flex;align-items:flex-start;flex-direction:column;gap:12px;margin-top:clamp(18px,2.8vw,32px);max-width:53%}
+.art-copy{position:relative;z-index:3;display:flex;align-items:flex-start;flex-direction:column;gap:12px;margin-top:clamp(24px,4vw,48px);max-width:72%;color:#F7F3EB}
+.art-eyebrow{font-size:clamp(.48rem,.8vw,.65rem);font-weight:800;letter-spacing:.15em;color:#FFB08A}
+.art-copy strong,.home-copy strong,.estate-copy strong{font-size:clamp(1.5rem,4vw,3.6rem);line-height:.92;letter-spacing:-.055em;font-weight:700;text-wrap:balance}
+.art-desc{font-size:clamp(.62rem,1vw,.83rem);line-height:1.45;max-width:26ch;color:rgba(255,255,255,.82)}
+.art-cta{display:inline-flex;align-items:center;gap:8px;padding:8px 11px;border:1px solid rgba(255,255,255,.7);border-radius:3px;font-size:clamp(.55rem,.85vw,.68rem);font-weight:700;margin-top:5px;color:#fff;background:rgba(8,8,8,.24);backdrop-filter:blur(8px)}
+.art-note{position:absolute;z-index:3;right:15px;bottom:13px;font-size:.48rem;letter-spacing:.16em;font-weight:800;color:rgba(255,255,255,.78)}
+.project-art--academy .project-photo{object-position:center 46%}
+.project-art--home .project-photo{object-position:center 54%}
+.project-art--estate .project-photo{object-position:center 55%}
+.home-copy{position:relative;z-index:3;display:flex;align-items:flex-start;flex-direction:column;gap:12px;margin-top:clamp(22px,3vw,34px);max-width:58%;color:#F7F3EB}
 .home-copy strong{font-family:Georgia,serif;font-weight:400;font-size:clamp(1.8rem,4.5vw,4rem)}
-.home-products{position:absolute;z-index:1;right:3%;bottom:14%;width:46%;height:48%;display:flex;align-items:flex-end;justify-content:center;gap:8%}
-.home-product{position:relative;display:block;width:27%;border-radius:48% 48% 12% 12%;box-shadow:inset -9px -8px 16px rgba(0,0,0,.12),0 12px 18px rgba(0,0,0,.1)}
-.product-vase{height:76%;background:linear-gradient(90deg,#ab8a70,#d5b99b 48%,#96765f);border-radius:42% 42% 18% 18%}
-.product-vase::before{content:"";position:absolute;width:38%;height:14%;left:31%;top:-9%;border-radius:40% 40% 0 0;background:#a88a70}
-.product-chair{height:52%;background:#bd6f4d;border-radius:8px 8px 18% 18%}
-.product-chair::before{content:"";position:absolute;left:-16%;right:-16%;top:14%;height:42%;border:7px solid #bd6f4d;border-bottom:0;border-radius:8px 8px 0 0}
-.product-lamp{height:92%;background:linear-gradient(90deg,#7d826a,#d5d5b4 45%,#8f947d);border-radius:50% 50% 8% 8%;clip-path:polygon(50% 0,100% 28%,74% 28%,74% 100%,27% 100%,27% 28%,0 28%)}
-.project-art--estate{background:#e6e4dd;color:#252721}
-.estate-copy{position:relative;z-index:3;display:flex;align-items:flex-start;flex-direction:column;gap:11px;margin-top:clamp(22px,3.4vw,40px);max-width:59%}
+.estate-copy{position:relative;z-index:3;display:flex;align-items:flex-start;flex-direction:column;gap:11px;margin-top:clamp(22px,3.4vw,40px);max-width:64%;color:#F7F3EB}
 .estate-copy strong{font-family:Georgia,serif;font-weight:400;font-size:clamp(1.7rem,4vw,3.5rem)}
 .estate-copy .art-desc{max-width:24ch}
-.estate-building{position:absolute;z-index:1;bottom:-8%;transform:skewY(-8deg);box-shadow:inset 10px 0 0 rgba(255,255,255,.08)}
-.estate-building--back{right:3%;width:32%;height:64%;background:repeating-linear-gradient(90deg,#a9aba4 0 5px,#dddcd3 5px 11px);clip-path:polygon(18% 0,100% 10%,100% 100%,0 100%,0 16%)}
-.estate-building--front{right:19%;width:25%;height:48%;background:repeating-linear-gradient(90deg,#b65c32 0 6px,#d88a5b 6px 12px);clip-path:polygon(0 12%,78% 0,100% 100%,0 100%)}
-.estate-tag{position:absolute;z-index:3;right:10px;bottom:10px;font-size:.48rem;letter-spacing:.13em;font-weight:800;opacity:.7}
 @media(max-width:599px){
-  .project-art{min-height:220px}
+  .project-art{min-height:220px;padding:16px}
+  .art-nav{font-size:.53rem}
   .art-copy strong,.home-copy strong,.estate-copy strong{font-size:clamp(1.65rem,8vw,2.5rem)}
-  .art-copy,.estate-copy{max-width:70%}
-  .home-copy{max-width:58%}
+  .art-copy,.estate-copy{max-width:75%}
+  .home-copy{max-width:65%}
 }
-@media(prefers-reduced-motion:reduce){.case .frame img{animation:none}}
+@media(prefers-reduced-motion:reduce){.case .frame img,.project-photo{animation:none;transition:none;transform:none}}
 .case-meta{font-size:.78rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-2);margin-bottom:14px}
 .case h3{font-size:clamp(2rem,4vw,3.4rem);font-weight:800;letter-spacing:-.04em;line-height:1;margin-bottom:24px}
 .change{display:grid;gap:14px;margin:0;border-top:1px solid var(--ink);padding-top:20px}
@@ -514,17 +505,17 @@ html:not(.js) .pre{display:none}
     <!-- Concept 1 -->
     <article class="case rv" style="--i:0">
       <div class="frame">
-        <div class="project-art project-art--academy" role="img" aria-label="Concept website preview for Northstar Academy">
-          <div class="art-nav"><span class="art-brand">NORTHSTAR</span><span>Programs&nbsp;&nbsp; About</span></div>
+        <div class="project-art project-art--academy">
+          <img class="project-photo" src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&amp;fit=crop&amp;w=1400&amp;q=85" alt="University graduates celebrating outdoors" loading="lazy" decoding="async">
+          <span class="project-shade" aria-hidden="true"></span>
+          <div class="art-nav"><span class="art-brand">NORTHSTAR</span><span>PROGRAMS&nbsp;&nbsp; ABOUT</span></div>
           <div class="art-copy">
             <span class="art-eyebrow">LEARN WITHOUT LIMITS</span>
             <strong>Build a future<br>you choose.</strong>
             <span class="art-desc">Career-focused learning for curious minds.</span>
             <span class="art-cta">Explore programmes ↗</span>
           </div>
-          <span class="art-orbit" aria-hidden="true"></span>
-          <span class="art-sun" aria-hidden="true"></span>
-          <span class="art-note">NEW PATHS START HERE</span>
+          <span class="art-note">CONCEPT / EDUCATION</span>
         </div>
       </div>
       <div>
@@ -540,19 +531,17 @@ html:not(.js) .pre{display:none}
     <!-- Concept 2 -->
     <article class="case rv" style="--i:1">
       <div class="frame">
-        <div class="project-art project-art--home" role="img" aria-label="Concept e-commerce storefront preview for Form Home">
-          <div class="art-nav"><span class="art-brand">FORM / HOME</span><span>Objects&nbsp;&nbsp; Living&nbsp;&nbsp; Journal</span></div>
+        <div class="project-art project-art--home">
+          <img class="project-photo" src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&amp;fit=crop&amp;w=1400&amp;q=85" alt="Warm minimalist living room with carefully styled furniture" loading="lazy" decoding="async">
+          <span class="project-shade" aria-hidden="true"></span>
+          <div class="art-nav"><span class="art-brand">FORM / HOME</span><span>OBJECTS&nbsp;&nbsp; LIVING&nbsp;&nbsp; JOURNAL</span></div>
           <div class="home-copy">
             <span class="art-eyebrow">THOUGHTFUL EVERYDAY OBJECTS</span>
             <strong>Less, but<br>better.</strong>
+            <span class="art-desc">Considered pieces for slower, more personal spaces.</span>
             <span class="art-cta">Explore the collection ↗</span>
           </div>
-          <div class="home-products" aria-hidden="true">
-            <span class="home-product product-vase"></span>
-            <span class="home-product product-chair"></span>
-            <span class="home-product product-lamp"></span>
-          </div>
-          <span class="art-note">FORM FOLLOWS FEELING</span>
+          <span class="art-note">CONCEPT / E-COMMERCE</span>
         </div>
       </div>
       <div>
@@ -568,17 +557,17 @@ html:not(.js) .pre{display:none}
     <!-- Concept 3 -->
     <article class="case rv" style="--i:2">
       <div class="frame">
-        <div class="project-art project-art--estate" role="img" aria-label="Concept real-estate website preview for Habitat Properties">
-          <div class="art-nav"><span class="art-brand">HABITAT<span class="art-brand-light">/ PROPERTIES</span></span><span>Buy&nbsp;&nbsp; Rent&nbsp;&nbsp; About</span></div>
+        <div class="project-art project-art--estate">
+          <img class="project-photo" src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&amp;fit=crop&amp;w=1400&amp;q=85" alt="Contemporary home exterior with landscaped garden and large windows" loading="lazy" decoding="async">
+          <span class="project-shade" aria-hidden="true"></span>
+          <div class="art-nav"><span class="art-brand">HABITAT<span class="art-brand-light"> / PROPERTIES</span></span><span>BUY&nbsp;&nbsp; RENT&nbsp;&nbsp; ABOUT</span></div>
           <div class="estate-copy">
             <span class="art-eyebrow">FIND YOUR PLACE</span>
             <strong>A place to<br>belong.</strong>
             <span class="art-desc">Thoughtfully selected homes in the neighbourhoods you love.</span>
             <span class="art-cta">Explore properties ↗</span>
           </div>
-          <div class="estate-building estate-building--back" aria-hidden="true"></div>
-          <div class="estate-building estate-building--front" aria-hidden="true"></div>
-          <span class="estate-tag">01 / THE RESIDENCES</span>
+          <span class="art-note">CONCEPT / REAL ESTATE</span>
         </div>
       </div>
       <div>
