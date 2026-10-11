@@ -5,8 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script>document.documentElement.classList.add('js')</script>
 
-<title>WebHorizn — Websites and Ads That Bring Real Customers</title>
-<meta name="description" content="Web development and digital marketing for growing businesses in India. Website packages from ₹8,999, plus a free audit for advertising projects.">
+<title>WebHorizn — Websites and Ads Built to Turn Attention into Enquiries</title>
+<meta name="description" content="Websites, landing pages and digital marketing for growing businesses in India. Clear website packages from ₹8,999, transparent scope and direct contact.">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="en_IN">
 <meta property="og:site_name" content="WebHorizn">
@@ -19,8 +19,8 @@
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
 <link rel="apple-touch-icon" href="favicon.png">
 <link rel="manifest" href="site.webmanifest">
-<meta property="og:title" content="Websites and ads that bring you real customers.">
-<meta property="og:description" content="Web development and digital marketing for growing businesses in India. Website packages from ₹8,999, plus a free audit for advertising projects.">
+<meta property="og:title" content="Websites and ads built to turn attention into enquiries.">
+<meta property="og:description" content="Websites, landing pages and digital marketing for growing businesses in India. Clear website packages from ₹8,999, transparent scope and direct contact.">
 <link rel="canonical" href="https://webhorizn.vercel.app/">
 <meta name="twitter:card" content="summary_large_image">
 
@@ -29,7 +29,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&display=swap" rel="stylesheet">
 
 <!-- Structured data -->
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "ProfessionalService", "name": "WebHorizn", "description": "Web development and digital marketing for growing businesses in India.", "areaServed": "IN", "email": "webhorizn@gmail.com", "url": "https://webhorizn.vercel.app/", "sameAs": [], "logo": "https://webhorizn.vercel.app/logo-mark.png", "image": "https://webhorizn.vercel.app/og-image.png", "publisher": {"@type": "Organization", "name": "WebHorizn", "logo": {"@type": "ImageObject", "url": "logo-mark.png"}}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "ProfessionalService", "name": "WebHorizn", "description": "Web development and digital marketing for growing businesses in India.", "areaServed": "IN", "email": "webhorizn@gmail.com", "telephone": "+919463481836", "contactPoint": {"@type": "ContactPoint", "telephone": "+919463481836", "email": "webhorizn@gmail.com", "contactType": "sales", "availableLanguage": ["English", "Hindi"]}, "url": "https://webhorizn.vercel.app/", "sameAs": [], "logo": "https://webhorizn.vercel.app/logo-mark.png", "image": "https://webhorizn.vercel.app/og-image.png", "publisher": {"@type": "Organization", "name": "WebHorizn", "logo": {"@type": "ImageObject", "url": "logo-mark.png"}}}</script>
 
 <!-- ==================== TRACKING PLACEHOLDERS (uncomment and fill in) ====================
   [A] GA4 (paste in <head>, replace G-XXXXXXX):
@@ -460,6 +460,45 @@ html:not(.js) .pre{display:none}
  .faq-answer{padding-right:0;font-size:.92rem}
 }
 @media(prefers-reduced-motion:reduce){.faq-item summary span{transition:none}}
+
+/* Navigation: easy to scan on desktop, accessible disclosure on mobile */
+.nav-main{display:flex;align-items:center;gap:clamp(12px,1.55vw,24px);margin-left:auto;margin-right:clamp(6px,1.8vw,26px)}
+.nav-main a{font-size:.86rem;font-weight:700;text-decoration:none;color:var(--ink-2);white-space:nowrap;position:relative;padding:8px 0}
+.nav-main a::after{content:"";position:absolute;left:0;right:0;bottom:2px;height:2px;background:var(--accent);transform:scaleX(0);transform-origin:left;transition:transform .25s var(--ease)}
+.nav-main a:hover,.nav-main a:focus-visible{color:var(--ink)}
+.nav-main a:hover::after,.nav-main a:focus-visible::after{transform:scaleX(1)}
+.nav-mobile{display:none;position:relative;flex:none}
+.nav-mobile>summary{list-style:none;display:grid;place-items:center;width:42px;height:42px;border:1.5px solid var(--ink);border-radius:var(--r);cursor:pointer;color:var(--ink)}
+.nav-mobile>summary::-webkit-details-marker{display:none}
+.nav-mobile>summary svg{width:21px;height:21px}
+.nav-mobile[open]>summary{background:var(--ink);color:var(--paper)}
+.nav-mobile-panel{position:absolute;top:calc(100% + 12px);right:0;z-index:100;width:min(290px,calc(100vw - 32px));padding:10px;background:var(--paper);border:1px solid var(--line);border-radius:16px;box-shadow:0 18px 50px rgba(14,14,14,.18);display:grid;gap:2px}
+.nav-mobile-panel a{display:block;padding:13px 14px;border-radius:9px;font-size:.95rem;font-weight:700;text-decoration:none;color:var(--ink)}
+.nav-mobile-panel a:hover,.nav-mobile-panel a:focus-visible{background:var(--paper-2)}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.cta-short{display:none}
+.hero-text-link{display:inline-flex;align-items:center;gap:10px;margin-top:22px;font-size:.94rem;font-weight:800;text-decoration:none;border-bottom:1.5px solid var(--line);padding:6px 0 5px;transition:border-color .2s ease,color .2s ease}
+.hero-text-link span{color:var(--accent);font-size:1.1rem}
+.hero-text-link:hover{border-color:var(--accent)}
+.footer-legal{display:flex;align-items:center;flex-wrap:wrap;gap:10px!important;margin-top:16px!important}
+.footer-legal button{padding:0;border:0;background:none;color:var(--paper);font:inherit;font-size:.9rem;text-decoration:underline;text-underline-offset:4px;text-decoration-color:var(--accent);cursor:pointer}
+.footer-legal button:hover{color:var(--accent-2)}
+/* Accessible policy dialogs: real, keyboard-dismissable disclosures */
+.legal-dialog{width:min(760px,calc(100% - 28px));max-width:760px;max-height:min(84dvh,820px);margin:auto;padding:0;border:1px solid rgba(14,14,14,.16);border-radius:20px;background:var(--paper);color:var(--ink);box-shadow:0 30px 100px rgba(0,0,0,.3);overflow:hidden}
+.legal-dialog::backdrop{background:rgba(8,8,8,.62);backdrop-filter:blur(4px)}
+.legal-dialog-head{position:sticky;top:0;z-index:1;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:22px clamp(18px,4vw,32px);background:var(--paper);border-bottom:1px solid var(--line)}
+.legal-dialog-head h2{font-size:clamp(1.6rem,4vw,2.25rem);letter-spacing:-.04em;line-height:1}
+.legal-close{width:42px;height:42px;flex:none;display:grid;place-items:center;border:1.5px solid var(--ink);border-radius:50%;background:transparent;color:var(--ink);font:400 1.8rem/1 var(--font);cursor:pointer}
+.legal-close:hover{background:var(--ink);color:var(--paper)}
+.legal-dialog-body{max-height:calc(min(84dvh,820px) - 87px);overflow:auto;padding:24px clamp(18px,4vw,32px) 34px;font-size:.98rem;line-height:1.7}
+.legal-dialog-body h3{font-size:1.1rem;line-height:1.25;letter-spacing:-.02em;margin:26px 0 8px}
+.legal-dialog-body p{margin:0 0 14px;max-width:68ch}
+.legal-dialog-body a{font-weight:700;text-underline-offset:3px;text-decoration-color:var(--accent)}
+.legal-updated{font-size:.82rem!important;font-weight:700;color:var(--ink-2)}
+@media(max-width:1030px){.nav-main{display:none}.nav-mobile{display:block}}
+@media(max-width:700px){.hdr-right .call{display:none}}
+@media(max-width:479px){.cta-full{display:none}.cta-short{display:inline}}
+@media(prefers-reduced-motion:reduce){.nav-main a::after{transition:none}.hero-text-link{transition:none}.legal-dialog{animation:none}}
 </style>
 </head>
 <body>
@@ -478,12 +517,33 @@ html:not(.js) .pre{display:none}
       <picture class="logo-mark-wrap"><source type="image/webp" srcset="logo-mark.webp"><img class="logo-mark" src="logo-mark.png" width="30" height="30" alt="WebHorizn logo"></picture>
       <span class="word" aria-label="WebHorizn"><i style="--n:0">W</i><i style="--n:1">e</i><i style="--n:2">b</i><i style="--n:3">H</i><i style="--n:4">o</i><i style="--n:5">r</i><i style="--n:6">i</i><i style="--n:7">z</i><i style="--n:8">n</i></span>
     </a>
+    <nav class="nav-main" aria-label="Main navigation">
+      <a href="#services">Services</a>
+      <a href="#work">Work</a>
+      <a href="#website-pricing">Pricing</a>
+      <a href="#process">Process</a>
+      <a href="#faq">FAQs</a>
+    </nav>
+    <details class="nav-mobile">
+      <summary aria-label="Open navigation menu" title="Menu">
+        <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        <span class="sr-only">Menu</span>
+      </summary>
+      <nav class="nav-mobile-panel" aria-label="Mobile navigation">
+        <a href="#services">Services</a>
+        <a href="#work">Selected work</a>
+        <a href="#website-pricing">Website packages</a>
+        <a href="#process">How it works</a>
+        <a href="#faq">FAQs</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </details>
     <div class="hdr-right">
       <!-- Business contact number configured. -->
       <a class="call" href="tel:+919463481836" aria-label="Call WebHorizn">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>
       </a>
-      <a class="btn btn-accent btn-sm" href="#contact">Get a Free Audit</a>
+      <a class="btn btn-accent btn-sm" href="#contact"><span class="cta-full">Get a Free Audit</span><span class="cta-short">Contact</span></a>
     </div>
   </div>
   <span class="progress" aria-hidden="true"></span>
@@ -497,9 +557,9 @@ html:not(.js) .pre{display:none}
     <p class="kicker">WebHorizn · India</p>
     <h1 class="display">
       <span class="ln"><span>Websites</span></span>
-      <span class="ln"><span>and ads that</span></span>
-      <span class="ln"><span>bring you</span></span>
-      <span class="ln"><span><span class="pill">real customers.</span></span></span>
+      <span class="ln"><span>and ads built to</span></span>
+      <span class="ln"><span>turn attention</span></span>
+      <span class="ln"><span><span class="pill">into enquiries.</span></span></span>
     </h1>
 
     <div class="hero-bottom">
@@ -511,6 +571,7 @@ html:not(.js) .pre{display:none}
           <a class="btn btn-line" href="https://wa.me/919463481836?text=Hi%20WebHorizn%2C%20I%27d%20like%20a%20free%20audit." data-wa>Chat on WhatsApp</a>
         </div>
         <p class="trust">Clear website packages from ₹8,999 · Direct WhatsApp contact · No pressure to proceed</p>
+        <a class="hero-text-link" href="#work">See selected work <span aria-hidden="true">↗</span></a>
       </div>
 
       <figure class="fig rv">
@@ -924,7 +985,8 @@ html:not(.js) .pre{display:none}
       <div>
         
         <p>© 2026 WebHorizn. All rights reserved.</p>
-        <p>We use your details only to reply to your enquiry.</p>
+        <p>Enquiries are sent only when you confirm in WhatsApp.</p>
+        <p class="footer-legal"><button type="button" data-dialog-open="privacy-dialog">Privacy Policy</button><span aria-hidden="true">·</span><button type="button" data-dialog-open="terms-dialog">Terms &amp; Conditions</button></p>
       </div>
     </div>
   </div>
@@ -935,6 +997,46 @@ html:not(.js) .pre{display:none}
 <a class="wa" href="https://wa.me/919463481836?text=Hi%20WebHorizn%2C%20I%27d%20like%20a%20free%20audit." data-wa aria-label="Chat with WebHorizn on WhatsApp">
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 20.5l1.7-5.4A8.4 8.4 0 1 1 21 11.5z"/></svg>
 </a>
+
+<dialog class="legal-dialog" id="privacy-dialog" aria-labelledby="privacy-dialog-title">
+  <div class="legal-dialog-head">
+    <h2 id="privacy-dialog-title">Privacy Policy</h2>
+    <button type="button" class="legal-close" data-dialog-close aria-label="Close privacy policy">×</button>
+  </div>
+  <div class="legal-dialog-body">
+    <p class="legal-updated">Last updated: 11 October 2026</p>
+    <h3>What the enquiry form does</h3>
+    <p>The form prepares a message using the details you enter, then opens WhatsApp with that message as a draft. This website does not submit those fields to a WebHorizn form backend or save them in a website database.</p>
+    <p>Your details are not sent to WebHorizn until you review and press <strong>Send</strong> in WhatsApp. WhatsApp processes the conversation under its own terms and privacy policy.</p>
+    <h3>What you may enter</h3>
+    <p>The form may include your name, mobile number, city, business type, selected service or website package, and an optional description of your project. Please do not include passwords, payment card details, government ID numbers or other sensitive information.</p>
+    <h3>Contact and questions</h3>
+    <p>For a privacy question, email <a href="mailto:webhorizn@gmail.com">webhorizn@gmail.com</a>. If you choose to contact us by phone or WhatsApp, the information you share through those services is handled by the relevant provider as well.</p>
+    <p>This notice describes the website's current enquiry handoff. It is not a promise that third-party platforms never process technical data.</p>
+  </div>
+</dialog>
+
+<dialog class="legal-dialog" id="terms-dialog" aria-labelledby="terms-dialog-title">
+  <div class="legal-dialog-head">
+    <h2 id="terms-dialog-title">Terms &amp; Conditions</h2>
+    <button type="button" class="legal-close" data-dialog-close aria-label="Close terms and conditions">×</button>
+  </div>
+  <div class="legal-dialog-body">
+    <p class="legal-updated">Last updated: 11 October 2026</p>
+    <h3>Website packages</h3>
+    <p><strong>Basic Website — ₹8,999:</strong> 4 pages and 2 rounds of design changes.</p>
+    <p><strong>Standard Website — ₹12,999:</strong> 6 pages and 3 rounds of design changes, plus business email for the first year, logo design, social media links and Google Business Profile setup.</p>
+    <p>Both packages include responsive design, domain and hosting for the first year, SSL, WhatsApp integration, an enquiry form, Google Maps, basic SEO, 30 days of post-launch support, and ownership of the agreed website after full payment and handover. Landing pages, advertising and lead-generation services are scoped separately.</p>
+    <h3>Timing, payment and changes</h3>
+    <p>The 3-day delivery time is a target beginning after required content, assets, payment and approvals are received. It is not a guarantee. Payment terms are 50% in advance to begin and 50% before final handover. New pages, added features or work outside the agreed scope may require a separate quote.</p>
+    <h3>Renewals and third-party services</h3>
+    <p>Domain, hosting and (for Standard) business email are included for the first year only. Provider renewal charges may apply afterwards. Google Business Profile setup depends on Google's eligibility and verification requirements. Third-party platforms have their own terms and service availability.</p>
+    <h3>Results and ownership</h3>
+    <p>Basic SEO does not guarantee search rankings, enquiries or sales. Advertising performance also depends on factors outside a website's control. Website ownership transfers after full payment and handover, subject to any separately agreed third-party licences or assets.</p>
+    <h3>Confirm scope before work starts</h3>
+    <p>Before a project begins, confirm the agreed page count, features, content, payment schedule, delivery target and any recurring charges in writing. For questions, contact <a href="mailto:webhorizn@gmail.com">webhorizn@gmail.com</a>.</p>
+  </div>
+</dialog>
 
 <script>
 (function () {
@@ -979,6 +1081,31 @@ html:not(.js) .pre{display:none}
 
   document.querySelectorAll('[data-wa]').forEach(function (a) {
     a.addEventListener('click', function () { track('whatsapp_click', 'Contact'); });
+  });
+
+  var mobileMenu = document.querySelector('.nav-mobile');
+  if (mobileMenu) {
+    mobileMenu.querySelectorAll('a').forEach(function (link) {
+      link.addEventListener('click', function () { mobileMenu.removeAttribute('open'); });
+    });
+  }
+
+  document.querySelectorAll('[data-dialog-open]').forEach(function (button) {
+    button.addEventListener('click', function () {
+      var dialog = document.getElementById(button.getAttribute('data-dialog-open'));
+      if (dialog && typeof dialog.showModal === 'function') dialog.showModal();
+    });
+  });
+  document.querySelectorAll('[data-dialog-close]').forEach(function (button) {
+    button.addEventListener('click', function () {
+      var dialog = button.closest('dialog');
+      if (dialog && typeof dialog.close === 'function') dialog.close();
+    });
+  });
+  document.querySelectorAll('.legal-dialog').forEach(function (dialog) {
+    dialog.addEventListener('click', function (event) {
+      if (event.target === dialog && typeof dialog.close === 'function') dialog.close();
+    });
   });
 
   /* ===== HERO PARALLAX (pointer-linked, desktop only) ===== */
