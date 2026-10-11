@@ -263,6 +263,28 @@ section{padding:clamp(80px,11vw,160px) 0;scroll-margin-top:84px}
 @media (min-width:800px){.work-foot{flex-direction:row;justify-content:space-between;align-items:center}}
 
 
+/* Mobile project stack: retain the layered scroll interaction without trapping short screens */
+@media (max-width:899px) and (min-height:650px){
+  .case{
+    position:sticky;
+    top:calc(76px + var(--i) * 12px);
+    z-index:calc(10 + var(--i));
+    padding:16px;
+    gap:18px;
+  }
+  .case .frame{aspect-ratio:16/9}
+  .project-art{min-height:0;padding:16px}
+  .case h3{font-size:clamp(1.75rem,7vw,2.4rem);margin-bottom:18px}
+  .change{gap:12px;padding-top:14px}
+  .change div{grid-template-columns:100px minmax(0,1fr);gap:8px}
+  .change dt{font-size:.68rem;letter-spacing:.07em}
+  .change dd{font-size:.92rem;line-height:1.42}
+}
+@media (max-width:899px) and (max-height:649px){
+  .case{position:relative;top:auto}
+}
+
+
 /* Website packages: transparent scope and prices in the existing editorial style */
 .package-intro{color:var(--ink-2);max-width:64ch;margin-top:22px}
 .package-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;margin-top:clamp(36px,5vw,64px);align-items:stretch}
@@ -354,7 +376,7 @@ section{padding:clamp(80px,11vw,160px) 0;scroll-margin-top:84px}
 .foot p{color:var(--mute);margin:0 0 6px;max-width:none}
 .foot strong{color:var(--paper)}
 .foot a{color:var(--paper);text-underline-offset:4px}
-.giant{font-size:clamp(4rem,21vw,30rem);font-weight:800;letter-spacing:-.07em;line-height:.8;color:#242424;white-space:nowrap;margin:0 0 0 -.04em;user-select:none}
+.giant{font-size:clamp(2.5rem,17vw,30rem);font-weight:800;letter-spacing:-.08em;line-height:.8;color:#242424;white-space:nowrap;margin:0 0 0 -.04em;user-select:none}
 .giant{padding:0 var(--pad)}
 .js .giant{clip-path:inset(0 100% 0 0);transition:clip-path 1.4s var(--ease),color 1.2s var(--ease)}
 .js .giant.in{clip-path:inset(0 -2% 0 0)}
