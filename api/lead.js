@@ -90,6 +90,11 @@ module.exports = async function handler(req, res) {
     });
 
     const responseText = await upstream.text();
+    const responseContentType = upstream.headers.get("content-type") || "unknown";
+    const responseHost = (() => {
+      try { return new URL(upstream.url).hostname; } catch (_) { return "unknown"; }
+    })();
+
     let result;
     try {
       result = JSON.parse(responseText);
@@ -98,6 +103,15 @@ module.exports = async function handler(req, res) {
     }
 
     if (!upstream.ok || !result || result.status !== "success") {
+      if (!result) {
+        // Safe diagnostics only: never return the raw response body or submitted lead.
+        return res.status(502).json({
+          success: false,
+          message: "Google returned a non-JSON response (HTTP " + upstream.status +
+            ", content type " + responseContentType + ", response host " + responseHost +
+            "). Check the Apps Script deployment URL and web-app access settings."
+        });
+      }
       // Report a safe next step without exposing submitted data or stack traces.
       if (result && result.status === "error" && result.message === "Unauthorized.") {
         return res.status(502).json({
