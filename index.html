@@ -1092,7 +1092,7 @@ html:not(.js) .pre{display:none}
         <details class="faq-item"><summary>What are design revision rounds?<span aria-hidden="true">+</span></summary><div class="faq-answer"><p>A revision round is one consolidated set of design changes, such as text, colours, images or layout. Basic includes 2 rounds and Standard includes 3. New pages or changes to the agreed project scope are quoted separately.</p></div></details>
         <details class="faq-item"><summary>What does 30-day support include?<span aria-hidden="true">+</span></summary><div class="faq-answer"><p>It covers help with issues related to the website we built for 30 days after launch. New pages, features or changes beyond the agreed scope are discussed and quoted separately.</p></div></details>
         <details class="faq-item"><summary>How do payments work?<span aria-hidden="true">+</span></summary><div class="faq-answer"><p>Payment terms are 50% in advance to begin the project and the remaining 50% before final handover.</p></div></details>
-        <details class="faq-item"><summary>How does the enquiry form work?<span aria-hidden="true">+</span></summary><div class="faq-answer"><p>It opens WhatsApp with your details prepared as a draft. Your enquiry reaches us only if you press Send in WhatsApp. This website does not save submissions.</p></div></details>
+        <details class="faq-item"><summary>How does the enquiry form work?<span aria-hidden="true">+</span></summary><div class="faq-answer"><p>Submitting records the details you provide in WebHorizn’s lead-management spreadsheet so we can follow up. It also opens WhatsApp with a message draft; the WhatsApp message is sent only when you press Send.</p></div></details>
         <details class="faq-item"><summary>Can you build a website for my kind of business?<span aria-hidden="true">+</span></summary><div class="faq-answer"><p>We can discuss websites for shops, clinics, coaching institutes, real estate, salons, consultants, freelancers and other service businesses. Tell us about your requirements and we will confirm the fit.</p></div></details>
         <details class="faq-item"><summary>Does basic SEO guarantee Google rankings?<span aria-hidden="true">+</span></summary><div class="faq-answer"><p>No. Basic SEO covers setup that helps search engines understand the site. Rankings, enquiries and sales depend on many factors, so we do not guarantee them.</p></div></details>
       </div>
@@ -1184,7 +1184,7 @@ html:not(.js) .pre{display:none}
 
           <button class="btn btn-accent btn-block" type="submit" id="submit-btn">Continue on WhatsApp <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
           <p class="status" id="form-status" role="status" aria-live="polite"></p>
-          <p class="privacy">This page does not save your details. Continue opens a WhatsApp draft; your enquiry reaches us only after you press Send.</p>
+          <p class="privacy">Submitting sends your details to WebHorizn’s lead-management spreadsheet so we can follow up. Continue also opens a WhatsApp draft; that WhatsApp message is sent only when you press Send.</p>
         </form>
 
         <div class="or" style="margin:24px 0">or</div>
@@ -1526,31 +1526,73 @@ html:not(.js) .pre{display:none}
     if (!validate(true)) return;
 
     var detailsField = document.getElementById('details');
+    var phone = normalisePhone(fPhone.value);
     var packageName = packageInput && packageInput.value ? packageInput.value + ' Website' : 'Not sure yet';
+    var details = detailsField && detailsField.value.trim() ? detailsField.value.trim() : '';
     var msg = [
       'Hi WebHorizn, I would like to discuss a project.',
       '',
       'Name: ' + fName.value.trim(),
-      'Phone: +91 ' + normalisePhone(fPhone.value),
+      'Phone: +91 ' + phone,
       'City: ' + fCity.value.trim(),
       'Business type: ' + fBusiness.value,
       'Service: ' + fService.value,
       'Website package: ' + packageName,
-      'Project details: ' + (detailsField && detailsField.value.trim() ? detailsField.value.trim() : 'Not provided')
-    ].join('\n');
-    var url = 'https://wa.me/919463481836?text=' + encodeURIComponent(msg);
+      'Project details: ' + (details || 'Not provided')
+    ].join('\\n');
+    var whatsappUrl = 'https://wa.me/919463481836?text=' + encodeURIComponent(msg);
 
+    // Open WhatsApp synchronously to reduce the chance of a popup being blocked.
     track('lead_form_whatsapp_handoff', 'Lead');
     var opened = null;
-    try { opened = window.open(url, '_blank'); } catch (err) {}
+    try { opened = window.open(whatsappUrl, '_blank'); } catch (err) {}
     if (opened) {
       try { opened.opener = null; } catch (err) {}
-      status.classList.add('status-ok');
-      status.textContent = 'WhatsApp should now be open with your message ready. Review it and press Send to contact us. Nothing is sent to WebHorizn until you press Send.';
-    } else {
-      status.classList.add('status-error');
-      status.textContent = 'WhatsApp did not open automatically. Use the Chat on WhatsApp link below to contact us. Nothing has been sent yet.';
     }
+
+    status.textContent = 'Saving your enquiry…';
+    var submitButton = document.getElementById('submit-btn');
+    if (submitButton) submitButton.disabled = true;
+
+    fetch('/api/lead', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        name: fName.value.trim(),
+        phone: phone,
+        city: fCity.value.trim(),
+        business: fBusiness.value,
+        service: fService.value,
+        website_package: packageInput && packageInput.value ? packageInput.value : 'Not selected',
+        details: details
+      })
+    })
+      .then(function (response) {
+        return response.json().then(function (payload) {
+          if (!response.ok || !payload || payload.success !== true) {
+            throw new Error('Lead save was not confirmed.');
+          }
+          return payload;
+        });
+      })
+      .then(function () {
+        track('lead_form_saved', 'Lead');
+        status.className = 'status status-ok';
+        status.textContent = 'Your enquiry has been saved to WebHorizn’s lead sheet. ' +
+          (opened
+            ? 'WhatsApp should be open with your message ready. Review it and press Send to send the WhatsApp message.'
+            : 'WhatsApp did not open automatically. Use the Chat on WhatsApp link below if you would also like to message us. Press Send in WhatsApp to send that message.');
+      })
+      .catch(function () {
+        status.className = 'status status-error';
+        status.textContent = 'We could not confirm that your enquiry was saved to our lead sheet. ' +
+          (opened
+            ? 'Your WhatsApp draft may be open; review it and press Send to contact WebHorizn.'
+            : 'Please use the Chat on WhatsApp link below to contact WebHorizn.');
+      })
+      .finally(function () {
+        if (submitButton) submitButton.disabled = false;
+      });
   });
 })();
 </script>
