@@ -221,6 +221,46 @@ section{padding:clamp(80px,11vw,160px) 0;scroll-margin-top:84px}
 .case .frame{overflow:hidden}
 .case .frame img{width:100%;height:100%;object-fit:cover;animation:kb 18s var(--ease) infinite alternate}
 @keyframes kb{from{transform:scale(1.03)}to{transform:scale(1.1) translate(-1.4%,-1.6%)}}
+.work-intro{color:var(--ink-2);max-width:62ch;margin:-18px 0 48px}
+.project-art{position:relative;width:100%;height:100%;min-height:250px;overflow:hidden;border-radius:10px;text-align:left;padding:clamp(14px,2.2vw,26px);isolation:isolate}
+.art-nav{position:relative;z-index:3;display:flex;justify-content:space-between;gap:12px;align-items:center;font-size:clamp(.52rem,.9vw,.72rem);letter-spacing:.04em;white-space:nowrap}
+.art-brand{font-weight:800;letter-spacing:.08em}
+.art-brand-light{font-weight:500;opacity:.7;margin-left:3px}
+.art-copy{position:relative;z-index:3;display:flex;align-items:flex-start;flex-direction:column;gap:12px;margin-top:clamp(22px,4vw,48px);max-width:70%}
+.art-eyebrow{font-size:clamp(.48rem,.8vw,.65rem);font-weight:800;letter-spacing:.15em}
+.art-copy strong,.home-copy strong,.estate-copy strong{font-size:clamp(1.5rem,4vw,3.6rem);line-height:.92;letter-spacing:-.055em;font-weight:700}
+.art-desc{font-size:clamp(.62rem,1vw,.83rem);line-height:1.45;max-width:26ch;opacity:.78}
+.art-cta{display:inline-flex;align-items:center;gap:8px;padding:8px 11px;border:1px solid currentColor;border-radius:2px;font-size:clamp(.55rem,.85vw,.68rem);font-weight:700;margin-top:5px}
+.art-orbit{position:absolute;z-index:1;width:55%;aspect-ratio:1;right:-8%;top:18%;border:1px solid rgba(30,70,55,.32);border-radius:50%;transform:rotate(-23deg) scaleY(.45)}
+.art-sun{position:absolute;z-index:0;width:45%;aspect-ratio:1;border-radius:50%;right:-3%;top:16%;background:linear-gradient(135deg,#f5c06b,#e98e58 65%,#c96842);box-shadow:0 18px 55px rgba(155,87,40,.16)}
+.art-note{position:absolute;z-index:3;right:15px;bottom:13px;font-size:.48rem;letter-spacing:.16em;font-weight:800;opacity:.58}
+.project-art--academy{background:#dbe8dc;color:#183a2c}
+.project-art--academy .art-copy{margin-top:clamp(25px,4vw,44px)}
+.project-art--home{background:#eee5d5;color:#28271f}
+.home-copy{position:relative;z-index:2;display:flex;align-items:flex-start;flex-direction:column;gap:12px;margin-top:clamp(18px,2.8vw,32px);max-width:53%}
+.home-copy strong{font-family:Georgia,serif;font-weight:400;font-size:clamp(1.8rem,4.5vw,4rem)}
+.home-products{position:absolute;z-index:1;right:3%;bottom:14%;width:46%;height:48%;display:flex;align-items:flex-end;justify-content:center;gap:8%}
+.home-product{position:relative;display:block;width:27%;border-radius:48% 48% 12% 12%;box-shadow:inset -9px -8px 16px rgba(0,0,0,.12),0 12px 18px rgba(0,0,0,.1)}
+.product-vase{height:76%;background:linear-gradient(90deg,#ab8a70,#d5b99b 48%,#96765f);border-radius:42% 42% 18% 18%}
+.product-vase::before{content:"";position:absolute;width:38%;height:14%;left:31%;top:-9%;border-radius:40% 40% 0 0;background:#a88a70}
+.product-chair{height:52%;background:#bd6f4d;border-radius:8px 8px 18% 18%}
+.product-chair::before{content:"";position:absolute;left:-16%;right:-16%;top:14%;height:42%;border:7px solid #bd6f4d;border-bottom:0;border-radius:8px 8px 0 0}
+.product-lamp{height:92%;background:linear-gradient(90deg,#7d826a,#d5d5b4 45%,#8f947d);border-radius:50% 50% 8% 8%;clip-path:polygon(50% 0,100% 28%,74% 28%,74% 100%,27% 100%,27% 28%,0 28%)}
+.project-art--estate{background:#e6e4dd;color:#252721}
+.estate-copy{position:relative;z-index:3;display:flex;align-items:flex-start;flex-direction:column;gap:11px;margin-top:clamp(22px,3.4vw,40px);max-width:59%}
+.estate-copy strong{font-family:Georgia,serif;font-weight:400;font-size:clamp(1.7rem,4vw,3.5rem)}
+.estate-copy .art-desc{max-width:24ch}
+.estate-building{position:absolute;z-index:1;bottom:-8%;transform:skewY(-8deg);box-shadow:inset 10px 0 0 rgba(255,255,255,.08)}
+.estate-building--back{right:3%;width:32%;height:64%;background:repeating-linear-gradient(90deg,#a9aba4 0 5px,#dddcd3 5px 11px);clip-path:polygon(18% 0,100% 10%,100% 100%,0 100%,0 16%)}
+.estate-building--front{right:19%;width:25%;height:48%;background:repeating-linear-gradient(90deg,#b65c32 0 6px,#d88a5b 6px 12px);clip-path:polygon(0 12%,78% 0,100% 100%,0 100%)}
+.estate-tag{position:absolute;z-index:3;right:10px;bottom:10px;font-size:.48rem;letter-spacing:.13em;font-weight:800;opacity:.7}
+@media(max-width:599px){
+  .project-art{min-height:220px}
+  .art-copy strong,.home-copy strong,.estate-copy strong{font-size:clamp(1.65rem,8vw,2.5rem)}
+  .art-copy,.estate-copy{max-width:70%}
+  .home-copy{max-width:58%}
+}
+@media(prefers-reduced-motion:reduce){.case .frame img{animation:none}}
 .case-meta{font-size:.78rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-2);margin-bottom:14px}
 .case h3{font-size:clamp(2rem,4vw,3.4rem);font-weight:800;letter-spacing:-.04em;line-height:1;margin-bottom:24px}
 .change{display:grid;gap:14px;margin:0;border-top:1px solid var(--ink);padding-top:20px}
@@ -253,20 +293,30 @@ section{padding:clamp(80px,11vw,160px) 0;scroll-margin-top:84px}
 .step h3{font-size:clamp(1.9rem,3.8vw,3.2rem);font-weight:800;letter-spacing:-.04em;line-height:1;margin:10px 0 14px;transition:color .5s var(--ease)}
 .step p{color:var(--mute);max-width:40ch}
 
-/* Contact */
-.contact-grid{display:grid;gap:64px}
-@media (min-width:960px){.contact-grid{grid-template-columns:.85fr 1.15fr;gap:110px;align-items:start}}
-.founder .frame{aspect-ratio:4/5;max-width:440px}
-.founder h3{font-size:clamp(2rem,4vw,3.2rem);font-weight:800;letter-spacing:-.04em;line-height:1;margin:28px 0 8px}
-.role{color:var(--ink-2);font-size:.95rem;margin-bottom:20px}
-.story p{margin-bottom:12px;color:var(--ink-2)}
-.form{display:grid;gap:30px}
+/* Contact: project-first lead form, no founder profile block */
+.contact-grid{display:grid;gap:clamp(36px,6vw,80px)}
+@media (min-width:960px){.contact-grid{grid-template-columns:.85fr 1.15fr;gap:clamp(56px,8vw,110px);align-items:start}}
+.contact-intro{padding-top:6px}
+.contact-intro h3{font-size:clamp(2.1rem,4.2vw,3.7rem);font-weight:800;letter-spacing:-.05em;line-height:.98;margin:0 0 22px;max-width:12ch}
+.contact-intro>p:not(.case-meta){color:var(--ink-2);max-width:42ch}
+.contact-points{list-style:none;margin:34px 0 0;padding:0;border-top:1px solid var(--line)}
+.contact-points li{display:grid;grid-template-columns:38px 1fr;gap:12px;padding:17px 0;border-bottom:1px solid var(--line)}
+.contact-points li>span{font-size:.78rem;font-weight:800;color:var(--accent);letter-spacing:.1em;padding-top:3px}
+.contact-points strong{display:block;font-size:.98rem}
+.contact-points p{color:var(--ink-2);font-size:.91rem;margin-top:3px}
+.contact-promise{margin-top:26px;font-weight:700;font-size:.9rem}
+.contact-form-wrap{background:rgba(255,255,255,.28);border:1px solid var(--line);border-radius:var(--r);padding:clamp(22px,3.5vw,40px)}
+.contact-form-wrap h3{font-size:clamp(1.45rem,2.8vw,2.1rem);letter-spacing:-.04em;line-height:1.05;margin:0 0 8px}
+.contact-form-wrap>p{color:var(--ink-2);font-size:.95rem;margin-bottom:28px}
+.form{display:grid;gap:22px}
 .field{display:grid;gap:6px}
 .field label{font-size:.78rem;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:var(--ink-2)}
-.field input,.field select{width:100%;min-height:56px;background:transparent;border:0;border-bottom:1.5px solid var(--ink);border-radius:0;padding:12px 0;font:inherit;font-size:1.2rem;font-weight:600;color:var(--ink);appearance:none;-webkit-appearance:none;transition:box-shadow .2s ease}
-.field input::placeholder{color:#6E6A61;font-weight:500}
+.field input,.field select,.field textarea{width:100%;min-height:56px;background:transparent;border:0;border-bottom:1.5px solid var(--ink);border-radius:0;padding:12px 0;font:inherit;font-size:1.08rem;font-weight:600;color:var(--ink);transition:box-shadow .2s ease}
+.field input,.field select{appearance:none;-webkit-appearance:none}
+.field textarea{min-height:112px;resize:vertical;line-height:1.45}
+.field input::placeholder,.field textarea::placeholder{color:#6E6A61;font-weight:500}
 .field select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='%230E0E0E' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 2px center;background-size:20px;padding-right:32px}
-.field input:focus,.field select:focus{outline:none;box-shadow:0 3px 0 var(--accent)}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;box-shadow:0 3px 0 var(--accent)}
 .field [aria-invalid="true"]{border-bottom-color:#B42318;box-shadow:none}
 .err{display:none;color:#B42318;font-size:.9rem;font-weight:600}
 .err.show{display:block}
@@ -366,7 +416,7 @@ html:not(.js) .pre{display:none}
 <!-- 2. HERO -->
 <section class="hero" id="top" style="padding-bottom:0">
   <div class="wrap">
-    <p class="kicker">WebHorizn · [City, State], India</p>
+    <p class="kicker">WebHorizn · India</p>
     <h1 class="display">
       <span class="ln"><span>Websites</span></span>
       <span class="ln"><span>and ads that</span></span>
@@ -457,52 +507,93 @@ html:not(.js) .pre{display:none}
 <!-- 4. OUR WORK -->
 <section id="work" aria-labelledby="work-title" style="padding-top:0">
   <div class="wrap">
-    <div class="label rv"><b>02</b> Our work</div>
+    <div class="label rv"><b>02</b> Selected work</div>
     <h2 class="title rv" id="work-title" style="margin-bottom:clamp(40px,6vw,72px)">Recent projects.</h2>
+    <p class="work-intro rv">A look at how we approach clear, responsive digital experiences. These concept projects demonstrate our process; they are not presented as client results.</p>
 
-    <!-- Case 1 -->
+    <!-- Concept 1 -->
     <article class="case rv" style="--i:0">
-      <!-- Replace the frame with <img src="..." alt="Screenshot of [PROJECT 1 NAME] website"> -->
-      <div class="frame">[SCREENSHOT: PROJECT 1]</div>
+      <div class="frame">
+        <div class="project-art project-art--academy" role="img" aria-label="Concept website preview for Northstar Academy">
+          <div class="art-nav"><span class="art-brand">NORTHSTAR</span><span>Programs&nbsp;&nbsp; About</span></div>
+          <div class="art-copy">
+            <span class="art-eyebrow">LEARN WITHOUT LIMITS</span>
+            <strong>Build a future<br>you choose.</strong>
+            <span class="art-desc">Career-focused learning for curious minds.</span>
+            <span class="art-cta">Explore programmes ↗</span>
+          </div>
+          <span class="art-orbit" aria-hidden="true"></span>
+          <span class="art-sun" aria-hidden="true"></span>
+          <span class="art-note">NEW PATHS START HERE</span>
+        </div>
+      </div>
       <div>
-        <p class="case-meta">Case 01 · Business type: [BUSINESS TYPE]</p>
-        <h3>[PROJECT 1 NAME]</h3>
+        <p class="case-meta">Concept project · Education</p>
+        <h3>Northstar Academy</h3>
         <dl class="change">
-          <div><dt>What we did</dt><dd>[WHAT WE DID]</dd></div>
-          <div><dt>What changed</dt><dd>[X]% [WHAT CHANGED, e.g. more enquiries]</dd></div>
+          <div><dt>What we built</dt><dd>A mobile-first admissions page with programme highlights, clear outcomes, and a focused enquiry path.</dd></div>
+          <div><dt>Design focus</dt><dd>Make course options easy to scan and help visitors take the next step.</dd></div>
         </dl>
       </div>
     </article>
 
-    <!-- Case 2 -->
+    <!-- Concept 2 -->
     <article class="case rv" style="--i:1">
-      <div class="frame">[SCREENSHOT: PROJECT 2]</div>
+      <div class="frame">
+        <div class="project-art project-art--home" role="img" aria-label="Concept e-commerce storefront preview for Form Home">
+          <div class="art-nav"><span class="art-brand">FORM / HOME</span><span>Objects&nbsp;&nbsp; Living&nbsp;&nbsp; Journal</span></div>
+          <div class="home-copy">
+            <span class="art-eyebrow">THOUGHTFUL EVERYDAY OBJECTS</span>
+            <strong>Less, but<br>better.</strong>
+            <span class="art-cta">Explore the collection ↗</span>
+          </div>
+          <div class="home-products" aria-hidden="true">
+            <span class="home-product product-vase"></span>
+            <span class="home-product product-chair"></span>
+            <span class="home-product product-lamp"></span>
+          </div>
+          <span class="art-note">FORM FOLLOWS FEELING</span>
+        </div>
+      </div>
       <div>
-        <p class="case-meta">Case 02 · Business type: [BUSINESS TYPE]</p>
-        <h3>[PROJECT 2 NAME]</h3>
+        <p class="case-meta">Concept project · E-commerce</p>
+        <h3>Form / Home</h3>
         <dl class="change">
-          <div><dt>What we did</dt><dd>[WHAT WE DID]</dd></div>
-          <div><dt>What changed</dt><dd>[X]% [WHAT CHANGED, e.g. more enquiries]</dd></div>
+          <div><dt>What we built</dt><dd>A product-led storefront concept with curated collections, editorial product visuals, and a clear route from discovery to purchase.</dd></div>
+          <div><dt>Design focus</dt><dd>Create a calm shopping experience with clear product hierarchy and consistent visual language.</dd></div>
         </dl>
       </div>
     </article>
 
-    <!-- Case 3 -->
+    <!-- Concept 3 -->
     <article class="case rv" style="--i:2">
-      <div class="frame">[SCREENSHOT: PROJECT 3]</div>
+      <div class="frame">
+        <div class="project-art project-art--estate" role="img" aria-label="Concept real-estate website preview for Habitat Properties">
+          <div class="art-nav"><span class="art-brand">HABITAT<span class="art-brand-light">/ PROPERTIES</span></span><span>Buy&nbsp;&nbsp; Rent&nbsp;&nbsp; About</span></div>
+          <div class="estate-copy">
+            <span class="art-eyebrow">FIND YOUR PLACE</span>
+            <strong>A place to<br>belong.</strong>
+            <span class="art-desc">Thoughtfully selected homes in the neighbourhoods you love.</span>
+            <span class="art-cta">Explore properties ↗</span>
+          </div>
+          <div class="estate-building estate-building--back" aria-hidden="true"></div>
+          <div class="estate-building estate-building--front" aria-hidden="true"></div>
+          <span class="estate-tag">01 / THE RESIDENCES</span>
+        </div>
+      </div>
       <div>
-        <p class="case-meta">Case 03 · Business type: [BUSINESS TYPE]</p>
-        <h3>[PROJECT 3 NAME]</h3>
+        <p class="case-meta">Concept project · Real estate</p>
+        <h3>Habitat Properties</h3>
         <dl class="change">
-          <div><dt>What we did</dt><dd>[WHAT WE DID]</dd></div>
-          <div><dt>What changed</dt><dd>[X]% [WHAT CHANGED, e.g. more enquiries]</dd></div>
+          <div><dt>What we built</dt><dd>A property landing-page concept with featured listings, neighbourhood context, and a straightforward callback request.</dd></div>
+          <div><dt>Design focus</dt><dd>Surface useful details early and make it simple for interested buyers to enquire.</dd></div>
         </dl>
       </div>
     </article>
 
     <div class="work-foot rv">
-      <p>Real projects. Details shared on the call.</p>
-      <a class="btn btn-accent" href="#contact">Get a Free Audit <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <p>Concept projects demonstrating our approach to design and conversion.</p>
+      <a class="btn btn-accent" href="#contact">Discuss your project <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
     </div>
   </div>
 </section>
@@ -536,34 +627,37 @@ html:not(.js) .pre{display:none}
   </div>
 </section>
 
-<!-- 6. FOUNDER + CONTACT -->
+<!-- 6. CONTACT -->
 <section id="contact" aria-labelledby="contact-title">
   <div class="wrap">
     <div class="label rv"><b>04</b> Contact</div>
-    <h2 class="title rv" id="contact-title" style="margin-bottom:clamp(40px,6vw,72px)">Talk to a real person.</h2>
+    <h2 class="title rv" id="contact-title" style="margin-bottom:clamp(40px,6vw,72px)">Tell us about your project.</h2>
 
     <div class="contact-grid">
-      <div class="founder rv">
-        <!-- Replace the frame with <img src="..." alt="Photo of [Founder Name], founder of WebHorizn"> -->
-        <div class="frame">[FOUNDER PHOTO]</div>
-        <h3>[Founder Name]</h3>
-        <p class="role">Founder, WebHorizn · [City, State], India</p>
-        <div class="story">
-          <p>I have spent 4+ years in web development and digital marketing, building websites and running ads for small and medium businesses.</p>
-          <p>[ADD ONE HONEST LINE ABOUT WHY YOU DO THIS WORK]</p>
-        </div>
+      <div class="contact-intro rv">
+        <p class="case-meta">START A PROJECT</p>
+        <h3>Good work starts with a clear brief.</h3>
+        <p>Tell us a little about your business and what you need. We'll review your enquiry and get back to you with a clear next step.</p>
+        <ul class="contact-points">
+          <li><span>01</span><div><strong>Websites that explain your offer</strong><p>Responsive, well-structured experiences built around your business goals.</p></div></li>
+          <li><span>02</span><div><strong>Landing pages with a purpose</strong><p>Focused pages that help visitors understand what to do next.</p></div></li>
+          <li><span>03</span><div><strong>Advertising that connects</strong><p>Google and Meta Ads planning with clear measurement in mind.</p></div></li>
+        </ul>
+        <p class="contact-promise">No pressure. Just a useful first conversation.</p>
       </div>
 
-      <div class="rv">
+      <div class="contact-form-wrap rv">
+        <h3>Tell us what you need.</h3>
+        <p>A few details are enough to get started.</p>
         <form id="lead-form" class="form" novalidate>
           <div class="field">
             <label for="name">Your name</label>
-            <input id="name" name="name" type="text" autocomplete="name" required aria-describedby="name-error">
+            <input id="name" name="name" type="text" autocomplete="name" required aria-describedby="name-error" placeholder="e.g. Priya Sharma">
             <p class="err" id="name-error" role="alert"></p>
           </div>
 
           <div class="field">
-            <label for="phone">Mobile number</label>
+            <label for="phone">Mobile / WhatsApp number</label>
             <input id="phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" maxlength="16" placeholder="10-digit mobile number" required aria-describedby="phone-error">
             <p class="err" id="phone-error" role="alert"></p>
           </div>
@@ -571,7 +665,7 @@ html:not(.js) .pre{display:none}
           <div class="field">
             <label for="business">Business type</label>
             <select id="business" name="business" required aria-describedby="business-error">
-              <option value="">Select one</option>
+              <option value="">Choose your business type</option>
               <option value="Restaurant or cafe">Restaurant or cafe</option>
               <option value="Clinic or healthcare">Clinic or healthcare</option>
               <option value="Coaching or education">Coaching or education</option>
@@ -579,20 +673,39 @@ html:not(.js) .pre{display:none}
               <option value="Salon or wellness">Salon or wellness</option>
               <option value="Real estate">Real estate</option>
               <option value="Manufacturing or wholesale">Manufacturing or wholesale</option>
+              <option value="Professional services">Professional services</option>
               <option value="Other">Other</option>
             </select>
             <p class="err" id="business-error" role="alert"></p>
           </div>
 
-          <button class="btn btn-accent btn-block" type="submit" id="submit-btn">Get a Free Audit <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+          <div class="field">
+            <label for="service">What can we help with?</label>
+            <select id="service" name="service" required aria-describedby="service-error">
+              <option value="">Choose a service</option>
+              <option value="Website development">Website development</option>
+              <option value="Landing page">Landing page</option>
+              <option value="Google Ads">Google Ads</option>
+              <option value="Meta Ads">Meta Ads</option>
+              <option value="Website and advertising">Website + advertising</option>
+              <option value="Lead generation">Lead generation</option>
+              <option value="Not sure yet">Not sure yet</option>
+            </select>
+            <p class="err" id="service-error" role="alert"></p>
+          </div>
+
+          <div class="field">
+            <label for="details">A little about your project <span style="font-weight:500;letter-spacing:0;text-transform:none">(optional)</span></label>
+            <textarea id="details" name="details" rows="3" maxlength="1200" placeholder="What are you hoping to build or improve?"></textarea>
+          </div>
+
+          <button class="btn btn-accent btn-block" type="submit" id="submit-btn">Request a Free Audit <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
           <p class="status" id="form-status" role="status" aria-live="polite"></p>
-          <p class="privacy">Your details stay private. We only use them to contact you about your enquiry.</p>
+          <p class="privacy">Your details stay private. We only use them to respond to your enquiry.</p>
         </form>
 
-        <div class="or" style="margin:28px 0">or</div>
-
-        <!-- Replace 91XXXXXXXXXX with your WhatsApp number -->
-        <a class="btn btn-line btn-block" href="https://wa.me/91XXXXXXXXXX?text=Hi%20WebHorizn%2C%20I%27d%20like%20a%20free%20audit." data-wa>Chat on WhatsApp</a>
+        <div class="or" style="margin:24px 0">or</div>
+        <a class="btn btn-line btn-block" href="https://wa.me/91XXXXXXXXXX?text=Hi%20WebHorizn%2C%20I%27d%20like%20to%20discuss%20a%20project." data-wa>Chat on WhatsApp</a>
       </div>
     </div>
   </div>
@@ -607,7 +720,7 @@ html:not(.js) .pre{display:none}
       <div class="foot-brand">
         <img class="logo-mark foot-logo" src="logo-mark-white.png" width="40" height="40" alt="WebHorizn logo">
         <p><strong>WebHorizn</strong></p>
-        <p>[City, State], India</p>
+        <p>India</p>
       </div>
       <div>
         <p>Phone: <a href="tel:+91XXXXXXXXXX">+91 XXXXX XXXXX</a></p>
@@ -839,6 +952,7 @@ html:not(.js) .pre{display:none}
   var fName = document.getElementById('name');
   var fPhone = document.getElementById('phone');
   var fBusiness = document.getElementById('business');
+  var fService = document.getElementById('service');
 
   function normalisePhone(v) {
     var d = v.replace(/\D/g, '');
@@ -859,11 +973,12 @@ html:not(.js) .pre{display:none}
     var okName = setError(fName, fName.value.trim().length < 2 ? 'Please enter your name.' : '');
     var okPhone = setError(fPhone, /^[6-9]\d{9}$/.test(normalisePhone(fPhone.value)) ? '' : 'Enter a valid 10-digit mobile number, for example 98765 43210.');
     var okBiz = setError(fBusiness, fBusiness.value ? '' : 'Please choose your business type.');
+    var okService = setError(fService, fService.value ? '' : 'Please choose a service.');
     if (focusFirst) {
-      var first = [fName, fPhone, fBusiness].filter(function (f) { return f.getAttribute('aria-invalid') === 'true'; })[0];
+      var first = [fName, fPhone, fBusiness, fService].filter(function (f) { return f.getAttribute('aria-invalid') === 'true'; })[0];
       if (first) first.focus();
     }
-    return okName && okPhone && okBiz;
+    return okName && okPhone && okBiz && okService;
   }
 
   form.addEventListener('input', function () {
