@@ -15,8 +15,10 @@
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="WebHorizn — minimalist W monogram on paper background">
 <meta name="twitter:image" content="og-image.png">
-<link rel="icon" type="image/png" sizes="64x64" href="favicon.png">
+<link rel="icon" type="image/webp" sizes="32x32" href="favicon-32.webp">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
 <link rel="apple-touch-icon" href="favicon.png">
+<link rel="manifest" href="site.webmanifest">
 <meta property="og:title" content="Websites and ads that bring you real customers.">
 <meta property="og:description" content="Web development and digital marketing for growing businesses in India. Get a free audit.">
 <!-- <link rel="canonical" href="[CANONICAL_URL]"> -->
@@ -27,7 +29,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&display=swap" rel="stylesheet">
 
 <!-- Structured data -->
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "ProfessionalService", "name": "WebHorizn", "description": "Web development and digital marketing for growing businesses in India.", "areaServed": "IN", "email": "hello@example.com", "url": "[CANONICAL_URL]", "sameAs": [], "logo": "Web%20Horizon%20logo.png", "image": "og-image.png", "publisher": {"@type": "Organization", "name": "WebHorizn", "logo": {"@type": "ImageObject", "url": "Web%20Horizon%20logo.png"}}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "ProfessionalService", "name": "WebHorizn", "description": "Web development and digital marketing for growing businesses in India.", "areaServed": "IN", "email": "hello@example.com", "url": "[CANONICAL_URL]", "sameAs": [], "logo": "logo-mark.png", "image": "og-image.png", "publisher": {"@type": "Organization", "name": "WebHorizn", "logo": {"@type": "ImageObject", "url": "logo-mark.png"}}}</script>
 
 <!-- ==================== TRACKING PLACEHOLDERS (uncomment and fill in) ====================
   [A] GA4 (paste in <head>, replace G-XXXXXXX):
@@ -75,7 +77,7 @@ p{max-width:60ch}
 /* Preloader: the logo unveils, then the curtain lifts (hidden for reduced motion) */
 .pre{position:fixed;inset:0;z-index:1000;background:var(--paper);display:grid;place-items:center;transition:transform .8s var(--ease),visibility 0s linear .8s}
 .pre.done{transform:translateY(-101%);visibility:hidden}
-.pre img{width:min(112px,18vw);height:auto}
+.pre img{width:min(112px,18vw);height:auto;object-fit:contain}
 .js .pre img{clip-path:inset(0 0 100% 0);animation:unveil .9s var(--ease) .1s forwards}
 @keyframes unveil{to{clip-path:inset(0 0 -4% 0)}}
 
@@ -95,10 +97,11 @@ section{padding:clamp(80px,11vw,160px) 0;scroll-margin-top:84px}
 .hdr .wrap{height:72px;display:flex;align-items:center;justify-content:space-between;gap:12px;transition:height .4s var(--ease)}
 .hdr.is-scrolled .wrap{height:60px}
 .brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:1.1rem;letter-spacing:-.02em;text-decoration:none;white-space:nowrap}
+.logo-mark-wrap{display:flex}
 /* Wordmark rises letter by letter on load */
 .word{display:inline-flex}
 .word i{display:inline-block;font-style:normal;transform:translateY(105%);animation:rise .7s var(--ease) forwards;animation-delay:calc(.15s + var(--n) * .03s)}
-.logo-mark{width:30px;height:30px;border-radius:8px;display:block;box-shadow:inset 0 0 0 1px rgba(14,14,14,.08);transition:transform .4s var(--ease)}
+.logo-mark{width:30px;height:30px;display:block;object-fit:contain;transition:transform .4s var(--ease)}
 .brand:hover .logo-mark{transform:rotate(-6deg) scale(1.06)}
 .hdr.is-scrolled .logo-mark{width:26px;height:26px}
 @media (max-width:479px){.brand .ext{display:none}.hdr .btn-sm{padding:0 16px;font-size:.88rem}}
@@ -277,7 +280,7 @@ section{padding:clamp(80px,11vw,160px) 0;scroll-margin-top:84px}
 /* Footer */
 .foot{background:var(--ink);color:var(--paper);padding:88px 0 calc(40px + 80px);overflow:clip}
 .foot-grid{display:grid;gap:32px;margin-bottom:72px}
-.foot-brand .foot-logo{width:40px;height:40px;border-radius:10px;margin-bottom:10px;box-shadow:inset 0 0 0 1px rgba(243,240,232,.18)}
+.foot-brand .foot-logo{width:40px;height:40px;margin-bottom:10px;object-fit:contain}
 @media (min-width:800px){.foot-grid{grid-template-columns:repeat(3,1fr)}}
 .foot p{color:var(--mute);margin:0 0 6px;max-width:none}
 .foot strong{color:var(--paper)}
@@ -298,7 +301,7 @@ section{padding:clamp(80px,11vw,160px) 0;scroll-margin-top:84px}
 .hdr.is-invert .brand,.hdr.is-invert .btn-accent:hover{color:var(--paper)}
 .hdr.is-invert .btn-line{border-color:var(--paper);color:var(--paper)}
 .hdr.is-invert .btn-line:hover{background:var(--paper);color:var(--ink)}
-.hdr.is-invert .logo-mark{box-shadow:inset 0 0 0 1px rgba(243,240,232,.2)}
+.hdr.is-invert .logo-mark{content:url("logo-mark-white.png")}
 
 /* Floating WhatsApp (ink, not a fourth color) */
 .wa{position:fixed;right:20px;bottom:20px;z-index:70;width:58px;height:58px;border-radius:var(--r);background:var(--ink);color:var(--paper);display:grid;place-items:center;box-shadow:0 12px 30px rgba(14,14,14,.28);transition:opacity .3s var(--ease),transform .3s var(--ease)}
@@ -337,14 +340,14 @@ html:not(.js) .pre{display:none}
 <div class="fx vig" aria-hidden="true"></div>
 
 <!-- Intro curtain: your real logo unveils, then it lifts -->
-<div class="pre" id="pre" aria-hidden="true"><img src="Web%20Horizon%20logo.png" alt=""></div>
+<div class="pre" id="pre" aria-hidden="true"><img src="logo-mark.png" alt=""></div>
 
 <a class="skip" href="#main">Skip to content</a>
 
 <header class="hdr">
   <div class="wrap">
     <a class="brand" href="#top" aria-label="WebHorizn, back to top">
-      <img class="logo-mark" src="Web%20Horizon%20logo.png" width="30" height="30" alt="WebHorizn logo">
+      <picture class="logo-mark-wrap"><source type="image/webp" srcset="logo-mark.webp"><img class="logo-mark" src="logo-mark.png" width="30" height="30" alt="WebHorizn logo"></picture>
       <span class="word" aria-label="WebHorizn"><i style="--n:0">W</i><i style="--n:1">e</i><i style="--n:2">b</i><i style="--n:3">H</i><i style="--n:4">o</i><i style="--n:5">r</i><i style="--n:6">i</i><i style="--n:7">z</i><i style="--n:8">n</i></span>
     </a>
     <div class="hdr-right">
@@ -602,7 +605,7 @@ html:not(.js) .pre{display:none}
   <div class="wrap">
     <div class="foot-grid">
       <div class="foot-brand">
-        <img class="logo-mark foot-logo" src="Web%20Horizon%20logo.png" width="40" height="40" alt="WebHorizn logo">
+        <img class="logo-mark foot-logo" src="logo-mark-white.png" width="40" height="40" alt="WebHorizn logo">
         <p><strong>WebHorizn</strong></p>
         <p>[City, State], India</p>
       </div>
