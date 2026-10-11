@@ -491,6 +491,69 @@ html:not(.js) .pre{display:none}
 @media(max-width:700px){.hdr-right .call{display:none}}
 @media(max-width:479px){.cta-full{display:none}.cta-short{display:inline}}
 @media(prefers-reduced-motion:reduce){.nav-main a::after{transition:none}.hero-text-link{transition:none}.legal-dialog{animation:none}}
+
+/* Trust section: specifics beat empty claims */
+.why-section{padding-top:clamp(76px,9vw,120px);padding-bottom:clamp(80px,10vw,136px);background:var(--paper-2)}
+.why-heading{display:grid;gap:22px;align-items:end;margin-bottom:clamp(34px,5vw,56px)}
+.why-heading .title{max-width:13ch;font-size:clamp(2.6rem,6.2vw,5.6rem)}
+.why-lead{color:var(--ink-2);max-width:42ch;font-size:clamp(1.02rem,1.4vw,1.2rem)}
+.package-trust{margin:0;padding:0;background:transparent;border:0;border-radius:0}
+.package-trust-kicker{font-size:.75rem;font-weight:800;letter-spacing:.16em;color:var(--ink-2);margin-bottom:16px}
+.package-trust>h3{display:none}
+.package-trust-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:1.5px solid var(--ink);border-bottom:1px solid var(--line)}
+.package-trust-grid article{padding:24px 20px 24px 0;margin-right:20px;border-right:1px solid var(--line)}
+.package-trust-grid article:last-child{border-right:0;margin-right:0}
+.package-trust-grid article>span{display:block;color:var(--accent);font-size:.8rem;font-weight:800;letter-spacing:.12em;margin-bottom:18px}
+.package-trust-grid h4{font-size:clamp(1.05rem,1.55vw,1.45rem);line-height:1.15;letter-spacing:-.03em;margin:0 0 10px}
+.package-trust-grid p{font-size:.92rem;line-height:1.6;color:var(--ink-2);margin:0;max-width:34ch}
+
+/* Portfolio previews: live site capture with a designed fallback */
+.live-projects{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;margin:0 0 clamp(48px,7vw,88px)}
+.live-project{display:flex;flex-direction:column;align-items:stretch;min-width:0;gap:0;border:1px solid var(--line);border-radius:var(--r);overflow:hidden;background:rgba(255,255,255,.35);box-shadow:0 10px 38px rgba(14,14,14,.035);transition:transform .35s var(--ease),box-shadow .35s var(--ease),border-color .35s var(--ease)}
+.live-project:hover{transform:translateY(-5px);box-shadow:0 22px 48px rgba(14,14,14,.10);border-color:rgba(14,14,14,.24)}
+.live-project-preview{position:relative;aspect-ratio:16/10;min-height:230px;overflow:hidden;background:#121212}
+.preview-browser-bar{position:absolute;inset:0 0 auto;height:34px;display:flex;align-items:center;gap:12px;padding:0 13px;background:#f4f0e7;border-bottom:1px solid rgba(14,14,14,.12);color:#45423d;font-size:.67rem;font-weight:700;letter-spacing:.02em;z-index:5}
+.preview-dots{display:flex;gap:4px;align-items:center}
+.preview-dots i{display:block;width:7px;height:7px;border-radius:50%;background:#c5bfb3}
+.preview-browser-bar>span:nth-child(2){flex:1;text-align:center;font-weight:600;opacity:.75}
+.preview-lock{opacity:.7;font-size:.85rem}
+.preview-screen{position:absolute;inset:34px 0 0;overflow:hidden;background:#121212}
+.preview-fallback{position:absolute;inset:0;overflow:hidden;color:#f8f4ec}
+.preview-fallback--fashion{background:radial-gradient(ellipse at 78% 38%,rgba(206,151,76,.32),transparent 35%),linear-gradient(120deg,#111 0%,#25221d 54%,#111 100%)}
+.preview-fallback--fashion:after{content:"";position:absolute;right:9%;top:8%;width:39%;height:86%;background:linear-gradient(145deg,rgba(224,190,139,.42),rgba(30,28,26,.2));border-radius:48% 48% 12% 12%;transform:rotate(7deg);filter:blur(1px)}
+.preview-fallback--agency{background:radial-gradient(ellipse at 75% 40%,rgba(255,92,20,.14),transparent 34%),#050606}
+.preview-brand{position:relative;z-index:1;padding:clamp(14px,2vw,22px) clamp(14px,2.2vw,26px);font-family:Georgia,serif;font-size:clamp(1.05rem,2.4vw,1.9rem);letter-spacing:.07em}
+.preview-brand span{font-family:var(--font);display:block;font-size:.5em;font-weight:700;letter-spacing:.18em;opacity:.7;margin-top:3px}
+.preview-fashion-copy{position:relative;z-index:2;display:flex;align-items:flex-start;flex-direction:column;padding:clamp(14px,2.2vw,26px);max-width:71%;gap:10px}
+.preview-fashion-copy>span:first-child,.preview-agency-copy>span:first-child{font-size:clamp(.48rem,.8vw,.7rem);letter-spacing:.13em;font-weight:800;color:#f0b94f}
+.preview-fashion-copy strong,.preview-agency-copy strong{font-size:clamp(1.5rem,3.8vw,3.1rem);line-height:.91;letter-spacing:-.055em}
+.preview-fashion-copy p,.preview-agency-copy p{font-size:clamp(.55rem,.9vw,.8rem);line-height:1.45;color:rgba(248,244,236,.78);max-width:24ch}
+.preview-fake-cta{display:inline-flex;align-items:center;border:1px solid rgba(248,244,236,.55);padding:8px 10px;margin-top:5px;font-size:clamp(.5rem,.75vw,.65rem);font-weight:800;letter-spacing:.04em}
+.preview-fashion-stamp{position:absolute;z-index:3;bottom:13px;right:14px;font-size:.52rem;line-height:1.5;letter-spacing:.18em;text-align:right;color:rgba(248,244,236,.78)}
+.preview-globe{position:absolute;right:5%;top:0;width:66%;height:100%;border-radius:50%;background:radial-gradient(circle at 45% 42%,rgba(255,124,21,.45) 0%,rgba(255,89,10,.17) 22%,rgba(255,86,10,.04) 46%,transparent 64%);filter:blur(2px)}
+.preview-globe:before{content:"";position:absolute;inset:9% 13% 9% 13%;border-radius:50%;border:1px solid rgba(255,116,35,.5);box-shadow:inset 0 0 24px rgba(255,116,35,.28),0 0 50px rgba(255,87,20,.15)}
+.preview-globe:after{content:"";position:absolute;inset:24% 0 24%;border-top:1px solid rgba(255,116,35,.32);border-bottom:1px solid rgba(255,116,35,.32);border-radius:50%}
+.preview-agency-copy{position:relative;z-index:2;display:flex;align-items:flex-start;flex-direction:column;padding:clamp(16px,2.5vw,28px);max-width:84%;gap:11px}
+.preview-agency-copy>span:first-child{color:#ff955b}
+.preview-agency-copy strong{font-weight:800}
+.preview-agency-copy p{max-width:28ch}
+.preview-label{position:absolute;z-index:6;right:12px;bottom:12px;padding:6px 9px;border:1px solid rgba(255,255,255,.35);border-radius:4px;background:rgba(8,8,8,.72);backdrop-filter:blur(6px);color:#fff;font-size:.62rem;font-weight:800;letter-spacing:.12em}
+.live-project-shot{position:absolute;z-index:3;inset:0;width:100%;height:100%;object-fit:cover;object-position:top center;background:var(--paper-2);transition:transform .75s var(--ease),opacity .3s ease}
+.live-project:hover .live-project-shot{transform:scale(1.025)}
+.live-project-shot.is-unavailable{display:none}
+.live-project-body{display:flex;flex-direction:column;align-items:flex-start;gap:11px;padding:clamp(20px,3vw,32px);flex:1}
+.live-project-body .case-meta{margin:0;font-size:.7rem}
+.live-project-body h3{font-size:clamp(1.65rem,3vw,2.3rem);letter-spacing:-.045em;line-height:1;margin:0}
+.live-project-body>p:not(.case-meta){font-size:.96rem;line-height:1.6;color:var(--ink-2);max-width:46ch;margin:0}
+.project-tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:2px}
+.project-tags span{display:inline-flex;padding:5px 8px;border:1px solid var(--line);border-radius:5px;font-size:.7rem;line-height:1.2;font-weight:700;color:var(--ink-2)}
+.project-link{display:inline-flex;align-items:center;gap:10px;margin-top:auto;padding-top:14px;font-size:.92rem;font-weight:800;text-decoration:none;border-bottom:1.5px solid var(--line);padding-bottom:6px}
+.project-link span{color:var(--accent);font-size:1.1rem}
+.project-link:hover{border-color:var(--accent)}
+@media(min-width:960px){.why-heading{grid-template-columns:1.1fr .9fr;gap:64px}}
+@media(max-width:820px){.package-trust-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.package-trust-grid article:nth-child(2){border-right:0;margin-right:0}.package-trust-grid article:nth-child(3),.package-trust-grid article:nth-child(4){border-top:1px solid var(--line)}.package-trust-grid article{padding:22px 16px 22px 0}.live-projects{grid-template-columns:1fr;max-width:720px;margin-inline:auto;margin-bottom:56px}.live-project-preview{aspect-ratio:16/9;min-height:250px}.preview-fashion-copy strong,.preview-agency-copy strong{font-size:clamp(2rem,6vw,3.4rem)}}
+@media(max-width:560px){.package-trust-grid{grid-template-columns:1fr}.package-trust-grid article,.package-trust-grid article:nth-child(2),.package-trust-grid article:nth-child(3),.package-trust-grid article:nth-child(4){padding:20px 0;border-right:0;border-top:1px solid var(--line);margin:0}.package-trust-grid article:first-child{border-top:0}.package-trust-grid article>span{margin-bottom:9px}.live-project-preview{min-height:220px;aspect-ratio:4/3}.preview-fashion-copy,.preview-agency-copy{max-width:84%;padding:16px}.preview-fashion-copy strong,.preview-agency-copy strong{font-size:clamp(1.85rem,9vw,2.7rem)}.preview-brand{padding:14px 16px}.preview-fake-cta{font-size:.56rem}}
+@media(prefers-reduced-motion:reduce){.live-project,.live-project-shot{transition:none}.live-project:hover{transform:none}}
 </style>
 </head>
 <body>
@@ -511,8 +574,9 @@ html:not(.js) .pre{display:none}
     </a>
     <nav class="nav-main" aria-label="Main navigation">
       <a href="#services">Services</a>
-      <a href="#work">Work</a>
       <a href="#website-pricing">Pricing</a>
+      <a href="#why-webhorizn">Why us</a>
+      <a href="#work">Work</a>
       <a href="#process">Process</a>
       <a href="#faq">FAQs</a>
     </nav>
@@ -523,8 +587,9 @@ html:not(.js) .pre{display:none}
       </summary>
       <nav class="nav-mobile-panel" aria-label="Mobile navigation">
         <a href="#services">Services</a>
-        <a href="#work">Selected work</a>
         <a href="#website-pricing">Website packages</a>
+        <a href="#why-webhorizn">Why WebHorizn</a>
+        <a href="#work">Selected work</a>
         <a href="#process">How it works</a>
         <a href="#faq">FAQs</a>
         <a href="#contact">Contact</a>
@@ -548,21 +613,21 @@ html:not(.js) .pre{display:none}
   <div class="wrap">
     <p class="kicker">WebHorizn · India</p>
     <h1 class="display">
-      <span class="ln"><span>Websites</span></span>
-      <span class="ln"><span>and ads that</span></span>
-      <span class="ln"><span>help turn visits</span></span>
-      <span class="ln"><span><span class="pill">into enquiries.</span></span></span>
+      <span class="ln"><span>Websites that</span></span>
+      <span class="ln"><span>build trust.</span></span>
+      <span class="ln"><span>Ads that reach</span></span>
+      <span class="ln"><span><span class="pill">the right people.</span></span></span>
     </h1>
 
     <div class="hero-bottom">
       <div>
-        <p class="sub">Web development and digital marketing for growing businesses in India.</p>
+        <p class="sub">Make the first impression count—and make the next step obvious. We build websites and digital campaigns for growing businesses in India.</p>
         <div class="cta-row">
           <a class="btn btn-accent" href="#contact">Discuss a Project <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
           <!-- Business WhatsApp number configured. -->
           <a class="btn btn-line" href="https://wa.me/919463481836?text=Hi%20WebHorizn%2C%20I%27d%20like%20to%20discuss%20a%20project." data-wa>Chat on WhatsApp</a>
         </div>
-        <p class="trust">Clear website packages from ₹8,999 · Direct WhatsApp contact · No pressure to proceed</p>
+        <p class="trust">Website packages from ₹8,999 · Written scope before work begins · Direct call, email or WhatsApp</p>
         <a class="hero-text-link" href="#work">See selected work <span aria-hidden="true">↗</span></a>
       </div>
 
@@ -693,34 +758,114 @@ html:not(.js) .pre{display:none}
       <li>Payment terms: 50% advance to start and 50% before final handover. Ownership transfers after full payment.</li>
       <li>Google Business Profile setup depends on Google's eligibility and verification requirements. Basic SEO does not guarantee search rankings.</li>
     </ul>
+
+  </div>
+</section>
+
+<section class="why-section" id="why-webhorizn" aria-labelledby="why-title">
+  <div class="wrap">
+    <div class="label rv"><b>03</b> Why WebHorizn</div>
+    <div class="why-heading">
+      <h2 class="title rv" id="why-title">Good work starts with clear expectations.</h2>
+      <p class="why-lead rv">You should know what is included, what it costs, how decisions are made, and what happens after launch—before you commit.</p>
+    </div>
+    <div class="package-trust rv" aria-label="What you can expect from WebHorizn">
+      <p class="package-trust-kicker">BEFORE YOU COMMIT</p>
+      <h3>Clear terms. No guesswork.</h3>
+      <div class="package-trust-grid">
+        <article>
+          <span>01</span>
+          <h4>Know the price</h4>
+          <p>Website packages show the price and inclusions up front, so you can compare before deciding.</p>
+        </article>
+        <article>
+          <span>02</span>
+          <h4>Agree the scope</h4>
+          <p>Get the deliverables, page count, revision rounds and payment terms in writing before work starts.</p>
+        </article>
+        <article>
+          <span>03</span>
+          <h4>Talk directly</h4>
+          <p>Use WhatsApp, phone or email to discuss your project. No complicated booking process.</p>
+        </article>
+        <article>
+          <span>04</span>
+          <h4>Know what you own</h4>
+          <p>Website ownership transfers after full payment and handover. First-year inclusions and possible renewal charges are stated clearly.</p>
+        </article>
+      </div>
+    </div>
   </div>
 </section>
 
 <!-- 5. OUR WORK -->
 <section id="work" aria-labelledby="work-title" style="padding-top:0">
   <div class="wrap">
-    <div class="label rv"><b>03</b> Selected work</div>
+    <div class="label rv"><b>04</b> Selected work</div>
     <h2 class="title rv" id="work-title" style="margin-bottom:clamp(40px,6vw,72px)">Recent projects.</h2>
     <p class="work-intro rv">Explore live website links alongside clearly labelled concept designs. Concept projects show our approach; they are not client results.</p>
 
-      <div class="live-projects rv" aria-label="Live website examples">
-        <article class="live-project">
-          <div class="live-project-mark" aria-hidden="true">JK<br>MOGA</div>
-          <div class="live-project-info">
+      <div class="live-projects" aria-label="Live website examples">
+        <article class="live-project live-project--fashion rv">
+          <div class="live-project-preview">
+            <div class="preview-browser-bar" aria-hidden="true">
+              <span class="preview-dots"><i></i><i></i><i></i></span>
+              <span>jkmoga.com</span>
+              <span class="preview-lock">↗</span>
+            </div>
+            <div class="preview-screen">
+              <div class="preview-fallback preview-fallback--fashion">
+                <div class="preview-brand">JK MOGA <span>MEN'S FASHION</span></div>
+                <div class="preview-fashion-copy">
+                  <span>STYLE, MADE PERSONAL</span>
+                  <strong>Discover<br>JK Moga.</strong>
+                  <p>Everyday style. A sharper first impression.</p>
+                  <span class="preview-fake-cta">EXPLORE COLLECTIONS ↗</span>
+                </div>
+                <div class="preview-fashion-stamp">LIVE WEBSITE<br><b>RETAIL</b></div>
+              </div>
+              <img class="live-project-shot" src="https://image.thum.io/get/width/1000/crop/700/noanimate/https://jkmoga.com/" alt="Preview of the live JK Moga men's fashion website" loading="lazy" decoding="async" referrerpolicy="no-referrer">
+            </div>
+            <span class="preview-label">LIVE WEBSITE</span>
+          </div>
+          <div class="live-project-body">
             <p class="case-meta">Live website · Retail</p>
             <h3>JK Moga</h3>
-            <p>A men’s fashion storefront with collection browsing, store location, opening hours and clear contact links.</p>
+            <p>A men's fashion storefront designed to make the brand, collections and store contact easy to discover.</p>
+            <div class="project-tags"><span>Retail</span><span>Product discovery</span><span>Store contact</span></div>
+            <a class="project-link" href="https://jkmoga.com/" target="_blank" rel="noopener noreferrer">Visit live website <span aria-hidden="true">↗</span></a>
           </div>
-          <a class="btn btn-line btn-sm" href="https://jkmoga.com/" target="_blank" rel="noopener noreferrer">Visit website ↗</a>
         </article>
-        <article class="live-project live-project--kiwi">
-          <div class="live-project-mark" aria-hidden="true">KIWI<br>DIGIHUB</div>
-          <div class="live-project-info">
+
+        <article class="live-project live-project--agency rv">
+          <div class="live-project-preview">
+            <div class="preview-browser-bar" aria-hidden="true">
+              <span class="preview-dots"><i></i><i></i><i></i></span>
+              <span>kiwidigihub.com</span>
+              <span class="preview-lock">↗</span>
+            </div>
+            <div class="preview-screen">
+              <div class="preview-fallback preview-fallback--agency">
+                <div class="preview-brand">KIWI <span>DIGIHUB</span></div>
+                <div class="preview-globe" aria-hidden="true"></div>
+                <div class="preview-agency-copy">
+                  <span>DIGITAL, WITH DIRECTION</span>
+                  <strong>Elevate<br>your brand.</strong>
+                  <p>Strategy, creative and digital experiences.</p>
+                  <span class="preview-fake-cta">GET A QUOTE ↗</span>
+                </div>
+              </div>
+              <img class="live-project-shot" src="https://image.thum.io/get/width/1000/crop/700/noanimate/https://kiwidigihub.com/" alt="Preview of the live Kiwi DigiHub digital services website" loading="lazy" decoding="async" referrerpolicy="no-referrer">
+            </div>
+            <span class="preview-label">LIVE WEBSITE</span>
+          </div>
+          <div class="live-project-body">
             <p class="case-meta">Live website · Digital agency</p>
             <h3>Kiwi DigiHub</h3>
-            <p>A digital-agency website presenting marketing, video editing and design services with direct enquiry paths.</p>
+            <p>A digital-services website presenting marketing, video editing and creative services with a clear route to enquire.</p>
+            <div class="project-tags"><span>Digital services</span><span>Creative</span><span>Enquiries</span></div>
+            <a class="project-link" href="https://kiwidigihub.com/" target="_blank" rel="noopener noreferrer">Visit live website <span aria-hidden="true">↗</span></a>
           </div>
-          <a class="btn btn-line btn-sm" href="https://kiwidigihub.com/" target="_blank" rel="noopener noreferrer">Visit website ↗</a>
         </article>
       </div>
 
@@ -813,37 +958,42 @@ html:not(.js) .pre{display:none}
 <section class="dark" id="process" aria-labelledby="process-title">
   <div class="wrap proc">
     <div class="proc-l">
-      <div class="label rv"><b>04</b> How it works</div>
-      <h2 class="title rv" id="process-title">Three steps. No surprises.</h2>
+      <div class="label rv"><b>05</b> How it works</div>
+      <h2 class="title rv" id="process-title">Four steps. No surprises.</h2>
       <p class="risk rv">No lock-in. No pressure. Start with a conversation.</p>
     </div>
 
     <ol class="timeline" id="timeline">
       <li class="step rv">
         <div class="step-no">STEP 01</div>
-        <h3>First conversation</h3>
-        <p>A short, no-pressure conversation to understand your business and goals.</p>
+        <h3>Start with a conversation</h3>
+        <p>Tell us about your business, who you serve and what you want to improve. We'll help you identify a sensible next step.</p>
       </li>
       <li class="step rv">
         <div class="step-no">STEP 02</div>
-        <h3>Plan and proposal</h3>
-        <p>You get a clear plan and a written price. You decide, and only then we start.</p>
+        <h3>Agree the scope and price</h3>
+        <p>Get a written plan with deliverables, revision rounds and payment terms. We begin only after the scope is agreed.</p>
       </li>
       <li class="step rv">
         <div class="step-no">STEP 03</div>
-        <h3>Build, launch and handover</h3>
-        <p>We build and launch the agreed website, walk through it with you, and hand over ownership after final payment.</p>
+        <h3>Share details and review</h3>
+        <p>Provide your brand details, content and images. Review the design and send feedback within the agreed revision rounds.</p>
       </li>
-    </ol>
+      <li class="step rv">
+        <div class="step-no">STEP 04</div>
+        <h3>Approve, launch and hand over</h3>
+        <p>We launch the approved website and hand over ownership after final payment. Advertising setup and ongoing management follow the separately agreed scope.</p>
+      </li>
+    </ol>/ol>
   </div>
 </section>
 
-<!-- 6. CONTACT -->
+<!-- 7. FAQ + CONTACT -->
 <section id="faq" aria-labelledby="faq-title" class="faq-section">
   <div class="wrap">
     <div class="faq-layout">
       <div class="faq-copy">
-        <div class="label rv"><b>05</b> Before we begin</div>
+        <div class="label rv"><b>06</b> Before we begin</div>
         <h2 class="title rv" id="faq-title">Good questions. Straight answers.</h2>
         <p class="faq-intro rv">Clear expectations make projects easier for everyone. Here is what to know before we start.</p>
         <p class="faq-cta rv">Still unsure? <a href="https://wa.me/919463481836?text=Hi%20WebHorizn%2C%20I%20have%20a%20question%20about%20a%20website%20or%20digital%20marketing%20project." target="_blank" rel="noopener noreferrer" data-wa>Ask on WhatsApp ↗</a></p>
@@ -867,7 +1017,7 @@ html:not(.js) .pre{display:none}
 
 <section id="contact" aria-labelledby="contact-title">
   <div class="wrap">
-    <div class="label rv"><b>06</b> Contact</div>
+    <div class="label rv"><b>07</b> Contact</div>
     <h2 class="title rv" id="contact-title" style="margin-bottom:clamp(40px,6vw,72px)">Tell us about your project.</h2>
 
     <div class="contact-grid">
@@ -1068,6 +1218,15 @@ html:not(.js) .pre{display:none}
 
   document.querySelectorAll('[data-wa]').forEach(function (a) {
     a.addEventListener('click', function () { track('whatsapp_click', 'Contact'); });
+  });
+
+  document.querySelectorAll('.live-project-shot').forEach(function (img) {
+    function markUnavailable() { img.classList.add('is-unavailable'); }
+    if (img.complete) {
+      if (!img.naturalWidth) markUnavailable();
+    } else {
+      img.addEventListener('error', markUnavailable, { once: true });
+    }
   });
 
   var mobileMenu = document.querySelector('.nav-mobile');
