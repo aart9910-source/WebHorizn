@@ -80,27 +80,54 @@ module.exports = async function handler(req, res) {
 
   try {
     // Send a URL-encoded payload so Apps Script can read it from e.parameter.
+    // Reuse the same request_id on bounded retries. The Apps Script handler
+    // deduplicates that ID, so a lost/404 ContentService response won't add
+    // duplicate rows if the first execution actually saved the lead.
     const payload = JSON.stringify({ ...lead, _token: secret });
     const encodedBody = new URLSearchParams({ payload }).toString();
 
-    const upstream = await fetch(scriptUrl, {
-      method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8" },
-      body: encodedBody,
-      redirect: "follow"
-    });
+    let upstream;
+    let responseText = "";
+    let responseContentType = "unknown";
+    let responseHost = "unknown";
+    let result = null;
 
-    const responseText = await upstream.text();
-    const responseContentType = upstream.headers.get("content-type") || "unknown";
-    const responseHost = (() => {
-      try { return new URL(upstream.url).hostname; } catch (_) { return "unknown"; }
-    })();
+    for (let attempt = 0; attempt < 3; attempt++) {
+      upstream = await fetch(scriptUrl, {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8" },
+        body: encodedBody,
+        redirect: "follow"
+      });
 
-    let result;
-    try {
-      result = JSON.parse(responseText);
-    } catch (_) {
-      result = null;
+      responseText = await upstream.text();
+      responseContentType = upstream.headers.get("content-type") || "unknown";
+      responseHost = (() => {
+        try { return new URL(upstream.url).hostname; } catch (_) { return "unknown"; }
+      })();
+
+      try {
+        result = JSON.parse(responseText);
+      } catch (_) {
+        result = null;
+      }
+
+      if (upstream.ok && result && result.status === "success") {
+        break;
+      }
+
+      // Google has a publicly reported intermittent Apps Script Web App 404 /
+      // HTML response issue. Retry only those ambiguous HTML/404 responses.
+      // Do not retry explicit JSON validation/authorization failures.
+      const looksLikeGoogleRoutingFailure =
+        upstream.status === 404 ||
+        (!result && responseContentType.toLowerCase().includes("text/html"));
+
+      if (!looksLikeGoogleRoutingFailure || attempt === 2) {
+        break;
+      }
+
+      await new Promise(resolve => setTimeout(resolve, attempt === 0 ? 350 : 800));
     }
 
     if (!upstream.ok || !result || result.status !== "success") {
