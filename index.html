@@ -361,10 +361,6 @@ section{padding:clamp(80px,11vw,160px) 0;scroll-margin-top:84px}
 .foot:hover .js .giant.in,.js .giant.in:hover{color:#2E2C28}
 @media (min-width:960px){.foot{padding-bottom:40px}}
 
-/* Custom cursor ring (desktop/fine pointers only) */
-.cur{position:fixed;top:0;left:0;width:34px;height:34px;border:1.5px solid var(--ink);border-radius:50%;pointer-events:none;z-index:950;transform:translate(-50%,-50%);mix-blend-mode:multiply;transition:width .3s var(--ease),height .3s var(--ease),background-color .3s var(--ease),opacity .3s;will-change:transform}
-.cur.hot{width:58px;height:58px;background:rgba(255,79,31,.22);border-color:var(--accent)}
-@media (pointer:coarse){.cur{display:none}}
 /* Header inverts itself while over the dark sections (ink <-> paper only) */
 .hdr.is-invert{background:rgba(14,14,14,.92);border-bottom-color:rgba(243,240,232,.16)}
 .hdr.is-invert .brand,.hdr.is-invert .btn-accent:hover{color:var(--paper)}
@@ -404,7 +400,6 @@ html:not(.js) .pre{display:none}
 </head>
 <body>
 
-<div class="cur" id="cur" aria-hidden="true"></div>
 <div class="fx grain" aria-hidden="true"></div>
 <div class="fx vig" aria-hidden="true"></div>
 
@@ -894,25 +889,6 @@ html:not(.js) .pre{display:none}
         });
       }
     }, { passive: true });
-  }
-
-  /* ===== CUSTOM CURSOR + HEADER INVERSION ON DARK SECTIONS ===== */
-  var cur = document.getElementById('cur');
-  if (cur && !reduce && window.matchMedia('(pointer:fine)').matches) {
-    document.body.style.cursor = 'none';
-    document.querySelectorAll('a,button,input,select').forEach(function (el) { el.style.cursor = 'none'; });
-    var cx = 0, cy = 0, tx = 0, ty = 0, raf = null;
-    window.addEventListener('pointermove', function (e) { tx = e.clientX; ty = e.clientY; }, { passive: true });
-    (function loop() {
-      cx += (tx - cx) * .18; cy += (ty - cy) * .18;
-      cur.style.transform = 'translate(' + (cx - 17) + 'px,' + (cy - 17) + 'px)';
-      raf = requestAnimationFrame(loop);
-    })();
-    document.addEventListener('pointerover', function (e) {
-      cur.classList.toggle('hot', !!e.target.closest('a,button,input,select,label'));
-    });
-    document.addEventListener('pointerdown', function () { cur.style.width = cur.style.height = '24px'; });
-    document.addEventListener('pointerup', function () { cur.style.width = cur.style.height = ''; });
   }
 
   /* Header turns ink-on-paper while over dark sections/ticker/footer.
