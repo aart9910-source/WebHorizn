@@ -6,7 +6,7 @@
 <script>document.documentElement.classList.add('js')</script>
 
 <title>WebHorizn — Websites and Ads That Bring Real Customers</title>
-<meta name="description" content="Web development and digital marketing for growing businesses in India. Get a free audit. We reply within 2 hours (10am to 7pm).">
+<meta name="description" content="Web development and digital marketing for growing businesses in India. Website packages from ₹8,999, plus a free audit for advertising projects.">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="en_IN">
 <meta property="og:site_name" content="WebHorizn">
@@ -20,7 +20,7 @@
 <link rel="apple-touch-icon" href="favicon.png">
 <link rel="manifest" href="site.webmanifest">
 <meta property="og:title" content="Websites and ads that bring you real customers.">
-<meta property="og:description" content="Web development and digital marketing for growing businesses in India. Get a free audit.">
+<meta property="og:description" content="Web development and digital marketing for growing businesses in India. Website packages from ₹8,999, plus a free audit for advertising projects.">
 <!-- <link rel="canonical" href="[CANONICAL_URL]"> -->
 <meta name="twitter:card" content="summary_large_image">
 
@@ -262,6 +262,34 @@ section{padding:clamp(80px,11vw,160px) 0;scroll-margin-top:84px}
 .work-foot p{color:var(--ink-2);margin:0}
 @media (min-width:800px){.work-foot{flex-direction:row;justify-content:space-between;align-items:center}}
 
+
+/* Website packages: transparent scope and prices in the existing editorial style */
+.package-intro{color:var(--ink-2);max-width:64ch;margin-top:22px}
+.package-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;margin-top:clamp(36px,5vw,64px);align-items:stretch}
+.package-card{border:1.5px solid var(--ink);border-radius:var(--r);padding:clamp(24px,4vw,42px);display:flex;flex-direction:column;min-width:0;background:rgba(255,255,255,.22)}
+.package-card--featured{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.package-card .package-kicker{font-size:.78rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-2);margin:0 0 14px}
+.package-card--featured .package-kicker{color:var(--accent-2)}
+.package-card h3{font-size:clamp(1.8rem,3.2vw,2.6rem);font-weight:800;letter-spacing:-.045em;line-height:1.02}
+.package-card .package-fit{color:var(--ink-2);margin-top:12px;min-height:3em;max-width:38ch}
+.package-card--featured .package-fit{color:#CFCBC0}
+.package-price{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin:26px 0 4px}
+.package-price strong{font-size:clamp(2.7rem,5vw,4.2rem);letter-spacing:-.065em;line-height:1;font-weight:800}
+.package-price span{font-size:.9rem;font-weight:600;color:var(--ink-2)}
+.package-card--featured .package-price span{color:#CFCBC0}
+.package-list{list-style:none;padding:22px 0 28px;margin:20px 0 28px;border-top:1px solid var(--line);display:grid;gap:11px}
+.package-card--featured .package-list{border-color:rgba(243,240,232,.2)}
+.package-list li{display:grid;grid-template-columns:18px minmax(0,1fr);gap:9px;align-items:start;font-size:.94rem;line-height:1.45;color:var(--ink-2)}
+.package-list li::before{content:"✓";font-weight:800;color:var(--accent);line-height:1.5}
+.package-card--featured .package-list li{color:#E0DCD3}
+.package-card .btn{align-self:flex-start;margin-top:auto;max-width:100%;white-space:normal;text-align:center}
+.package-card--featured .btn-accent:hover{background:var(--paper);color:var(--ink)}
+.package-notes{margin-top:28px;padding-top:22px;border-top:1px solid var(--line);display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px 32px;list-style:none}
+.package-notes li{display:grid;grid-template-columns:16px minmax(0,1fr);gap:9px;color:var(--ink-2);font-size:.9rem;line-height:1.5}
+.package-notes li::before{content:"•";font-size:1.3rem;line-height:1;color:var(--accent);font-weight:800}
+.package-selection{font-size:.9rem;color:var(--ink-2);margin:-14px 0 2px}
+@media(max-width:820px){.package-grid{grid-template-columns:1fr}.package-card .package-fit{min-height:0}.package-notes{grid-template-columns:1fr}}
+
 /* How it works (dark) */
 .dark{background:var(--ink);color:var(--paper)}
 .proc{display:grid;gap:64px}
@@ -463,25 +491,25 @@ html:not(.js) .pre{display:none}
         <span class="idx">01</span>
         <h3><span>Website Development</span></h3>
         <p>A fast website that shows your business well on every phone.</p>
-        <span class="price">From Rs [X]</span>
+        <span class="price">From ₹8,999</span>
       </li>
       <li class="row rv">
         <span class="idx">02</span>
         <h3><span>Landing Pages</span></h3>
         <p>One focused page that turns ad clicks into enquiries.</p>
-        <span class="price">From Rs [X]</span>
+        <span class="price">Quoted to scope</span>
       </li>
       <li class="row rv">
         <span class="idx">03</span>
         <h3><span>Google Ads</span></h3>
         <p>Show up when people nearby search for what you sell.</p>
-        <span class="price">Management from Rs [X]/month</span>
+        <span class="price">Management fee quoted after audit</span>
       </li>
       <li class="row rv">
         <span class="idx">04</span>
         <h3><span>Meta Ads</span></h3>
         <p>Reach nearby customers on Facebook and Instagram.</p>
-        <span class="price">Management from Rs [X]/month</span>
+        <span class="price">Management fee quoted after audit</span>
       </li>
       <li class="row rv">
         <span class="idx">05</span>
@@ -495,10 +523,71 @@ html:not(.js) .pre{display:none}
   </div>
 </section>
 
-<!-- 4. OUR WORK -->
+<!-- 4. WEBSITE PACKAGES -->
+<section id="website-pricing" aria-labelledby="website-pricing-title">
+  <div class="wrap">
+    <div class="label rv"><b>02</b> Website packages</div>
+    <h2 class="title rv" id="website-pricing-title">Clear scope. Clear price.</h2>
+    <p class="package-intro rv">Choose a website package with its inclusions listed up front. Landing pages and advertising management are scoped separately to suit your goals.</p>
+
+    <div class="package-grid">
+      <article class="package-card rv">
+        <p class="package-kicker">Basic website</p>
+        <h3>Launch essentials.</h3>
+        <p class="package-fit">For local businesses that need a polished, easy-to-use online presence.</p>
+        <div class="package-price"><strong>₹8,999</strong><span>one-time</span></div>
+        <ul class="package-list">
+          <li>4-page professional website</li>
+          <li>Responsive design for mobile, tablet, and desktop</li>
+          <li>Domain and web hosting for 1 year</li>
+          <li>SSL certificate</li>
+          <li>WhatsApp chat and enquiry form</li>
+          <li>Google Maps integration and basic SEO setup</li>
+          <li>2 rounds of design changes</li>
+          <li>30 days of post-launch support</li>
+          <li>Website ownership after full payment</li>
+          <li>3-day delivery target*</li>
+        </ul>
+        <a class="btn btn-line" href="#contact" data-package="Basic">Choose Basic <span aria-hidden="true">↗</span></a>
+      </article>
+
+      <article class="package-card package-card--featured rv">
+        <p class="package-kicker">Standard website · More included</p>
+        <h3>Build a stronger presence.</h3>
+        <p class="package-fit">For businesses that also need branded assets and business email.</p>
+        <div class="package-price"><strong>₹12,999</strong><span>one-time</span></div>
+        <ul class="package-list">
+          <li>6-page professional website</li>
+          <li>Responsive design for mobile, tablet, and desktop</li>
+          <li>Domain and web hosting for 1 year</li>
+          <li>Professional business email for 1 year</li>
+          <li>SSL certificate</li>
+          <li>WhatsApp chat and enquiry form</li>
+          <li>Google Maps integration and basic SEO setup</li>
+          <li>Google Business Profile setup*</li>
+          <li>Professional logo design and social media links</li>
+          <li>3 rounds of design changes</li>
+          <li>30 days of post-launch support</li>
+          <li>Website ownership after full payment</li>
+          <li>3-day delivery target*</li>
+        </ul>
+        <a class="btn btn-accent" href="#contact" data-package="Standard">Choose Standard <span aria-hidden="true">↗</span></a>
+      </article>
+    </div>
+
+    <ul class="package-notes">
+      <li>Delivery is a target from the point we receive the required content, assets, payment, and approvals.</li>
+      <li>Domain, hosting, and (for Standard) business email are included for the first year. Provider renewal charges may apply after that.</li>
+      <li>Payment terms: 50% advance to start and 50% before final handover. Ownership transfers after full payment.</li>
+      <li>Google Business Profile setup depends on Google's eligibility and verification requirements. Basic SEO does not guarantee search rankings.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- 5. OUR WORK -->
 <section id="work" aria-labelledby="work-title" style="padding-top:0">
   <div class="wrap">
-    <div class="label rv"><b>02</b> Selected work</div>
+    <div class="label rv"><b>03</b> Selected work</div>
     <h2 class="title rv" id="work-title" style="margin-bottom:clamp(40px,6vw,72px)">Recent projects.</h2>
     <p class="work-intro rv">A look at how we approach clear, responsive digital experiences. These concept projects demonstrate our process; they are not presented as client results.</p>
 
@@ -591,7 +680,7 @@ html:not(.js) .pre{display:none}
 <section class="dark" id="process" aria-labelledby="process-title">
   <div class="wrap proc">
     <div class="proc-l">
-      <div class="label rv"><b>03</b> How it works</div>
+      <div class="label rv"><b>04</b> How it works</div>
       <h2 class="title rv" id="process-title">Three steps. No surprises.</h2>
       <p class="risk rv">No lock-in. No pressure. Start with a free audit.</p>
     </div>
@@ -619,7 +708,7 @@ html:not(.js) .pre{display:none}
 <!-- 6. CONTACT -->
 <section id="contact" aria-labelledby="contact-title">
   <div class="wrap">
-    <div class="label rv"><b>04</b> Contact</div>
+    <div class="label rv"><b>05</b> Contact</div>
     <h2 class="title rv" id="contact-title" style="margin-bottom:clamp(40px,6vw,72px)">Tell us about your project.</h2>
 
     <div class="contact-grid">
@@ -638,7 +727,9 @@ html:not(.js) .pre{display:none}
       <div class="contact-form-wrap rv">
         <h3>Tell us what you need.</h3>
         <p>A few details are enough to get started.</p>
+        <p class="package-selection" id="package-selection" aria-live="polite">Optional: choose a website package above, or leave this blank if you are not sure.</p>
         <form id="lead-form" class="form" novalidate>
+          <input type="hidden" id="website-package" name="website_package" value="">
           <div class="field">
             <label for="name">Your name</label>
             <input id="name" name="name" type="text" autocomplete="name" required aria-describedby="name-error" placeholder="e.g. Priya Sharma">
@@ -942,6 +1033,19 @@ html:not(.js) .pre{display:none}
   var fPhone = document.getElementById('phone');
   var fBusiness = document.getElementById('business');
   var fService = document.getElementById('service');
+  var packageInput = document.getElementById('website-package');
+  var packageSelection = document.getElementById('package-selection');
+  var packageDefaultText = 'Optional: choose a website package above, or leave this blank if you are not sure.';
+
+  document.querySelectorAll('[data-package]').forEach(function (link) {
+    link.addEventListener('click', function () {
+      var chosen = link.getAttribute('data-package');
+      if (packageInput) packageInput.value = chosen;
+      if (packageSelection) packageSelection.textContent = chosen + ' Website selected. Complete the form and we will review your requirements.';
+      if (fService) fService.value = 'Website development';
+      track('website_package_select', chosen);
+    });
+  });
 
   function normalisePhone(v) {
     var d = v.replace(/\D/g, '');
@@ -1004,6 +1108,7 @@ html:not(.js) .pre{display:none}
         if (!res.ok) throw new Error('HTTP ' + res.status);
         track('lead_form_submit', 'Lead');
         form.reset();
+        if (packageSelection) packageSelection.textContent = packageDefaultText;
         status.classList.add('status-ok');
         status.textContent = 'Thank you! We have your details and will reply within 2 hours (10am to 7pm).';
         /* Gentle confirmation pulse on the success message */
