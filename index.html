@@ -1519,11 +1519,19 @@ html:not(.js) .pre{display:none}
     if (form.querySelector('[aria-invalid="true"]')) validate(false);
   });
 
+  // Reuse one submission ID after a reported failure, so safe retries are possible.
+  var pendingLeadRequestId = null;
+
   form.addEventListener('submit', function (ev) {
     ev.preventDefault();
     status.className = 'status';
     status.textContent = '';
     if (!validate(true)) return;
+    if (!pendingLeadRequestId) {
+      pendingLeadRequestId = (window.crypto && typeof window.crypto.randomUUID === 'function')
+        ? window.crypto.randomUUID()
+        : 'lead-' + Date.now() + '-' + Math.random().toString(36).slice(2);
+    }
 
     var detailsField = document.getElementById('details');
     var phone = normalisePhone(fPhone.value);
@@ -1537,6 +1545,7 @@ html:not(.js) .pre{display:none}
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
+        request_id: pendingLeadRequestId,
         name: fName.value.trim(),
         phone: phone,
         city: fCity.value.trim(),
@@ -1559,6 +1568,7 @@ html:not(.js) .pre{display:none}
         status.className = 'status status-ok';
         status.textContent = 'Thanks — your enquiry has been submitted to WebHorizn. Your details have been saved for follow-up. If you would also like to message us directly, use the separate Chat on WhatsApp link below.';
         form.reset();
+        pendingLeadRequestId = null;
         if (packageInput) packageInput.value = '';
         if (packageSelection) packageSelection.textContent = packageDefaultText;
       })
