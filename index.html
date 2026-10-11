@@ -29,7 +29,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&display=swap" rel="stylesheet">
 
 <!-- Structured data -->
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "ProfessionalService", "name": "WebHorizn", "description": "Web development and digital marketing for growing businesses in India.", "areaServed": "IN", "email": "webhorizn@gmail.com", "telephone": "+919463481836", "contactPoint": {"@type": "ContactPoint", "telephone": "+919463481836", "email": "webhorizn@gmail.com", "contactType": "sales", "availableLanguage": ["English", "Hindi"]}, "url": "https://webhorizn.vercel.app/", "sameAs": [], "logo": "https://webhorizn.vercel.app/logo-mark.png", "image": "https://webhorizn.vercel.app/og-image.png", "publisher": {"@type": "Organization", "name": "WebHorizn", "logo": {"@type": "ImageObject", "url": "logo-mark.png"}}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "ProfessionalService", "name": "WebHorizn", "description": "Web development and digital marketing for growing businesses in India.", "areaServed": "IN", "email": "webhorizn@gmail.com", "telephone": "+919463481836", "contactPoint": {"@type": "ContactPoint", "telephone": "+919463481836", "email": "webhorizn@gmail.com", "contactType": "sales"}, "url": "https://webhorizn.vercel.app/", "sameAs": [], "logo": "https://webhorizn.vercel.app/logo-mark.png", "image": "https://webhorizn.vercel.app/og-image.png", "publisher": {"@type": "Organization", "name": "WebHorizn", "logo": {"@type": "ImageObject", "url": "logo-mark.png"}}}</script>
 
 <!-- ==================== TRACKING PLACEHOLDERS (uncomment and fill in) ====================
   [A] GA4 (paste in <head>, replace G-XXXXXXX):
@@ -405,7 +405,7 @@ section{padding:clamp(80px,11vw,160px) 0;scroll-margin-top:84px}
 @media (max-width:600px){.js h2.title.wsplit .w>i{transition-delay:calc(var(--k)*.03s)}}
 
 /* JS-free safety net: curtain lifts itself after ~2.6s no matter what */
-html.js .pre{animation:lift 0s linear 2.6s forwards}
+html.js .pre{animation:lift 0s linear 1.2s forwards}
 @keyframes lift{to{transform:translateY(-101%);visibility:hidden;pointer-events:none}}
 
 /* Fallbacks when JS never runs: reveals are .js-scoped so content shows; hide the curtain */
@@ -557,8 +557,8 @@ html:not(.js) .pre{display:none}
     <p class="kicker">WebHorizn · India</p>
     <h1 class="display">
       <span class="ln"><span>Websites</span></span>
-      <span class="ln"><span>and ads built to</span></span>
-      <span class="ln"><span>turn attention</span></span>
+      <span class="ln"><span>and ads that</span></span>
+      <span class="ln"><span>help turn visits</span></span>
       <span class="ln"><span><span class="pill">into enquiries.</span></span></span>
     </h1>
 
@@ -1074,8 +1074,8 @@ html:not(.js) .pre{display:none}
     };
     if (reduce) { kill(); }
     else {
-      window.addEventListener('load', function () { setTimeout(kill, 650); });
-      setTimeout(kill, 2200); /* hard safety cap */
+      window.addEventListener('load', function () { setTimeout(kill, 160); });
+      setTimeout(kill, 1100); /* hard safety cap */
     }
   }
 
