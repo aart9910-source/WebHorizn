@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://webhorizn.vercel.app/sitemap.xml
