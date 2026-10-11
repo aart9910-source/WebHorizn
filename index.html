@@ -10,18 +10,18 @@
 <meta property="og:type" content="website">
 <meta property="og:locale" content="en_IN">
 <meta property="og:site_name" content="WebHorizn">
-<meta property="og:image" content="og-image.png">
+<meta property="og:image" content="https://webhorizn.vercel.app/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="WebHorizn — minimalist W monogram on paper background">
-<meta name="twitter:image" content="og-image.png">
+<meta name="twitter:image" content="https://webhorizn.vercel.app/og-image.png">
 <link rel="icon" type="image/webp" sizes="32x32" href="favicon-32.webp">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
 <link rel="apple-touch-icon" href="favicon.png">
 <link rel="manifest" href="site.webmanifest">
 <meta property="og:title" content="Websites and ads that bring you real customers.">
 <meta property="og:description" content="Web development and digital marketing for growing businesses in India. Website packages from ₹8,999, plus a free audit for advertising projects.">
-<!-- <link rel="canonical" href="[CANONICAL_URL]"> -->
+<link rel="canonical" href="https://webhorizn.vercel.app/">
 <meta name="twitter:card" content="summary_large_image">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -29,7 +29,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&display=swap" rel="stylesheet">
 
 <!-- Structured data -->
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "ProfessionalService", "name": "WebHorizn", "description": "Web development and digital marketing for growing businesses in India.", "areaServed": "IN", "email": "hello@example.com", "url": "[CANONICAL_URL]", "sameAs": [], "logo": "logo-mark.png", "image": "og-image.png", "publisher": {"@type": "Organization", "name": "WebHorizn", "logo": {"@type": "ImageObject", "url": "logo-mark.png"}}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "ProfessionalService", "name": "WebHorizn", "description": "Web development and digital marketing for growing businesses in India.", "areaServed": "IN", "email": "webhorizn@gmail.com", "url": "https://webhorizn.vercel.app/", "sameAs": [], "logo": "https://webhorizn.vercel.app/logo-mark.png", "image": "https://webhorizn.vercel.app/og-image.png", "publisher": {"@type": "Organization", "name": "WebHorizn", "logo": {"@type": "ImageObject", "url": "logo-mark.png"}}}</script>
 
 <!-- ==================== TRACKING PLACEHOLDERS (uncomment and fill in) ====================
   [A] GA4 (paste in <head>, replace G-XXXXXXX):
@@ -418,6 +418,48 @@ html:not(.js) .pre{display:none}
   .pre{display:none}
   .js .giant{clip-path:none}
 }
+
+/* Live website links added from the supplied portfolio reference */
+.live-projects{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin:0 0 clamp(44px,6vw,72px)}
+.live-project{display:grid;grid-template-columns:64px minmax(0,1fr) auto;align-items:center;gap:18px;padding:20px;border:1px solid var(--line);border-radius:var(--r);background:rgba(255,255,255,.42)}
+.live-project-mark{width:64px;height:64px;display:grid;place-items:center;border-radius:12px;background:var(--ink);color:var(--paper);font-size:.7rem;font-weight:800;line-height:1.1;text-align:center;letter-spacing:.04em}
+.live-project--kiwi .live-project-mark{background:var(--accent);color:var(--ink)}
+.live-project-info .case-meta{margin:0 0 5px;font-size:.68rem}
+.live-project-info h3{font-size:clamp(1.3rem,2vw,1.8rem);line-height:1.1;margin:0 0 6px;letter-spacing:-.04em}
+.live-project-info p:last-child{font-size:.9rem;line-height:1.45;color:var(--ink-2);margin:0}
+.live-project .btn{padding:0 14px}
+.direct-contact{display:flex;flex-wrap:wrap;gap:10px 22px;margin-top:24px;padding-top:20px;border-top:1px solid var(--line)}
+.direct-contact a{font-size:.95rem;font-weight:700;text-underline-offset:4px;text-decoration-color:var(--accent)}
+/* Practical FAQs and transparent handoff details */
+.faq-section{background:var(--paper-2)}
+.faq-layout{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);align-items:start;gap:clamp(32px,7vw,100px)}
+.faq-copy .title{font-size:clamp(2.4rem,5vw,4.5rem);line-height:.98}
+.faq-intro{margin-top:22px;color:var(--ink-2);max-width:35ch}
+.faq-cta{margin-top:26px;font-weight:700}
+.faq-cta a{text-decoration-color:var(--accent);text-underline-offset:4px}
+.faq-list{border-top:1px solid var(--ink)}
+.faq-item{border-bottom:1px solid var(--line)}
+.faq-item summary{display:flex;align-items:center;justify-content:space-between;gap:18px;list-style:none;cursor:pointer;padding:19px 0;font-weight:700;line-height:1.35}
+.faq-item summary::-webkit-details-marker{display:none}
+.faq-item summary span{width:28px;height:28px;display:grid;place-items:center;flex:none;border:1px solid var(--line);border-radius:50%;font-size:1.2rem;font-weight:500;transition:transform .2s ease,background-color .2s ease}
+.faq-item[open] summary span{transform:rotate(45deg);background:var(--ink);color:var(--paper)}
+.faq-answer{padding:0 44px 20px 0;color:var(--ink-2);font-size:.96rem;line-height:1.65}
+.faq-answer p{margin:0;max-width:65ch}
+@media(max-width:820px){
+ .live-projects{grid-template-columns:1fr}
+ .live-project{grid-template-columns:56px minmax(0,1fr) auto}
+ .live-project-mark{width:56px;height:56px}
+ .faq-layout{grid-template-columns:1fr;gap:28px}
+ .faq-copy .title{max-width:14ch}
+}
+@media(max-width:560px){
+ .live-project{grid-template-columns:52px minmax(0,1fr);gap:12px;padding:16px}
+ .live-project-mark{width:52px;height:52px;font-size:.64rem}
+ .live-project .btn{grid-column:1/-1;width:100%}
+ .faq-item summary{font-size:.98rem;padding:17px 0}
+ .faq-answer{padding-right:0;font-size:.92rem}
+}
+@media(prefers-reduced-motion:reduce){.faq-item summary span{transition:none}}
 </style>
 </head>
 <body>
@@ -437,8 +479,8 @@ html:not(.js) .pre{display:none}
       <span class="word" aria-label="WebHorizn"><i style="--n:0">W</i><i style="--n:1">e</i><i style="--n:2">b</i><i style="--n:3">H</i><i style="--n:4">o</i><i style="--n:5">r</i><i style="--n:6">i</i><i style="--n:7">z</i><i style="--n:8">n</i></span>
     </a>
     <div class="hdr-right">
-      <!-- Replace +91XXXXXXXXXX with your real number -->
-      <a class="call" href="tel:+91XXXXXXXXXX" aria-label="Call WebHorizn">
+      <!-- Business contact number configured. -->
+      <a class="call" href="tel:+919463481836" aria-label="Call WebHorizn">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>
       </a>
       <a class="btn btn-accent btn-sm" href="#contact">Get a Free Audit</a>
@@ -465,10 +507,10 @@ html:not(.js) .pre{display:none}
         <p class="sub">Web development and digital marketing for growing businesses in India.</p>
         <div class="cta-row">
           <a class="btn btn-accent" href="#contact">Get a Free Audit <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-          <!-- Replace 91XXXXXXXXXX with your WhatsApp number (country code, no +) -->
-          <a class="btn btn-line" href="https://wa.me/91XXXXXXXXXX?text=Hi%20WebHorizn%2C%20I%27d%20like%20a%20free%20audit." data-wa>Chat on WhatsApp</a>
+          <!-- Business WhatsApp number configured. -->
+          <a class="btn btn-line" href="https://wa.me/919463481836?text=Hi%20WebHorizn%2C%20I%27d%20like%20a%20free%20audit." data-wa>Chat on WhatsApp</a>
         </div>
-        <p class="trust">4+ years in web development and digital marketing · We reply within 2 hours (10am to 7pm) · No obligation</p>
+        <p class="trust">Clear website packages from ₹8,999 · Direct WhatsApp contact · No pressure to proceed</p>
       </div>
 
       <figure class="fig rv">
@@ -606,7 +648,28 @@ html:not(.js) .pre{display:none}
   <div class="wrap">
     <div class="label rv"><b>03</b> Selected work</div>
     <h2 class="title rv" id="work-title" style="margin-bottom:clamp(40px,6vw,72px)">Recent projects.</h2>
-    <p class="work-intro rv">A look at how we approach clear, responsive digital experiences. These concept projects demonstrate our process; they are not presented as client results.</p>
+    <p class="work-intro rv">Explore live website links alongside clearly labelled concept designs. Concept projects show our approach; they are not client results.</p>
+
+      <div class="live-projects rv" aria-label="Live website examples">
+        <article class="live-project">
+          <div class="live-project-mark" aria-hidden="true">JK<br>MOGA</div>
+          <div class="live-project-info">
+            <p class="case-meta">Live website</p>
+            <h3>JK Moga</h3>
+            <p>Open the live website to explore the experience.</p>
+          </div>
+          <a class="btn btn-line btn-sm" href="https://jkmoga.com/" target="_blank" rel="noopener noreferrer">Visit website ↗</a>
+        </article>
+        <article class="live-project live-project--kiwi">
+          <div class="live-project-mark" aria-hidden="true">KIWI<br>DIGIHUB</div>
+          <div class="live-project-info">
+            <p class="case-meta">Live website</p>
+            <h3>Kiwi DigiHub</h3>
+            <p>Open the live website to explore the experience.</p>
+          </div>
+          <a class="btn btn-line btn-sm" href="https://kiwidigihub.com/" target="_blank" rel="noopener noreferrer">Visit website ↗</a>
+        </article>
+      </div>
 
     <!-- Concept 1 -->
     <article class="case rv" style="--i:0">
@@ -723,9 +786,35 @@ html:not(.js) .pre{display:none}
 </section>
 
 <!-- 6. CONTACT -->
+<section id="faq" aria-labelledby="faq-title" class="faq-section">
+  <div class="wrap">
+    <div class="faq-layout">
+      <div class="faq-copy">
+        <div class="label rv"><b>05</b> Before we begin</div>
+        <h2 class="title rv" id="faq-title">Good questions. Straight answers.</h2>
+        <p class="faq-intro rv">Clear expectations make projects easier for everyone. Here is what to know before we start.</p>
+        <p class="faq-cta rv">Still unsure? <a href="https://wa.me/919463481836?text=Hi%20WebHorizn%2C%20I%20have%20a%20question%20about%20a%20website%20or%20digital%20marketing%20project." target="_blank" rel="noopener noreferrer" data-wa>Ask on WhatsApp ↗</a></p>
+      </div>
+      <div class="faq-list rv">
+        <details class="faq-item"><summary>What is included in each website plan?<span aria-hidden="true">+</span></summary><div class="faq-answer"><p>Basic includes 4 pages and 2 rounds of design changes. Standard includes 6 pages and 3 rounds, plus business email for the first year, Google Business Profile setup, logo design and social media links. Both plans include domain and hosting for the first year, SSL, WhatsApp integration, a contact/enquiry form, Google Maps, basic SEO, 30 days of post-launch support, and website ownership after full payment and handover.</p></div></details>
+        <details class="faq-item"><summary>What do I need to provide?<span aria-hidden="true">+</span></summary><div class="faq-answer"><p>Share your business name and contact details, your logo if you have one, photos, a list of your services, your address for Google Maps, and any text you want on the pages. If you do not have everything ready, tell us and we will guide you.</p></div></details>
+        <details class="faq-item"><summary>How long does a website take?<span aria-hidden="true">+</span></summary><div class="faq-answer"><p>The current target is 3 days after we receive the required content, assets, payment and approvals. It is a target, not a guarantee; missing material or delayed approvals can move the date.</p></div></details>
+        <details class="faq-item"><summary>What happens after the first year?<span aria-hidden="true">+</span></summary><div class="faq-answer"><p>Domain and hosting are included for the first year. Standard also includes business email for that year. Provider renewal charges may apply afterward, so ask us about renewal costs before starting.</p></div></details>
+        <details class="faq-item"><summary>Will I own my website?<span aria-hidden="true">+</span></summary><div class="faq-answer"><p>Yes. Ownership of the agreed website transfers after full payment and handover.</p></div></details>
+        <details class="faq-item"><summary>What are design revision rounds?<span aria-hidden="true">+</span></summary><div class="faq-answer"><p>A revision round is one consolidated set of design changes, such as text, colours, images or layout. Basic includes 2 rounds and Standard includes 3. New pages or changes to the agreed project scope are quoted separately.</p></div></details>
+        <details class="faq-item"><summary>What does 30-day support include?<span aria-hidden="true">+</span></summary><div class="faq-answer"><p>It covers help with issues related to the website we built for 30 days after launch. New pages, features or changes beyond the agreed scope are discussed and quoted separately.</p></div></details>
+        <details class="faq-item"><summary>How do payments work?<span aria-hidden="true">+</span></summary><div class="faq-answer"><p>Payment terms are 50% in advance to begin the project and the remaining 50% before final handover.</p></div></details>
+        <details class="faq-item"><summary>How does the enquiry form work?<span aria-hidden="true">+</span></summary><div class="faq-answer"><p>It opens WhatsApp with your details prepared as a draft. Your enquiry reaches us only if you press Send in WhatsApp. This website does not save submissions.</p></div></details>
+        <details class="faq-item"><summary>Can you build a website for my kind of business?<span aria-hidden="true">+</span></summary><div class="faq-answer"><p>We can discuss websites for shops, clinics, coaching institutes, real estate, salons, consultants, freelancers and other service businesses. Tell us about your requirements and we will confirm the fit.</p></div></details>
+        <details class="faq-item"><summary>Does basic SEO guarantee Google rankings?<span aria-hidden="true">+</span></summary><div class="faq-answer"><p>No. Basic SEO covers setup that helps search engines understand the site. Rankings, enquiries and sales depend on many factors, so we do not guarantee them.</p></div></details>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section id="contact" aria-labelledby="contact-title">
   <div class="wrap">
-    <div class="label rv"><b>05</b> Contact</div>
+    <div class="label rv"><b>06</b> Contact</div>
     <h2 class="title rv" id="contact-title" style="margin-bottom:clamp(40px,6vw,72px)">Tell us about your project.</h2>
 
     <div class="contact-grid">
@@ -739,6 +828,10 @@ html:not(.js) .pre{display:none}
           <li><span>03</span><div><strong>Advertising that connects</strong><p>Google and Meta Ads planning with clear measurement in mind.</p></div></li>
         </ul>
         <p class="contact-promise">No pressure. Just a useful first conversation.</p>
+        <div class="direct-contact" aria-label="Direct contact options">
+          <a href="tel:+919463481836">Call +91 94634 81836</a>
+          <a href="mailto:webhorizn@gmail.com">Email webhorizn@gmail.com</a>
+        </div>
       </div>
 
       <div class="contact-form-wrap rv">
@@ -757,6 +850,11 @@ html:not(.js) .pre{display:none}
             <label for="phone">Mobile / WhatsApp number</label>
             <input id="phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" maxlength="16" placeholder="10-digit mobile number" required aria-describedby="phone-error">
             <p class="err" id="phone-error" role="alert"></p>
+          </div>
+          <div class="field">
+            <label for="city">City / town</label>
+            <input id="city" name="city" type="text" autocomplete="address-level2" maxlength="80" placeholder="e.g. Katihar" required aria-describedby="city-error">
+            <p class="err" id="city-error" role="alert"></p>
           </div>
 
           <div class="field">
@@ -796,13 +894,13 @@ html:not(.js) .pre{display:none}
             <textarea id="details" name="details" rows="3" maxlength="1200" placeholder="What are you hoping to build or improve?"></textarea>
           </div>
 
-          <button class="btn btn-accent btn-block" type="submit" id="submit-btn">Request a Free Audit <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+          <button class="btn btn-accent btn-block" type="submit" id="submit-btn">Continue on WhatsApp <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
           <p class="status" id="form-status" role="status" aria-live="polite"></p>
-          <p class="privacy">Your details stay private. We only use them to respond to your enquiry.</p>
+          <p class="privacy">This page does not save your details. Continue opens a WhatsApp draft; your enquiry reaches us only after you press Send.</p>
         </form>
 
         <div class="or" style="margin:24px 0">or</div>
-        <a class="btn btn-line btn-block" href="https://wa.me/91XXXXXXXXXX?text=Hi%20WebHorizn%2C%20I%27d%20like%20to%20discuss%20a%20project." data-wa>Chat on WhatsApp</a>
+        <a class="btn btn-line btn-block" href="https://wa.me/919463481836?text=Hi%20WebHorizn%2C%20I%27d%20like%20to%20discuss%20a%20project." data-wa>Chat on WhatsApp</a>
       </div>
     </div>
   </div>
@@ -820,11 +918,11 @@ html:not(.js) .pre{display:none}
         <p>India</p>
       </div>
       <div>
-        <p>Phone: <a href="tel:+91XXXXXXXXXX">+91 XXXXX XXXXX</a></p>
-        <p>Email: <a href="mailto:hello@example.com">hello@example.com</a></p>
+        <p>Phone: <a href="tel:+919463481836">+91 94634 81836</a></p>
+        <p>Email: <a href="mailto:webhorizn@gmail.com">webhorizn@gmail.com</a></p>
       </div>
       <div>
-        <p>GST / Registration No.: [GST / REGISTRATION NUMBER]</p>
+        
         <p>© 2026 WebHorizn. All rights reserved.</p>
         <p>We use your details only to reply to your enquiry.</p>
       </div>
@@ -834,7 +932,7 @@ html:not(.js) .pre{display:none}
 </footer>
 
 <!-- Floating WhatsApp (hidden while the contact form is on screen) -->
-<a class="wa" href="https://wa.me/91XXXXXXXXXX?text=Hi%20WebHorizn%2C%20I%27d%20like%20a%20free%20audit." data-wa aria-label="Chat with WebHorizn on WhatsApp">
+<a class="wa" href="https://wa.me/919463481836?text=Hi%20WebHorizn%2C%20I%27d%20like%20a%20free%20audit." data-wa aria-label="Chat with WebHorizn on WhatsApp">
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 20.5l1.7-5.4A8.4 8.4 0 1 1 21 11.5z"/></svg>
 </a>
 
@@ -842,14 +940,7 @@ html:not(.js) .pre{display:none}
 (function () {
   'use strict';
 
-  /* ===== FORM ENDPOINT =====
-     Paste your endpoint here. Options:
-     - Formspree:  https://formspree.io/f/XXXXXXXX
-     - Google Apps Script web app URL (deploy as "Anyone" access)
-     - Your own backend URL (must accept POST with FormData)
-     Until this is set, the form will NOT send anything and will show a message. */
-  var FORM_ENDPOINT = '[FORM_ENDPOINT_URL]';
-  var isConfigured = /^https:\/\//.test(FORM_ENDPOINT);
+  /* Enquiries are handed off to WhatsApp; this page does not store form submissions. */
 
   /* ===== TRACKING =====
      Fires on form success (lead_form_submit) and WhatsApp taps (whatsapp_click). */
@@ -1029,6 +1120,7 @@ html:not(.js) .pre{display:none}
   var submitBtn = document.getElementById('submit-btn');
   var fName = document.getElementById('name');
   var fPhone = document.getElementById('phone');
+  var fCity = document.getElementById('city');
   var fBusiness = document.getElementById('business');
   var fService = document.getElementById('service');
   var packageInput = document.getElementById('website-package');
@@ -1063,13 +1155,14 @@ html:not(.js) .pre{display:none}
   function validate(focusFirst) {
     var okName = setError(fName, fName.value.trim().length < 2 ? 'Please enter your name.' : '');
     var okPhone = setError(fPhone, /^[6-9]\d{9}$/.test(normalisePhone(fPhone.value)) ? '' : 'Enter a valid 10-digit mobile number, for example 98765 43210.');
+    var okCity = setError(fCity, fCity.value.trim().length < 2 ? 'Please enter your city or town.' : '');
     var okBiz = setError(fBusiness, fBusiness.value ? '' : 'Please choose your business type.');
     var okService = setError(fService, fService.value ? '' : 'Please choose a service.');
     if (focusFirst) {
-      var first = [fName, fPhone, fBusiness, fService].filter(function (f) { return f.getAttribute('aria-invalid') === 'true'; })[0];
+      var first = [fName, fPhone, fCity, fBusiness, fService].filter(function (f) { return f.getAttribute('aria-invalid') === 'true'; })[0];
       if (first) first.focus();
     }
-    return okName && okPhone && okBiz && okService;
+    return okName && okPhone && okCity && okBiz && okService;
   }
 
   form.addEventListener('input', function () {
@@ -1082,46 +1175,32 @@ html:not(.js) .pre{display:none}
     status.textContent = '';
     if (!validate(true)) return;
 
-    if (!isConfigured) {
+    var detailsField = document.getElementById('details');
+    var packageName = packageInput && packageInput.value ? packageInput.value + ' Website' : 'Not sure yet';
+    var msg = [
+      'Hi WebHorizn, I would like to discuss a project.',
+      '',
+      'Name: ' + fName.value.trim(),
+      'Phone: +91 ' + normalisePhone(fPhone.value),
+      'City: ' + fCity.value.trim(),
+      'Business type: ' + fBusiness.value,
+      'Service: ' + fService.value,
+      'Website package: ' + packageName,
+      'Project details: ' + (detailsField && detailsField.value.trim() ? detailsField.value.trim() : 'Not provided')
+    ].join('\n');
+    var url = 'https://wa.me/919463481836?text=' + encodeURIComponent(msg);
+
+    track('lead_form_whatsapp_handoff', 'Lead');
+    var opened = null;
+    try { opened = window.open(url, '_blank'); } catch (err) {}
+    if (opened) {
+      try { opened.opener = null; } catch (err) {}
+      status.classList.add('status-ok');
+      status.textContent = 'WhatsApp should now be open with your message ready. Review it and press Send to contact us. Nothing is sent to WebHorizn until you press Send.';
+    } else {
       status.classList.add('status-error');
-      status.textContent = 'The form is not connected yet. Please use WhatsApp for now.';
-      console.warn('Set FORM_ENDPOINT in index.html so leads are received.');
-      return;
+      status.textContent = 'WhatsApp did not open automatically. Use the Chat on WhatsApp link below to contact us. Nothing has been sent yet.';
     }
-
-    var label = submitBtn.textContent;
-    submitBtn.disabled = true;
-    submitBtn.textContent = 'Sending…';
-
-    var data = new FormData(form);
-    data.set('phone', normalisePhone(fPhone.value));
-    data.append('page_url', location.href);
-    // Keep ad source details (utm_source, utm_campaign, etc.) for attribution
-    new URLSearchParams(location.search).forEach(function (v, k) {
-      if (k.indexOf('utm_') === 0) data.append(k, v);
-    });
-
-    fetch(FORM_ENDPOINT, { method: 'POST', body: data, headers: { 'Accept': 'application/json' } })
-      .then(function (res) {
-        if (!res.ok) throw new Error('HTTP ' + res.status);
-        track('lead_form_submit', 'Lead');
-        form.reset();
-        if (packageSelection) packageSelection.textContent = packageDefaultText;
-        status.classList.add('status-ok');
-        status.textContent = 'Thank you! We have your details and will reply within 2 hours (10am to 7pm).';
-        /* Gentle confirmation pulse on the success message */
-        if (!reduce && status.animate) {
-          status.animate([{transform:'scale(.99)'},{transform:'scale(1)'}], {duration:450, easing:'cubic-bezier(.2,.7,.1,1)'});
-        }
-      })
-      .catch(function () {
-        status.classList.add('status-error');
-        status.textContent = 'Something went wrong. Please try again, or tap Chat on WhatsApp.';
-      })
-      .then(function () {
-        submitBtn.disabled = false;
-        submitBtn.textContent = label;
-      });
   });
 })();
 </script>
