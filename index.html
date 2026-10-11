@@ -1182,7 +1182,7 @@ html:not(.js) .pre{display:none}
             <textarea id="details" name="details" rows="3" maxlength="1200" placeholder="What are you hoping to build or improve?"></textarea>
           </div>
 
-          <button class="btn btn-accent btn-block" type="submit" id="submit-btn">Continue on WhatsApp <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+          <button class="btn btn-accent btn-block" type="submit" id="submit-btn">Submit Enquiry <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
           <p class="status" id="form-status" role="status" aria-live="polite"></p>
           <p class="privacy">Submitting sends your details to WebHorizn’s lead-management spreadsheet so we can follow up. Continue also opens a WhatsApp draft; that WhatsApp message is sent only when you press Send.</p>
         </form>
@@ -1527,31 +1527,10 @@ html:not(.js) .pre{display:none}
 
     var detailsField = document.getElementById('details');
     var phone = normalisePhone(fPhone.value);
-    var packageName = packageInput && packageInput.value ? packageInput.value + ' Website' : 'Not sure yet';
     var details = detailsField && detailsField.value.trim() ? detailsField.value.trim() : '';
-    var msg = [
-      'Hi WebHorizn, I would like to discuss a project.',
-      '',
-      'Name: ' + fName.value.trim(),
-      'Phone: +91 ' + phone,
-      'City: ' + fCity.value.trim(),
-      'Business type: ' + fBusiness.value,
-      'Service: ' + fService.value,
-      'Website package: ' + packageName,
-      'Project details: ' + (details || 'Not provided')
-    ].join('\\n');
-    var whatsappUrl = 'https://wa.me/919463481836?text=' + encodeURIComponent(msg);
-
-    // Open WhatsApp synchronously to reduce the chance of a popup being blocked.
-    track('lead_form_whatsapp_handoff', 'Lead');
-    var opened = null;
-    try { opened = window.open(whatsappUrl, '_blank'); } catch (err) {}
-    if (opened) {
-      try { opened.opener = null; } catch (err) {}
-    }
+    var submitButton = document.getElementById('submit-btn');
 
     status.textContent = 'Saving your enquiry…';
-    var submitButton = document.getElementById('submit-btn');
     if (submitButton) submitButton.disabled = true;
 
     fetch('/api/lead', {
@@ -1570,7 +1549,7 @@ html:not(.js) .pre{display:none}
       .then(function (response) {
         return response.json().then(function (payload) {
           if (!response.ok || !payload || payload.success !== true) {
-            throw new Error('Lead save was not confirmed.');
+            throw new Error(payload && payload.message ? payload.message : 'Lead save was not confirmed.');
           }
           return payload;
         });
@@ -1578,17 +1557,16 @@ html:not(.js) .pre{display:none}
       .then(function () {
         track('lead_form_saved', 'Lead');
         status.className = 'status status-ok';
-        status.textContent = 'Your enquiry has been saved to WebHorizn’s lead sheet. ' +
-          (opened
-            ? 'WhatsApp should be open with your message ready. Review it and press Send to send the WhatsApp message.'
-            : 'WhatsApp did not open automatically. Use the Chat on WhatsApp link below if you would also like to message us. Press Send in WhatsApp to send that message.');
+        status.textContent = 'Thanks — your enquiry has been submitted to WebHorizn. Your details have been saved for follow-up. If you would also like to message us directly, use the separate Chat on WhatsApp link below.';
+        form.reset();
+        if (packageInput) packageInput.value = '';
+        if (packageSelection) packageSelection.textContent = packageDefaultText;
       })
-      .catch(function () {
+      .catch(function (error) {
         status.className = 'status status-error';
-        status.textContent = 'We could not confirm that your enquiry was saved to our lead sheet. ' +
-          (opened
-            ? 'Your WhatsApp draft may be open; review it and press Send to contact WebHorizn.'
-            : 'Please use the Chat on WhatsApp link below to contact WebHorizn.');
+        status.textContent = error && error.message
+          ? error.message
+          : 'We could not confirm that your enquiry was saved. Please try again or contact us via WhatsApp.';
       })
       .finally(function () {
         if (submitButton) submitButton.disabled = false;
