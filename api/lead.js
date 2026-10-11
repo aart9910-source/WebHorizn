@@ -31,7 +31,10 @@ module.exports = async function handler(req, res) {
   const secret = process.env.WEBHORIZN_API_SECRET;
 
   if (!scriptUrl || !secret) {
-    return res.status(500).json({ success: false, message: "Lead service is not configured." });
+    return res.status(500).json({
+      success: false,
+      message: "Lead form setup is incomplete. Check both Vercel Production environment variables and redeploy."
+    });
   }
 
   let body = req.body;
@@ -91,12 +94,36 @@ module.exports = async function handler(req, res) {
     }
 
     if (!upstream.ok || !result || result.status !== "success") {
-      // Do not expose the upstream response or any submitted personal data.
-      return res.status(502).json({ success: false, message: "We couldn't confirm saving your enquiry." });
+      // Report a safe next step without exposing submitted data or stack traces.
+      if (result && result.status === "error" && result.message === "Unauthorized.") {
+        return res.status(502).json({
+          success: false,
+          message: "Google rejected the lead-service secret. Confirm WEBHORIZN_API_SECRET exactly matches the Apps Script Script Property, then redeploy the Apps Script and Vercel."
+        });
+      }
+      if (result && result.status === "error" && result.message === "Configuration error: 'Leads' worksheet missing.") {
+        return res.status(502).json({
+          success: false,
+          message: "Google could not find the Leads tab. Confirm the worksheet name is exactly Leads."
+        });
+      }
+      if (result && result.status === "error") {
+        return res.status(502).json({
+          success: false,
+          message: "Google received the submission but could not save it. Check Apps Script authorization, the deployed version, and the Leads tab."
+        });
+      }
+      return res.status(502).json({
+        success: false,
+        message: "Google returned an unexpected response. Check the Apps Script web-app deployment and public access setting."
+      });
     }
 
     return res.status(200).json({ success: true });
   } catch (_) {
-    return res.status(502).json({ success: false, message: "We couldn't reach the lead service." });
+    return res.status(502).json({
+      success: false,
+      message: "The website could not reach Google Apps Script. Check the web-app URL and deployment access."
+    });
   }
 };
