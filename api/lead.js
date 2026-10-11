@@ -58,6 +58,7 @@ module.exports = async function handler(req, res) {
   }
 
   const lead = {
+    request_id: clean(body.request_id, 100),
     name: clean(body.name, 120),
     phone: clean(body.phone, 30),
     city: clean(body.city, 80),
@@ -67,8 +68,8 @@ module.exports = async function handler(req, res) {
     details: clean(body.details, 1200)
   };
 
-  if (!lead.name || !lead.phone || !lead.city || !lead.business || !lead.service) {
-    return res.status(400).json({ success: false, message: "Please complete all required fields." });
+  if (!lead.request_id || !lead.name || !lead.phone || !lead.city || !lead.business || !lead.service) {
+    return res.status(400).json({ success: false, message: "Please complete all required fields and retry." });
   }
 
   // The website validates Indian mobile numbers before submission; validate
