@@ -327,10 +327,12 @@ section{padding:clamp(80px,11vw,160px) 0;scroll-margin-top:84px}
 
 /* How it works (dark) */
 .dark{background:var(--ink);color:var(--paper)}
-.proc{display:grid;gap:64px}
+.proc{display:block}
+.proc-main{display:grid;gap:64px}
+.proc-l{min-width:0}
 @media (min-width:960px){
-  .proc{grid-template-columns:.9fr 1.1fr;gap:110px;align-items:start}
-  .proc-l{position:sticky;top:120px}
+  .proc-main{grid-template-columns:.9fr 1.1fr;gap:110px;align-items:start}
+  .proc-l{position:sticky;top:120px;align-self:start}
 }
 .risk{margin-top:40px;font-size:clamp(1.3rem,2.4vw,2rem);font-weight:800;letter-spacing:-.03em;line-height:1.15;max-width:18ch}
 .timeline{position:relative;list-style:none;margin:0;padding:0 0 0 56px}
@@ -348,7 +350,7 @@ section{padding:clamp(80px,11vw,160px) 0;scroll-margin-top:84px}
 .step p{color:var(--mute);max-width:40ch}
 
 /* Process: make practical next steps visible, not buried in the FAQ. */
-.process-details{grid-column:1/-1;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:6px}
+.process-details{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:clamp(64px,8vw,104px)}
 .process-detail-card{min-width:0;padding:clamp(22px,3vw,34px);border:1px solid rgba(243,240,232,.18);border-radius:var(--r);background:rgba(243,240,232,.035)}
 .process-detail-card .case-meta{color:var(--accent);font-weight:800;letter-spacing:.12em;font-size:.7rem;margin:0 0 18px}
 .process-detail-card h3{font-size:clamp(1.45rem,2.8vw,2.2rem);line-height:1;letter-spacing:-.045em;color:var(--paper);margin:0 0 22px;max-width:18ch}
@@ -1014,13 +1016,14 @@ html:not(.js) .pre{display:none}
 <!-- 5. HOW IT WORKS -->
 <section class="dark" id="process" aria-labelledby="process-title">
   <div class="wrap proc">
-    <div class="proc-l">
-      <div class="label rv"><b>05</b> How it works</div>
-      <h2 class="title rv" id="process-title">Four steps. No surprises.</h2>
-      <p class="risk rv">No lock-in. No pressure. Start with a conversation.</p>
-    </div>
+    <div class="proc-main">
+      <div class="proc-l">
+        <div class="label rv"><b>05</b> How it works</div>
+        <h2 class="title rv" id="process-title">Four steps. No surprises.</h2>
+        <p class="risk rv">No lock-in. No pressure. Start with a conversation.</p>
+      </div>
 
-    <ol class="timeline" id="timeline">
+      <ol class="timeline" id="timeline">
       <li class="step rv">
         <div class="step-no">STEP 01</div>
         <h3>Start with a conversation</h3>
@@ -1041,7 +1044,8 @@ html:not(.js) .pre{display:none}
         <h3>Approve, launch and hand over</h3>
         <p>We launch the approved website and hand over ownership after final payment. Advertising setup and ongoing management follow the separately agreed scope.</p>
       </li>
-    </ol>
+      </ol>
+    </div>
 
     <div class="process-details" aria-label="Project preparation and payment details">
       <article class="process-detail-card">
