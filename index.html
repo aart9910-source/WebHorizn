@@ -1339,10 +1339,27 @@ html:not(.js) .pre{display:none}
   }
 
   document.querySelectorAll('[data-wa]').forEach(function (a) {
-    a.addEventListener('click', function () {
+    a.addEventListener('click', function (event) {
       track('whatsapp_click', 'Contact');
-      // Only real WhatsApp-link clicks report the Contact conversion.
-      gtag_report_contact_conversion();
+
+      // Keep new-tab and modified clicks behaving as before; track them without
+      // overriding their native navigation. Same-tab clicks wait for the
+      // conversion callback, with a short fallback if the callback never runs.
+      var opensSeparateContext = a.target === '_blank' || event.ctrlKey ||
+        event.metaKey || event.shiftKey || event.altKey || event.button !== 0;
+      if (opensSeparateContext) {
+        gtag_report_contact_conversion();
+        return;
+      }
+
+      event.preventDefault();
+      var destination = a.href;
+      gtag_report_contact_conversion(destination);
+      window.setTimeout(function () {
+        if (window.location.href !== destination) {
+          window.location.href = destination;
+        }
+      }, 1000);
     });
   });
 
