@@ -1270,10 +1270,46 @@ html:not(.js) .pre{display:none}
 (function () {
   'use strict';
 
+  /*
+   * Google Ads conversion helpers.
+   * The supplied snippets used the same function name; separate names prevent
+   * one snippet from overwriting the other. The conversion IDs, labels, value,
+   * currency, and callback payloads below are preserved exactly.
+   */
+  function gtag_report_contact_conversion(url) {
+    var callback = function () {
+      if (typeof(url) != 'undefined') {
+        window.location = url;
+      }
+    };
+    gtag('event', 'conversion', {
+        'send_to': 'AW-18231826678/MdeaCMT5lJodEPaxzvVD',
+        'value': 1.0,
+        'currency': 'INR',
+        'event_callback': callback
+    });
+    return false;
+  }
+
+  function gtag_report_lead_conversion(url) {
+    var callback = function () {
+      if (typeof(url) != 'undefined') {
+        window.location = url;
+      }
+    };
+    gtag('event', 'conversion', {
+        'send_to': 'AW-18231826678/kYbuCMf5lJodEPaxzvVD',
+        'value': 1.0,
+        'currency': 'INR',
+        'event_callback': callback
+    });
+    return false;
+  }
+
   /* Enquiries are submitted to the server-side lead API and recorded in the lead-management spreadsheet. */
 
   /* ===== TRACKING =====
-     Fires on form success (lead_form_submit) and WhatsApp taps (whatsapp_click). */
+     Custom dataLayer events remain in place; Google Ads conversions are sent separately below. */
   function track(name) {
     // No third-party analytics is configured. Keep events available for later instrumentation.
     window.dataLayer = window.dataLayer || [];
@@ -1303,7 +1339,11 @@ html:not(.js) .pre{display:none}
   }
 
   document.querySelectorAll('[data-wa]').forEach(function (a) {
-    a.addEventListener('click', function () { track('whatsapp_click', 'Contact'); });
+    a.addEventListener('click', function () {
+      track('whatsapp_click', 'Contact');
+      // Only real WhatsApp-link clicks report the Contact conversion.
+      gtag_report_contact_conversion();
+    });
   });
 
 
@@ -1522,12 +1562,16 @@ html:not(.js) .pre{display:none}
 
   // Reuse one submission ID after a reported failure, so safe retries are possible.
   var pendingLeadRequestId = null;
+  var submissionInProgress = false;
 
   form.addEventListener('submit', function (ev) {
     ev.preventDefault();
+    // Ignore duplicate submit events while one backend request is in flight.
+    if (submissionInProgress) return;
     status.className = 'status';
     status.textContent = '';
     if (!validate(true)) return;
+    submissionInProgress = true;
     if (!pendingLeadRequestId) {
       pendingLeadRequestId = (window.crypto && typeof window.crypto.randomUUID === 'function')
         ? window.crypto.randomUUID()
@@ -1566,6 +1610,8 @@ html:not(.js) .pre{display:none}
       })
       .then(function () {
         track('lead_form_saved', 'Lead');
+        // A conversion is sent only after /api/lead confirms success:true.
+        gtag_report_lead_conversion();
         status.className = 'status status-ok';
         status.textContent = 'Thanks — your enquiry has been submitted to WebHorizn. Your details have been saved for follow-up. If you would also like to message us directly, use the separate Chat on WhatsApp link below.';
         form.reset();
@@ -1580,6 +1626,7 @@ html:not(.js) .pre{display:none}
           : 'We could not confirm that your enquiry was saved. Please try again or contact us via WhatsApp.';
       })
       .finally(function () {
+        submissionInProgress = false;
         if (submitButton) submitButton.disabled = false;
       });
   });
