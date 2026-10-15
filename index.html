@@ -129,6 +129,8 @@ section{padding:clamp(80px,11vw,160px) 0;scroll-margin-top:84px}
 .hero{padding:clamp(40px,6vw,88px) 0 0}
 .kicker{font-size:.95rem;font-weight:600;color:var(--ink-2);margin-bottom:clamp(20px,3vw,32px)}
 .display{font-size:clamp(2.5rem,10.5vw,7.5rem);font-weight:800;line-height:.92;letter-spacing:-.05em;font-stretch:112%}
+.display.hero-price-headline{font-size:clamp(2.45rem,7.2vw,7.4rem);line-height:.98;letter-spacing:-.06em;max-width:100%;overflow-wrap:normal}
+.hero-price-headline .pill{padding:.025em .16em .06em}
 .ln{display:block;overflow:hidden;padding-bottom:.06em;margin-bottom:-.06em}
 .ln>span{display:inline-block;transform:translateY(110%);animation:rise 1s var(--ease) forwards}
 .ln:nth-child(1)>span{animation-delay:.05s}
@@ -140,11 +142,15 @@ section{padding:clamp(80px,11vw,160px) 0;scroll-margin-top:84px}
 .hero-bottom{display:grid;gap:44px;align-items:end;margin-top:clamp(40px,6vw,72px);padding-bottom:clamp(56px,7vw,96px)}
 @media (min-width:960px){.hero-bottom{grid-template-columns:1fr 1.15fr;gap:72px}}
 .sub{font-size:clamp(1.2rem,1.7vw,1.45rem);line-height:1.4;font-weight:600;max-width:26ch;margin-bottom:28px}
+.sub{font-size:clamp(1rem,1.45vw,1.22rem);line-height:1.55;font-weight:500;max-width:48ch;margin-bottom:28px}
 .cta-row{display:flex;flex-direction:column;gap:12px}
 @media (min-width:520px){.cta-row{flex-direction:row;flex-wrap:wrap}}
 .trust{margin-top:22px;font-size:.92rem;color:var(--ink-2);max-width:none}
 .fig{margin:0;border-top:1px solid var(--ink);padding-top:20px;will-change:transform}
 .fig figcaption{font-size:.85rem;color:var(--ink-2);margin-top:12px}
+
+@media(max-width:519px){.display.hero-price-headline{font-size:clamp(2.1rem,9.5vw,2.75rem);line-height:1.01;letter-spacing:-.065em}.hero-price-headline .ln{padding-bottom:.075em}.sub{font-size:1.05rem;line-height:1.6;max-width:100%}}
+
 /* Hero: self-contained desktop + mobile website concept. No remote screenshot dependencies. */
 .mock{position:relative;isolation:isolate;display:flex;align-items:center;min-height:350px;padding:30px 18px 34px;overflow:hidden;border:1px solid var(--line);border-radius:var(--r);background:radial-gradient(ellipse at 78% 30%,rgba(255,79,31,.12),transparent 38%),linear-gradient(135deg,#f2eee4,#e8e0d2)}
 .site-window{position:relative;width:82%;aspect-ratio:1.32;overflow:hidden;border:1.5px solid #171714;border-radius:11px;background:#f7f3e9;box-shadow:0 22px 50px rgba(20,18,13,.16)}
@@ -657,20 +663,20 @@ html:not(.js) .pre{display:none}
 <section class="hero" id="top" style="padding-bottom:0">
   <div class="wrap">
     <p class="kicker">WebHorizn · India</p>
-    <h1 class="display">
-      <span class="ln"><span>Websites built</span></span>
-      <span class="ln"><span>to earn trust.</span></span>
-      <span class="ln"><span>Designed for</span></span>
-      <span class="ln"><span><span class="pill">your business.</span></span></span>
+    <h1 class="display hero-price-headline">
+      <span class="ln"><span>Get Your</span></span>
+      <span class="ln"><span>Business Website</span></span>
+      <span class="ln"><span>for Just</span></span>
+      <span class="ln"><span><span class="pill">₹8,999</span></span></span>
     </h1>
 
     <div class="hero-bottom">
       <div>
-        <p class="sub">Make a confident first impression online. We design and develop fast, responsive websites that explain what you do and make it easy for customers to get in touch.</p>
+        <p class="sub">Get a professional, mobile-friendly 4-page website with domain, web hosting for 1 year, SSL, WhatsApp integration and an enquiry form—all for a one-time price of ₹8,999. Backed by 3+ years of experience in digital solutions.</p>
         <div class="cta-row">
-          <a class="btn btn-accent" href="#contact">Discuss a Project <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <a class="btn btn-accent" href="#website-pricing">View Website Packages <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
           <!-- Business WhatsApp number configured. -->
-          <a class="btn btn-line" href="https://wa.me/919463481836?text=Hi%20WebHorizn%2C%20I%27d%20like%20to%20discuss%20a%20project." data-wa>Chat on WhatsApp</a>
+          <a class="btn btn-line" href="https://wa.me/919463481836?text=Hi%20WebHorizn%2C%20I%27d%20like%20to%20discuss%20a%20project." data-wa>Chat On Whatsapp</a>
         </div>
         <p class="trust">Website packages from ₹8,999 · Written scope before work begins · Direct call, email or WhatsApp</p>
         <a class="hero-text-link" href="#work">See selected work <span aria-hidden="true">↗</span></a>
